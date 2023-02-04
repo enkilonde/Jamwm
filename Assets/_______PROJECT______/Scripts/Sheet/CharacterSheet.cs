@@ -96,9 +96,9 @@ public abstract class CharacterSheet {
 
     public bool EmptySlot(ItemSlot slot)
     {
-        if (!Equipment.ContainsKey(slot)) return false;
-        if (Equipment[slot] == null) return false;
-        return true;
+        if (!Equipment.ContainsKey(slot)) return true;
+        if (Equipment[slot] == null) return true;
+        return false;
     }
 
 #region HP modification
