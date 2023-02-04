@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerSheet : CharacterSheet {
 
-    public Dictionary<ItemSlot, Item> Equipment;
-
     private readonly Transform _playerTransform;
     
 #region Initialization

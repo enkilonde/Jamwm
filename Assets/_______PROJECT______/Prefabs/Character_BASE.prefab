@@ -49,12 +49,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 5979747486772747467}
   playerVisual: {fileID: 2464562602284313748}
-  ItemDatabase: {fileID: 11400000, guid: e06c90c8d33004b2da5fa7798079c7f2, type: 2}
+  leftWeapon: {fileID: 0}
+  rightWeapon: {fileID: 0}
+  IsPlayer: 0
   moveSpeed: 10
   turnSpeed: 10
   dashSpeed: 100
-  dashDistance: 0
-  dashCooldown: 0
+  dashDistance: 10
+  dashCooldown: 0.5
   movementPenalties:
   - 1
   - 0.5
@@ -171,6 +173,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6b168e5ba5dea48b7d7a3f90d785f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4684050206611339313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4699441834109548554, guid: 745426ccd217e044dac1a98269ab86ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 15432382544625723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173dfa4d5335aaf40a754e81122241e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5802897334094184070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5818329432814976701, guid: 745426ccd217e044dac1a98269ab86ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 15432382544625723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173dfa4d5335aaf40a754e81122241e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5979747486990829706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5965729106699208881, guid: 745426ccd217e044dac1a98269ab86ba,
@@ -247,9 +273,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8021051617803219916, guid: 24d0aa9edc7f26a4fab59978c466ae09,
         type: 3}
+      propertyPath: slot
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021051617803219916, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+        type: 3}
+      propertyPath: armBehaviour
+      value: 
+      objectReference: {fileID: 5802897334094184070}
+    - target: {fileID: 8021051617803219916, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+        type: 3}
       propertyPath: characterController
       value: 
       objectReference: {fileID: 5979747486772747462}
+    - target: {fileID: 8594800660082525173, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+        type: 3}
+      propertyPath: slot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594800660082525173, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+        type: 3}
+      propertyPath: armBehaviour
+      value: 
+      objectReference: {fileID: 4684050206611339313}
     - target: {fileID: 8594800660082525173, guid: 24d0aa9edc7f26a4fab59978c466ae09,
         type: 3}
       propertyPath: characterController

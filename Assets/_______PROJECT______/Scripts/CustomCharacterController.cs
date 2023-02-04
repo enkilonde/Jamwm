@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum WeapoonChargeState
+{
+    StartCharging, 
+    Charging,
+    Release
+}
+
 public class CustomCharacterController : MonoBehaviour
 {
     [Header("References")]
@@ -132,7 +139,7 @@ public class CustomCharacterController : MonoBehaviour
 
     public void StartChargeAttackLeft()
     {
-        if (!PlayerSheet.Equipment.ContainsKey(ItemSlot.LeftArm) || PlayerSheet.Equipment[ItemSlot.LeftArm] == null) return;
+        if (!CharacterSheet.Equipment.ContainsKey(ItemSlot.LeftArm) || CharacterSheet.Equipment[ItemSlot.LeftArm] == null) return;
         isChargingLeft = true;
         chargingLeft = 0;
         leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.StartCharging);
@@ -153,7 +160,7 @@ public class CustomCharacterController : MonoBehaviour
 
     public void StartChargeAttackRight()
     {
-        if (!PlayerSheet.Equipment.ContainsKey(ItemSlot.RightArm) || PlayerSheet.Equipment[ItemSlot.RightArm] == null) return;
+        if (!CharacterSheet.Equipment.ContainsKey(ItemSlot.RightArm) || CharacterSheet.Equipment[ItemSlot.RightArm] == null) return;
 
         isChargingRight = true;
         chargingRight = 0;
