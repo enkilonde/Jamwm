@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -358,7 +358,7 @@ PrefabInstance:
     - target: {fileID: 2966214329312936567, guid: 8da2282548b4e4dd1b657f1c0d8c182d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2966214329312936567, guid: 8da2282548b4e4dd1b657f1c0d8c182d,
         type: 3}
@@ -501,7 +501,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904862755}
-  m_LocalRotation: {x: 0.35017398, y: -0.004813202, z: 0.0017994139, w: 0.9366706}
+  m_LocalRotation: {x: 0.35017398, y: -0.0048132343, z: 0.0017994264, w: 0.9366706}
   m_LocalPosition: {x: 0.435, y: 9.45, z: -7.1050005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -649,8 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b1e8f5c0224aaa9fae2ad8f10111cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootPrefab: {fileID: 719639826239134278, guid: 9dd4d1871408245d9821b235071dcd57,
-    type: 3}
   ItemDatabase: {fileID: 11400000, guid: e06c90c8d33004b2da5fa7798079c7f2, type: 2}
 --- !u!4 &1198300449
 Transform:
@@ -691,7 +689,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199062744}
-  m_LocalRotation: {x: 0.35017398, y: -0.004813202, z: 0.0017994139, w: 0.9366706}
+  m_LocalRotation: {x: 0.35017398, y: -0.0048132343, z: 0.0017994264, w: 0.9366706}
   m_LocalPosition: {x: 0.435, y: 9.45, z: -7.1050005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -770,7 +768,7 @@ PrefabInstance:
     - target: {fileID: 8263796364910586966, guid: 120904d3ce9c2314986cf66b3e97bd60,
         type: 3}
       propertyPath: attackChance
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8263796364910586966, guid: 120904d3ce9c2314986cf66b3e97bd60,
         type: 3}

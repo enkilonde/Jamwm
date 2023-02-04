@@ -61,7 +61,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackRight 2
+  m_Name: AttackLeft 2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -76,7 +76,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bf0b662685fc462438e84c6f04ceea84, type: 2}
+  m_Motion: {fileID: 7400000, guid: 91ce1c0ed1296904482235e869781641, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -194,7 +194,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AttackLeft2
+  m_Name: AttackRight2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -208,7 +208,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 91ce1c0ed1296904482235e869781641, type: 2}
+  m_Motion: {fileID: 7400000, guid: bf0b662685fc462438e84c6f04ceea84, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94d30a8cfaae90479bb285bd75f4c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: {x: 2, y: 5}
+  waitTime: {x: 1, y: 4}
   triggers:
   - choose
   weights: 
@@ -567,7 +567,7 @@ MonoBehaviour:
   - left
   - right
   - leftAndRight
-  weights: 0200000002000000e8030000
+  weights: 020000000200000001000000
 --- !u!1101 &-4270725096433414229
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   triggers:
   - simpleAttack
   - chargedAttack
-  weights: e803000001000000
+  weights: 0100000001000000
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -1098,31 +1098,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &23056850353105904
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: simpleAttack
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -8743491877737293581}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!114 &536273454900744870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1394,7 +1369,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: simpleAttack
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3298204221536871074}
   m_Solo: 0
@@ -1421,7 +1399,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4243535495041102745}
-  - {fileID: 23056850353105904}
   - {fileID: 4384104139161312290}
   m_StateMachineBehaviours:
   - {fileID: -32025713565587078}
@@ -1622,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94d30a8cfaae90479bb285bd75f4c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: {x: 1, y: 2}
+  waitTime: {x: 0.2, y: 0.4}
   triggers:
   - choose
   weights: 
