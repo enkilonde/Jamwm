@@ -111,6 +111,7 @@ public abstract class CharacterSheet {
 
     public virtual void Hit(int damages) {
         CurrentHp -= damages;
+        EffectManager.Instance.DoDamageEffectOn(damages, _playerTransform.position);
     }
 
 #endregion

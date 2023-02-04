@@ -1,11 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class EffectManager : MonoBehaviour
-{
+public class EffectManager : MonoBehaviour {
+
+    public static EffectManager Instance;
+
     [SerializeField] private DamageEffect _damageEffectPrefab;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     [Button]
     private void Do5Damage()
