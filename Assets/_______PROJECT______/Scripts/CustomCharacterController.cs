@@ -42,26 +42,26 @@ public class CustomCharacterController : MonoBehaviour
     
     public void Dodge()
     {
-        throw new NotImplementedException();
+
     }
 
     public void ChargeAttackLeft()
     {
-        throw new NotImplementedException();
+
     }
 
     public void LaunchAttackLeft()
     {
-        throw new NotImplementedException();
+
     }
 
     public void ChargeAttackRight()
     {
-        throw new NotImplementedException();
+
     }
 
     public void LaunchAttackRight()
     {
-        throw new NotImplementedException();
+
     }
 }
