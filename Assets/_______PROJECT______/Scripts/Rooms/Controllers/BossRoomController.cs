@@ -11,7 +11,7 @@ public class BossRoomController : MonoBehaviour {
     public void Configure(AncestorData boss, AncestorData leftChoice, AncestorData rightChoice) {
         _leftDoorChoice = leftChoice;
         _rightDoorChoice = rightChoice;
-        if (boss != null) {
+        if (boss.InitialRoomAncestor == false) {
             SpawnAncestor(boss);
         }
     }

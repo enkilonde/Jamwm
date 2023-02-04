@@ -11,7 +11,7 @@ public class AncestorGenerator : MonoBehaviour {
 #region Level Design
 
     public (AncestorData, AncestorData) GetInitialParents() {
-        return (GenerateAncestor(0), GenerateAncestor(0));
+        return (GenerateAncestor(1), GenerateAncestor(1));
     }
 
     public (AncestorData, AncestorData) GetParents(AncestorData node) {
@@ -19,7 +19,7 @@ public class AncestorGenerator : MonoBehaviour {
         return (GenerateAncestor(parentsLevel), GenerateAncestor(parentsLevel));
     }
 
-    private AncestorData GenerateAncestor(int level) {
+    public AncestorData GenerateAncestor(int level) {
         return new AncestorData(
             name: GenerateAncestorName(),
             level: level
