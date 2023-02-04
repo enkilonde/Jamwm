@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
-  _collider: {fileID: 0}
+  _collider: {fileID: 1008442975407035825}
   _doorKind: 1
   _locked: 1
 --- !u!1 &2405903982978368213
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
-  _collider: {fileID: 0}
+  _collider: {fileID: 5270737799274132816}
   _doorKind: 0
   _locked: 0
 --- !u!1 &7114548684177292453
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
-  _collider: {fileID: 0}
+  _collider: {fileID: 5805960731838830224}
   _doorKind: 1
   _locked: 1
 --- !u!1 &8033431534047154576

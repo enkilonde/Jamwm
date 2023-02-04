@@ -7,9 +7,8 @@ public class PlayerSheet : CharacterSheet {
 
 #region Initialization
 
-    public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) : base() {
+    public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) : base(playerTransform) {
         PlayerVisual = playerVisual;
-        _playerTransform = playerTransform;
         Stats = GetInitialStats();
     }
 
