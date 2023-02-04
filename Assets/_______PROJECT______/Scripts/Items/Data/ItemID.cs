@@ -11,6 +11,7 @@ public enum ItemID {
 
     Sword01,
     Axe01,
-    Shield01
-
+    Shield01,
+    Fireball01,
+    IceSpear01
 }
