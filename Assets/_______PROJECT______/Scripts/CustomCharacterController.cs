@@ -67,7 +67,8 @@ public class CustomCharacterController : MonoBehaviour
     private void Start()
     {
         EquipItem(ItemID.Fireball01);
-        EquipItem(ItemID.IceSpear01);
+        //EquipItem(ItemID.IceSpear01);        
+        EquipItem(ItemID.Sword01);
 
     }
 
