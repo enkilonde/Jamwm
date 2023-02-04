@@ -28,7 +28,7 @@ public class WeaponAction : MonoBehaviour
             case ItemID.Shield01: return Shield;
 
             default:
-                throw new System.Exception("Why are you trying to activate the item '" + item.name + "' in the slot '" + slot + "', you should not be able to do it, or it need to be implemented");
+                throw new System.Exception("Why are you trying to activate the item '" + item.Name + "' in the slot '" + slot + "', you should not be able to do it, or it need to be implemented");
         }
     }
 
