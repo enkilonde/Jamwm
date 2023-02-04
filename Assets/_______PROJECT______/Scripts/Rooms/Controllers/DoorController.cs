@@ -24,7 +24,6 @@ public class DoorController : MonoBehaviour {
         // Just to avoid multiple events' being sent
         this.enabled = false;
 
-        Debug.LogError("Trigger door " + _doorKind);
         _room.HandleDoorPassed(_doorKind);
     }
 

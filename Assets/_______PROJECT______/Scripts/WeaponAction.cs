@@ -11,7 +11,7 @@ public class WeaponAction : MonoBehaviour
 
     public void LaunchAttack(float charge)
     {
-        Item item = characterController.PlayerSheet.Equipment[slot];
+        Item item = ((PlayerSheet)characterController.CharacterSheet).Equipment[slot];
 
         GetMethod(item).Invoke(item, charge);
 

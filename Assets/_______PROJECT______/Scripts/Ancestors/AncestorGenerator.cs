@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AncestorGenerator : MonoBehaviour {
@@ -27,6 +28,17 @@ public class AncestorGenerator : MonoBehaviour {
     }
 
 #endregion
+
+    public static Dictionary<PlayerStats, int> GenerateBossStats(int bossLevel) {
+        return new Dictionary<PlayerStats, int>() {
+            {PlayerStats.Strength, bossLevel * 2},
+            {PlayerStats.MagicPower, bossLevel * 2},
+            {PlayerStats.AttackSpeed, bossLevel * 2},
+            {PlayerStats.MovementSpeed, bossLevel * 2},
+            {PlayerStats.Defense, bossLevel * 2},
+            {PlayerStats.MaxHp, bossLevel * 10}
+        };
+    }
 
     private string GenerateAncestorName() {
         return "Ancestor_" + UnityEngine.Random.Range(0, 1000);

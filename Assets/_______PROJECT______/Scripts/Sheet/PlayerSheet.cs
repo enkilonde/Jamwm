@@ -1,25 +1,21 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSheet {
+public class PlayerSheet : CharacterSheet {
 
-    public Dictionary<PlayerStats, int> Stats;
     public Dictionary<ItemSlot, Item> Equipment;
 
-    private readonly ItemDatabase _itemDatabase;
     private readonly Transform _playerTransform;
     
 #region Initialization
 
-    public PlayerSheet(Transform playerTransform, ItemDatabase itemDatabase) {
+    public PlayerSheet(Transform playerTransform) {
         _playerTransform = playerTransform;
-        _itemDatabase = itemDatabase;
-        Stats = GetDefaultStats();
+        Stats = GetInitialStats();
         Equipment = new Dictionary<ItemSlot, Item>();
     }
 
-    private Dictionary<PlayerStats, int> GetDefaultStats() {
+    private Dictionary<PlayerStats, int> GetInitialStats() {
         return new Dictionary<PlayerStats, int> {
             {PlayerStats.Strength, 1},
             {PlayerStats.MagicPower, 1},

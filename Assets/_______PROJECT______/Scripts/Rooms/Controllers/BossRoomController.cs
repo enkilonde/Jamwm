@@ -21,11 +21,14 @@ public class BossRoomController : MonoBehaviour {
     }
 
     private void SpawnAncestor(AncestorData ancestorData) {
-        Instantiate(
+        var ancestor = Instantiate(
             original: _enemyPrefab,
             position: new Vector3(0, 0, 15),
             rotation: Quaternion.identity
         );
+
+        var ancestorController = ancestor.GetComponent<CustomCharacterController>();
+        ancestorController.SetBossSheet(ancestorData.GetDetailedSheet());
     }
 
     public void SetExitDoorsLocked(bool locked) {
