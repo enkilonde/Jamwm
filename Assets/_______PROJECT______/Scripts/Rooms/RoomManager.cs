@@ -84,10 +84,10 @@ public class RoomManager : MonoBehaviour {
 
                 TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
                 TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
-            
+
                 _playerTransform.position = new Vector3(0, 0, -20f);
             },
-            
+
             // When the transition is finished, we resume gameplay
             callbackAction: () => {
                 _playerController.enabled = true;
