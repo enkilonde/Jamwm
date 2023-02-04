@@ -10,6 +10,7 @@ public class RoomManager : MonoBehaviour {
     [Header("Other Managers")]
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private CharacterController _playerController;
+    [SerializeField] private CustomCharacterController _playerCustomController;
 
     [Header("Resources")]
     [SerializeField] private BossRoomController _bossRoomPrefab;
@@ -34,7 +35,8 @@ public class RoomManager : MonoBehaviour {
         _currentRoom.Configure(
             AncestorGenerator.Instance.GenerateAncestor(0),
             parents.Item1,
-            parents.Item2
+            parents.Item2,
+            _playerCustomController
         );
 
         _playerTransform.position = Vector3.zero;
@@ -69,7 +71,12 @@ public class RoomManager : MonoBehaviour {
         _currentRoom = Instantiate(_bossRoomPrefab);
 
         (AncestorData, AncestorData) parents = AncestorGenerator.Instance.GetParents(chosenAncestor);
-        _currentRoom.Configure(chosenAncestor, parents.Item1, parents.Item2);
+        _currentRoom.Configure(
+            chosenAncestor,
+            parents.Item1,
+            parents.Item2,
+            _playerCustomController
+        );
 
         TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
         TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
