@@ -14,6 +14,7 @@ public class CustomCharacterController : MonoBehaviour
 
     public CharacterController characterController;
 
+    public PlayerSheet PlayerSheet = new PlayerSheet();
 
     // Start is called before the first frame update
     void Start()
