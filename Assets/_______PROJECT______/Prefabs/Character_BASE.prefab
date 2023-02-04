@@ -52,7 +52,8 @@ MonoBehaviour:
   moveSpeed: 10
   turnSpeed: 10
   dashSpeed: 100
-  dashTime: 0.1
+  dashDistance: 0
+  dashCooldown: 0
   movementPenalties:
   - 1
   - 0.5
@@ -243,6 +244,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerInventory
       objectReference: {fileID: 0}
+    - target: {fileID: 8021051617803219916, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+        type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 5979747486772747462}
+    - target: {fileID: 8594800660082525173, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+        type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 5979747486772747462}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

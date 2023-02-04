@@ -23,3 +23,4 @@ MonoBehaviour:
     GroupColor: {r: 0.101750255, g: 0.99194455, b: 0.48406655, a: 1}
     Assets:
     - {fileID: 102900000, guid: 24dd1384c81d3a246abf888e674e2ec5, type: 3}
+    - {fileID: 102900000, guid: e206dcd8e6492964a965d4cebdc03f1e, type: 3}
