@@ -34,6 +34,7 @@ public class PlayerSheet {
         }
 
         Equipment[slot] = item;
+        item.Equipped = true;
 
         RefreshStats();
 
@@ -42,6 +43,7 @@ public class PlayerSheet {
 
     private Item DropItem(ItemSlot slot) {
         Item dropped = Equipment[slot];
+        dropped.Equipped = false;
         Equipment[slot] = null;
         return dropped;
     }
@@ -54,9 +56,12 @@ public class PlayerSheet {
         }
         foreach (var kvp in Equipment) {
             Item item = kvp.Value;
-            foreach (var modifier in item.Modifiers) {
-                Stats[modifier.Key] += modifier.Value;
-            }
+            Stats[PlayerStats.Strength] += item.Strength;
+            Stats[PlayerStats.MagicPower] += item.Magic;
+            Stats[PlayerStats.AttackSpeed] += item.AttackSpeed;
+            Stats[PlayerStats.MovementSpeed] += item.MovementSpeed;
+            Stats[PlayerStats.Defense] += item.Defense;
+            Stats[PlayerStats.MaxHp] += item.MaxHp;
         }
     }
 

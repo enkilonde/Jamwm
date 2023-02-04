@@ -1,12 +1,22 @@
-using System;
-using System.Collections.Generic;
+using UnityEngine;
 
-[Serializable]
-public class Item {
+public class Item : MonoBehaviour {
 
+    [Header("Item Metadata")]
+    public string Name;
     public ItemID ID;
-    public string Name { get; }
-    public ItemKind Kind { get; }
-    public Dictionary<PlayerStats, int> Modifiers { get; }
+    public ItemKind Kind;
+    public Color FxColor;
+
+    [Header("Stats Modifiers")]
+    public int Strength;
+    public int Magic;
+    public int AttackSpeed;
+    public int MovementSpeed;
+    public int Defense;
+    public int MaxHp;
+
+    // Item State
+    public bool Equipped { get; set; }
 
 }
