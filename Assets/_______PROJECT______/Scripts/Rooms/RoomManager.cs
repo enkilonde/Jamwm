@@ -5,7 +5,7 @@ public class RoomManager : MonoBehaviour {
     public static RoomManager Instance;
 
     [Header("Data")]
-    [SerializeField] private BossRoomController _currentRoom;
+    [SerializeField] public BossRoomController _currentRoom;
 
     [Header("Other Managers")]
     [SerializeField] private Transform _playerTransform;

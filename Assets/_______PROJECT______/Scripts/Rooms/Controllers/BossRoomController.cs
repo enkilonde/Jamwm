@@ -11,6 +11,7 @@ public class BossRoomController : MonoBehaviour {
 
     private CustomCharacterController _playerRef;
     private CustomCharacterController _bossRef;
+    public AncestorData CurrentBoss;
     private AncestorData _leftDoorChoice;
     private AncestorData _rightDoorChoice;
 
@@ -20,6 +21,7 @@ public class BossRoomController : MonoBehaviour {
         _rightDoorChoice = rightChoice;
         _playerRef = playerRef;
 
+        CurrentBoss = boss;
         if (boss.InitialRoomAncestor == false) {
             SpawnAncestor(boss);
         }

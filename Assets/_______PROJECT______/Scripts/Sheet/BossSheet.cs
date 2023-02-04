@@ -11,6 +11,7 @@ public class BossSheet : CharacterSheet {
         base.Hit(damages);
         if (CurrentHp <= 0) {
             RoomManager.Instance.HandleBossDeath();
+            SaveManager.Instance.HandleDefeatedAncestor(RoomManager.Instance._currentRoom.CurrentBoss);
         }
     }
     
