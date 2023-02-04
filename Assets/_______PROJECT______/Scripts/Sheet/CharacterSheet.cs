@@ -16,6 +16,10 @@ public abstract class CharacterSheet {
     public int MaxHp => Stats[PlayerStats.MaxHp];
     public float HpRatio => CurrentHp / (float) MaxHp;
 
+    protected CharacterSheet() {
+        Equipment = new Dictionary<ItemSlot, Item>();
+    }
+
     public void Equip(ItemSlot slot, Item item) {
         // Optional phase 1 : drop a replaced item
         if (Equipment.ContainsKey(slot)) {
