@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173dfa4d5335aaf40a754e81122241e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 3332281653937714912}
   hand: {fileID: 7970643802171533450}
   moveSpeed: 20
   moveSpeedSpring: 10
