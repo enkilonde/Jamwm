@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 1468415363}
   - component: {fileID: 1468415365}
   - component: {fileID: 1468415366}
+  - component: {fileID: 1468415367}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -602,6 +603,18 @@ MonoBehaviour:
   _playerController: {fileID: 1259459939}
   _bossRoomPrefab: {fileID: 3830500429140299838, guid: 7e6b56adbd9de4a288c8d8733d4c103f,
     type: 3}
+--- !u!114 &1468415367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468415362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0212a275e549c2a283994581ca3fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1539288436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3830500429140299838, guid: 7e6b56adbd9de4a288c8d8733d4c103f,
