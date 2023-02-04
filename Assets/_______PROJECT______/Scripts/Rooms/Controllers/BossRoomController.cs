@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class BossRoomController : MonoBehaviour {
 
+    [Header("Room parts")]
     [SerializeField] private DoorController _leftExitDoor;
     [SerializeField] private DoorController _rightExitDoor;
+
+    [Header("Resources")]
+    [SerializeField] private GameObject _enemyPrefab;
 
     private AncestorData _leftDoorChoice;
     private AncestorData _rightDoorChoice;
@@ -17,7 +21,11 @@ public class BossRoomController : MonoBehaviour {
     }
 
     private void SpawnAncestor(AncestorData ancestorData) {
-        // TODO
+        Instantiate(
+            original: _enemyPrefab,
+            position: new Vector3(0, 0, 15),
+            rotation: Quaternion.identity
+        );
     }
 
     public void SetExitDoorsLocked(bool locked) {

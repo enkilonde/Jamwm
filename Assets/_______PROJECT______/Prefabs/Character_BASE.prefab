@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 5979747486772747467}
   playerVisual: {fileID: 2464562602284313748}
+  ItemDatabase: {fileID: 11400000, guid: e06c90c8d33004b2da5fa7798079c7f2, type: 2}
   moveSpeed: 10
   turnSpeed: 10
   dashSpeed: 100
