@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5493b90e0b4414ba38d8d7c266d005, type: 3}
+  m_Name: AncestorTree
+  m_EditorClassIdentifier: 
+  You:
+    Name: grgergr
+    Parents:
+    - Name: Parent A depth2
+      Parents:
+      - Name: Parent A depth1
+        Parents: []
+        Depth: 1
+      - Name: Parent B depth1
+        Parents: []
+        Depth: 1
+      Depth: 2
+    - Name: Parent B depth2
+      Parents:
+      - Name: Parent A depth1
+        Parents: []
+        Depth: 1
+      - Name: Parent B depth1
+        Parents: []
+        Depth: 1
+      Depth: 2
+    Depth: 0
