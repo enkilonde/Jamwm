@@ -10,14 +10,15 @@ public abstract class CharacterSheet {
     public Dictionary<PlayerStats, int> Stats;
     protected PlayerVisual PlayerVisual;
 
-    protected Transform _playerTransform;
+    protected Transform _characterTransform;
 
-    public int CurrentHp { get; private set; }
+    public int CurrentHp { get; protected set; }
     public int MaxHp => Stats[PlayerStats.MaxHp];
     public float HpRatio => CurrentHp / (float) MaxHp;
 
-    protected CharacterSheet()
+    protected CharacterSheet(Transform characterTransform)
     {
+        _characterTransform = characterTransform;
         Equipment = new Dictionary<ItemSlot, Item>();
     }
 
@@ -36,18 +37,16 @@ public abstract class CharacterSheet {
 
             // Visual update
             PlayerVisual.ClearSlot(slot);
-            LootSpawner.Instance.SpawnLoot(droppedItem, _playerTransform.position);
+            LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
         }
 
         // Main Phase 2 : equip the item
 
         // Data update
-        Equipment[slot] = item;
-        item.Equipped = true;
-        RefreshStats();
-
-        // Visual update
-        PlayerVisual.DisplayItem(slot, item);
+        Item spawnedItem = PlayerVisual.DisplayItem(slot, item);
+        Equipment[slot] = spawnedItem;
+        spawnedItem.Equipped = true;
+        RefreshStats();       
     }
 
     private Item DropItem(ItemSlot slot) {
@@ -98,9 +97,9 @@ public abstract class CharacterSheet {
 
     public bool EmptySlot(ItemSlot slot)
     {
-        if (!Equipment.ContainsKey(slot)) return false;
-        if (Equipment[slot] == null) return false;
-        return true;
+        if (!Equipment.ContainsKey(slot)) return true;
+        if (Equipment[slot] == null) return true;
+        return false;
     }
 
 #region HP modification
@@ -111,7 +110,7 @@ public abstract class CharacterSheet {
 
     public virtual void Hit(int damages) {
         CurrentHp -= damages;
-        EffectManager.Instance.DoDamageEffectOn(damages, _playerTransform.position);
+        EffectManager.Instance.DoDamageEffectOn(damages, _characterTransform.position);
     }
 
 #endregion

@@ -5,7 +5,7 @@ public class RoomManager : MonoBehaviour {
     public static RoomManager Instance;
 
     [Header("Data")]
-    [SerializeField] private BossRoomController _currentRoom;
+    [SerializeField] public BossRoomController _currentRoom;
 
     [Header("Other Managers")]
     [SerializeField] private Transform _playerTransform;
@@ -45,9 +45,19 @@ public class RoomManager : MonoBehaviour {
 
 #endregion
 
-    // TODO : call it on enemy's death
-    public void HandleBossDeath() {
+    public void HandleBossHealthZero() {
+        SaveManager.Instance.HandleDefeatedAncestor(_currentRoom.Ancestor);
         _currentRoom.SetExitDoorsLocked(false);
+
+        // TODO : animate the death / SFX / VFX / ...
+        var bossObject = _currentRoom.BossRef;
+        if (bossObject.leftWeapon != null) {
+            Destroy(bossObject.leftWeapon.armBehaviour.gameObject);
+        }
+        if (bossObject.rightWeapon != null) {
+            Destroy(bossObject.rightWeapon.armBehaviour.gameObject);
+        }
+        Destroy(bossObject.gameObject);
     }
 
     public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
@@ -95,6 +105,21 @@ public class RoomManager : MonoBehaviour {
         );
     }
 
+#endregion
+
+#region Cheats
+
+    public void ReShuffleNextAncestors() {
+        (AncestorData, AncestorData) newOptions = AncestorGenerator.Instance.GetParents(_currentRoom.Ancestor);
+
+        _currentRoom.Configure(
+            _currentRoom.Ancestor,
+            newOptions.Item1,
+            newOptions.Item2,
+            _playerCustomController
+        );
+    }
+    
 #endregion
 
 }

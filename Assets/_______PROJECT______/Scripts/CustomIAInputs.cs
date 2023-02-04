@@ -97,7 +97,6 @@ public class CustomIAInputs : MonoBehaviour
         if (Random.value > attackChance) return false;
         //attack
         animatorIA.SetTrigger("_attack");
-        Debug.Log("IA attack");
         return true;
     }
 

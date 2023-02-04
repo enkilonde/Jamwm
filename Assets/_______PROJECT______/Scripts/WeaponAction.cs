@@ -15,7 +15,26 @@ public class WeaponAction : MonoBehaviour
     {
         Item item = ((PlayerSheet)characterController.CharacterSheet).Equipment[slot];
 
-        GetMethod(item).Invoke(item, charge, state);
+        switch (state)
+        {
+            case WeapoonChargeState.StartCharging:
+                item.StartCharging();
+                break;
+            case WeapoonChargeState.Charging:
+                armBehaviour.animator.SetFloat("ChargeAmount", charge);
+                break;
+            case WeapoonChargeState.Release:
+                armBehaviour.animator.SetFloat("LaunchAttack", charge);
+
+                item.Attack(charge, characterController, armBehaviour.hand.position);
+
+                break;
+            default:
+                break;
+        }
+    
+
+    GetMethod(item).Invoke(item, charge, state);
 
     }
 
@@ -50,10 +69,8 @@ public class WeaponAction : MonoBehaviour
                 armBehaviour.animator.SetTrigger("StartChargingSpell");
                 break;
             case WeapoonChargeState.Charging:
-                armBehaviour.animator.SetFloat("ChargeAmount", charge);
                 break;
             case WeapoonChargeState.Release:
-                armBehaviour.animator.SetFloat("LaunchAttack", charge);
                 break;
             default:
                 break;

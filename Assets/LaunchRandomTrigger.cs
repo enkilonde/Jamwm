@@ -14,17 +14,23 @@ public class LaunchRandomTrigger : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         waitTimer = Random.Range(waitTime.x, waitTime.y);
+        if(waitTimer <= 0)
+            LaunchTrigger(animator);
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         waitTimer -= Time.deltaTime;
-        if(waitTimer <= 0)
-        {
-            animator.SetTrigger(PickRandomElement());
-            waitTimer = Random.Range(waitTime.x, waitTime.y);
-        }
+        if (waitTimer <= 0)
+            LaunchTrigger(animator);
+    }
+
+    private void LaunchTrigger(Animator animator)
+    {
+        animator.SetTrigger(PickRandomElement());
+        waitTimer = Random.Range(waitTime.x, waitTime.y) + 9999;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

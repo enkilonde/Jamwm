@@ -16,20 +16,21 @@ public class PlayerVisual : MonoBehaviour {
     private Item LeftArm;
     private Item RightArm;
 
-    public void DisplayItem(ItemSlot slot, Item item) {
+    public Item DisplayItem(ItemSlot slot, Item item) {
         switch (slot) {
             case ItemSlot.Head:
                 Helmet = Instantiate(original: item, parent: HeadPoint);
-                break;
+                return Helmet;
             case ItemSlot.Torso:
                 Armor = Instantiate(original: item, parent: TorsoPoint);
-                break;
+                return Armor;
             case ItemSlot.LeftArm:
                 LeftArm = Instantiate(original: item, parent: LeftHandPoint);
-                break;
+                return LeftArm;
             case ItemSlot.RightArm:
                 RightArm = Instantiate(original: item, parent: RightHandPoint);
-                break;
+                return RightArm;
+                default: return null;
         }
     }
 
