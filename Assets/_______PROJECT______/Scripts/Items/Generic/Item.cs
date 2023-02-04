@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 
-[Serializable]
-public abstract class Item {
+public abstract class Item : MonoBehaviour {
 
     public abstract ItemKind Kind { get; }
 

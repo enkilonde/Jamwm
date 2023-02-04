@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3403665463472213400}
   - component: {fileID: 4914497489864168355}
   - component: {fileID: 209509829974209500}
+  - component: {fileID: 9117743933899413508}
   m_Layer: 0
   m_Name: Helmet01
   m_TagString: Untagged
@@ -83,3 +84,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9117743933899413508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242175290917952194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9f62bf4df4249a2be464ff49a2c784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Grandpa's Helmet
+  ID: 0
+  FxColor: {r: 0.103462085, g: 0.2924528, b: 0.11650402, a: 1}
+  EquippedPrefab: {fileID: 242175290917952194}
+  Strength: 3
+  Magic: -1
+  AttackSpeed: 0
+  MovementSpeed: 0
+  Defense: 0
+  MaxHp: 0

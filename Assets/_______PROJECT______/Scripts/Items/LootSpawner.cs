@@ -34,5 +34,9 @@ public class LootSpawner : MonoBehaviour {
 
         Debug.Log("Spawned loot " + lootItem.Name);
     }
-
+/*
+    private void Start() {
+        SpawnLoot(null, new Vector3(0, 0.25f, 5));
+    }
+*/
 }
