@@ -13,7 +13,7 @@ public class RoomManager : MonoBehaviour {
     private BossRoomController _currentRoom;
 
     // TODO : might have to be kept elsewhere
-    public int CurrentLevel;
+    public int CurrentLevel { get; private set; }
 
     private void Awake() {
         Instance = this;
