@@ -41,7 +41,7 @@ public class CustomCharacterController : MonoBehaviour
     private bool isLocked => isDashing; //may add more conditions
 
     private void Awake() {
-        PlayerSheet = new PlayerSheet(ItemDatabase);
+        PlayerSheet = new PlayerSheet(this.transform, ItemDatabase);
         dashTimer = dashCooldown;
     }
 

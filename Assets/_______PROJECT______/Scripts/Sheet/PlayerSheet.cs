@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerSheet {
 
@@ -6,10 +7,12 @@ public class PlayerSheet {
     public Dictionary<ItemSlot, Item> Equipment;
 
     private readonly ItemDatabase _itemDatabase;
+    private readonly Transform _playerTransform;
     
 #region Initialization
 
-    public PlayerSheet(ItemDatabase itemDatabase) {
+    public PlayerSheet(Transform playerTransform, ItemDatabase itemDatabase) {
+        _playerTransform = playerTransform;
         _itemDatabase = itemDatabase;
         Stats = GetDefaultStats();
         Equipment = new Dictionary<ItemSlot, Item>();
@@ -33,7 +36,7 @@ public class PlayerSheet {
     public void PickUp(ItemSlot slot, LootableItem item) {
         if (Equipment.ContainsKey(slot)) {
             var droppedItem = DropItem(slot);
-            // TODO : spawn dropped item on ground
+            LootSpawner.Instance.SpawnLoot(droppedItem, _playerTransform.position);
         }
 
         Item loot = item.Loot;

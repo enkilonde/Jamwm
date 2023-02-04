@@ -2,21 +2,31 @@ using UnityEngine;
 
 public class LootSpawner : MonoBehaviour {
 
+    public static LootSpawner Instance;
+
     [Header("Resources")]
     public LootableItem LootPrefab;
     public ItemDatabase ItemDatabase;
 
-    public void SpawnLoot(ItemID? specificItem, Vector3 worldPosition) {
+    private void Awake() {
+        Instance = this;
+    }
+
+    public void SpawnLoot(Item specificItem, Vector3 worldPosition) {
+        worldPosition += new Vector3(
+            Random.Range(0.5f, 1.5f),
+            0,
+            Random.Range(0.5f, 1.5f)
+        ).normalized;
+
+        // TODO : spawn with animation (scale Up from nothing ? Falling from player's height ?)
         Instantiate(original: LootPrefab, position: worldPosition, rotation: Quaternion.identity);
 
-        Item lootItem;
-        if (specificItem.HasValue) {
-            lootItem = ItemDatabase.GetItem(specificItem.Value);
-        } else {
-            lootItem = ItemDatabase.GetRandomItem();
-        }
+        Item lootItem = specificItem ?? ItemDatabase.GetRandomItem();
 
-        // TODO : apply some stats modifiers based on current progression / level
+        if (specificItem == null) {
+            // TODO : apply some stats modifiers based on current progression / level
+        }
 
         LootPrefab.Loot = lootItem;
     }
