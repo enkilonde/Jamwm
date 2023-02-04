@@ -9,6 +9,8 @@ public class CustomCharacterController : MonoBehaviour
     [Header("References")]
     public CharacterController characterController;
     public PlayerVisual playerVisual;
+    public WeaponAction leftWeapon;
+    public WeaponAction rightWeapon;
 
     [Header("Resources")]
     public ItemDatabase ItemDatabase;
@@ -51,6 +53,10 @@ public class CustomCharacterController : MonoBehaviour
         ChargeAttackRight();
     }
 
+    public void Move(Vector3 direction)
+    {
+        Move(new Vector2(direction.x, direction.z));
+    }
 
     public void Move(Vector2 direction)
     {
@@ -115,35 +121,49 @@ public class CustomCharacterController : MonoBehaviour
 
     public void StartChargeAttackLeft()
     {
+        if (!PlayerSheet.Equipment.ContainsKey(ItemSlot.LeftArm) || PlayerSheet.Equipment[ItemSlot.LeftArm] == null) return;
         isChargingLeft = true;
+        chargingLeft = 0;
+        leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.StartCharging);
     }
 
     private void ChargeAttackLeft()
     {
         if (!isChargingLeft) return;
         chargingLeft += Time.deltaTime;
+        leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.Charging);
     }
 
     public void LaunchAttackLeft()
     {
         if (!isChargingLeft) return;
+        leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.Release);
     }
 
     public void StartChargeAttackRight()
     {
-        isChargingRight = true;
+        if (!PlayerSheet.Equipment.ContainsKey(ItemSlot.RightArm) || PlayerSheet.Equipment[ItemSlot.RightArm] == null) return;
 
+        isChargingRight = true;
+        chargingRight = 0;
+        rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.StartCharging);
     }
 
     private void ChargeAttackRight()
     {
         if (!isChargingRight) return;
         chargingRight += Time.deltaTime;
+        rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.Charging);
     }
 
     public void LaunchAttackRight()
     {
         if (!isChargingRight) return;
+        rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.Release);
+    }
 
+    public void EquipItem(ItemID itemID) 
+    { 
+        //PlayerSheet.Equip
     }
 }

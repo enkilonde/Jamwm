@@ -8,6 +8,10 @@ public class ArmBehaviour : MonoBehaviour
     private Vector3 originalPosition;
     private Vector3 wantedPosition => originalParent.position + originalPosition;
 
+    public Animator animator;
+
+    public Transform hand;
+
     public float moveSpeed;
     public float moveSpeedSpring;
     private float currentSpeed;

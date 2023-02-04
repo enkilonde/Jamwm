@@ -1,5 +1,72 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1107068121740936261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3699989486668757136}
+  - component: {fileID: 6263407111358354465}
+  - component: {fileID: 5732912837374349824}
+  m_Layer: 0
+  m_Name: IA_Graph
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3699989486668757136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107068121740936261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9017294294369611620}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6263407111358354465
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107068121740936261}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c73afdd5c444444093acd70dcdb03db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5732912837374349824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107068121740936261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f706e8ea67f7db4c997aa44538c4b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iaAnimator: {fileID: 6263407111358354465}
+  iaInputs: {fileID: 8263796364910586966}
 --- !u!1001 &3449627343093592995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,13 +137,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5979747486772747463, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3699989486668757136}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8263796364910586966}
   m_SourcePrefab: {fileID: 100100000, guid: 807b2b7b646a43c4a83e023e0c8e8c4d, type: 3}
+--- !u!4 &9017294294369611620 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5979747486772747463, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3449627343093592995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9017294294369611621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5979747486772747462, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3449627343093592995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017294294369611623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65d833dc84c6624fa52e4587d1d53fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9017294294369611623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
@@ -95,3 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c24abae30df3c44b8dc3dc5ea27e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  IA: {fileID: 9017294294369611621}
+  state: 0
+  animatorIA: {fileID: 6263407111358354465}
+  attackChance: 0
+  rushChance: 1
+  minRushDistance: 5
+  wantedRushDistance: 2

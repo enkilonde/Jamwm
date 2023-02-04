@@ -19,8 +19,17 @@ MonoBehaviour:
     Assets:
     - {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d, type: 3}
     - {fileID: 5965729106699208880, guid: 745426ccd217e044dac1a98269ab86ba, type: 3}
-  - GroupName: Group 1
+  - GroupName: folders
     GroupColor: {r: 0.101750255, g: 0.99194455, b: 0.48406655, a: 1}
     Assets:
     - {fileID: 102900000, guid: 24dd1384c81d3a246abf888e674e2ec5, type: 3}
     - {fileID: 102900000, guid: e206dcd8e6492964a965d4cebdc03f1e, type: 3}
+    - {fileID: 102900000, guid: f40ac985db9444d46acd9fd9e79374ef, type: 3}
+  - GroupName: Group 2
+    GroupColor: {r: 0.38832456, g: 0.3065155, b: 0.65373194, a: 1}
+    Assets:
+    - {fileID: 102900000, guid: 696d1a26d13d6a44c80f081380ed9b98, type: 3}
+  - GroupName: Group 3
+    GroupColor: {r: 0.24203873, g: 0.35255414, b: 0.85833, a: 1}
+    Assets:
+    - {fileID: 11400000, guid: e06c90c8d33004b2da5fa7798079c7f2, type: 2}

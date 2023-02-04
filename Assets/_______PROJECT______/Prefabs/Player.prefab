@@ -15,11 +15,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5979747486772747462, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
         type: 3}
-      propertyPath: dashCooldown
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5979747486772747462, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-        type: 3}
       propertyPath: dashDuration
       value: 0.1
       objectReference: {fileID: 0}
@@ -78,6 +73,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698875266720068739, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+        type: 3}
+      propertyPath: armBehaviour
+      value: 
+      objectReference: {fileID: 7582695921188785812}
+    - target: {fileID: 8268965264815244474, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+        type: 3}
+      propertyPath: armBehaviour
+      value: 
+      objectReference: {fileID: 8697079226380421155}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -99,6 +104,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1891323840768961754}
   m_SourcePrefab: {fileID: 100100000, guid: 807b2b7b646a43c4a83e023e0c8e8c4d, type: 3}
+--- !u!114 &7582695921188785812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5802897334094184070, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4157717057703276562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173dfa4d5335aaf40a754e81122241e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7732532171614956756 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5979747486772747462, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
@@ -281,3 +298,15 @@ MonoBehaviour:
   m_DefaultActionMap: MainGameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8697079226380421155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4684050206611339313, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4157717057703276562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173dfa4d5335aaf40a754e81122241e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
