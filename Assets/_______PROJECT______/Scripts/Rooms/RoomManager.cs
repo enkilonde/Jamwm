@@ -11,6 +11,7 @@ public class RoomManager : MonoBehaviour {
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private CharacterController _playerController;
     [SerializeField] private CustomCharacterController _playerCustomController;
+    [SerializeField] private TransitionUiController _transitionUi;
 
     [Header("Resources")]
     [SerializeField] private BossRoomController _bossRoomPrefab;
@@ -50,11 +51,6 @@ public class RoomManager : MonoBehaviour {
     }
 
     public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
-        // TODO : UI Fade Out
-        UnloadRoom();
-
-        // TODO : UI Fade In
-        // TODO : short walk/run animation
         LoadRoom(CurrentLevel + 1, chosenAncestor);
     }
 
@@ -66,24 +62,37 @@ public class RoomManager : MonoBehaviour {
     }
 
     private void LoadRoom(int roomLevel, AncestorData chosenAncestor) {
-        CurrentLevel = roomLevel;
-
-        _currentRoom = Instantiate(_bossRoomPrefab);
-
+        // Pre calculations
         (AncestorData, AncestorData) parents = AncestorGenerator.Instance.GetParents(chosenAncestor);
-        _currentRoom.Configure(
-            chosenAncestor,
-            parents.Item1,
-            parents.Item2,
-            _playerCustomController
-        );
 
-        TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
-        TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
-
+        // Launching the Room transition
         _playerController.enabled = false;
-        _playerTransform.position = new Vector3(0, 0, -20f);
-        _playerController.enabled = true;
+        _transitionUi.Transition(
+            // Halfway through, we ACTUALLY swap the rooms
+            halfwayAction: () => {
+                UnloadRoom();
+                CurrentLevel = roomLevel;
+
+                _currentRoom = Instantiate(_bossRoomPrefab);
+
+                _currentRoom.Configure(
+                    chosenAncestor,
+                    parents.Item1,
+                    parents.Item2,
+                    _playerCustomController
+                );
+
+                TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
+                TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
+
+                _playerTransform.position = new Vector3(0, 0, -20f);
+            },
+
+            // When the transition is finished, we resume gameplay
+            callbackAction: () => {
+                _playerController.enabled = true;
+            }
+        );
     }
 
 #endregion

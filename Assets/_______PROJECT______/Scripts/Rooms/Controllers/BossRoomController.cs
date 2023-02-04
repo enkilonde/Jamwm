@@ -10,6 +10,7 @@ public class BossRoomController : MonoBehaviour {
     [SerializeField] private GameObject _enemyPrefab;
 
     private CustomCharacterController _playerRef;
+    private CustomCharacterController _bossRef;
     private AncestorData _leftDoorChoice;
     private AncestorData _rightDoorChoice;
 
@@ -34,9 +35,9 @@ public class BossRoomController : MonoBehaviour {
         var iaInputs = ancestor.GetComponent<CustomIAInputs>();
         iaInputs.player = _playerRef;
 
-        var ancestorController = ancestor.GetComponent<CustomCharacterController>();
-        var bossSheet = ancestorData.GetDetailedSheet(ancestorController.playerVisual);
-        ancestorController.SetBossSheet(bossSheet);
+        _bossRef = ancestor.GetComponent<CustomCharacterController>();
+        var bossSheet = ancestorData.GetDetailedSheet(_bossRef.playerVisual);
+        _bossRef.SetBossSheet(bossSheet);
     }
 
     public void SetExitDoorsLocked(bool locked) {

@@ -6,5 +6,12 @@ public class BossSheet : CharacterSheet {
         base.PlayerVisual = bossVisualPlayer;
         base.Stats = stats;
     }
+
+    public override void Hit(int damages) {
+        base.Hit(damages);
+        if (CurrentHp <= 0) {
+            RoomManager.Instance.HandleBossDeath();
+        }
+    }
     
 }

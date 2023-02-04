@@ -107,11 +107,9 @@ public abstract class CharacterSheet {
         CurrentHp = Math.Min(CurrentHp + hitPoints, MaxHp);
     }
 
-    public void Hit(int damages) {
+    public virtual void Hit(int damages) {
         CurrentHp -= damages;
-        if (CurrentHp <= 0) {
-            GameOverManager.Instance.TriggerGameOver();
-        }
+        EffectManager.Instance.DoDamageEffectOn(damages, _playerTransform.position);
     }
 
 #endregion
