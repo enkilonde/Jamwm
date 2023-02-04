@@ -17,7 +17,6 @@ public class LootSpawner : MonoBehaviour {
     
 
     [Header("Resources")]
-    public LootableItem LootPrefab;
     public ItemDatabase ItemDatabase;
 
     public Item SpawnLoot(Item specificItem, Vector3 worldPosition) {
@@ -28,18 +27,15 @@ public class LootSpawner : MonoBehaviour {
         ).normalized;
 
         // TODO : spawn with animation (scale Up from nothing ? Falling from player's height ?)
-        var lootObject = Instantiate(original: LootPrefab, position: worldPosition, rotation: Quaternion.identity);
-
-        Item lootItem = specificItem ?? ItemDatabase.GetRandomItem();
+        Item lootModel = specificItem ?? ItemDatabase.GetRandomItem();
+        Item lootObject = Instantiate(original: lootModel, position: worldPosition, rotation: Quaternion.identity);
 
         if (specificItem == null) {
             // TODO : apply some stats modifiers based on current progression / level
         }
 
-        lootObject.Configure(lootItem);
-
-        Debug.Log("Spawned loot " + lootItem.Name);
-        return lootItem;
+        Debug.Log("Spawned loot " + lootModel.Name);
+        return lootModel;
     }
 /*
     private void Start() {
