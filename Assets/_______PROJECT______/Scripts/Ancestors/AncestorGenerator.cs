@@ -41,7 +41,7 @@ public class AncestorGenerator : MonoBehaviour {
     }
 
     private string GenerateAncestorName() {
-        return "Ancestor_" + UnityEngine.Random.Range(0, 1000);
+        return "ancestor_" + UnityEngine.Random.Range(0, 1000);
     }
 
 }

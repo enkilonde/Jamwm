@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -13,6 +10,8 @@ public class LifeBar : MonoBehaviour
 
     [SerializeField]private Slider _slider1;
     [SerializeField]private Slider _slider2;
+
+    [SerializeField]private CanvasGroup _canvasGroup;
 
     [SerializeField] private bool _isPlayerBar;
 
@@ -43,6 +42,16 @@ public class LifeBar : MonoBehaviour
         }
     }
 
+    public void SetBossName(string bossName) {
+        if (_isPlayerBar) return;
+
+        _HPText.text = bossName;
+    }
+
+    public void FadeTo(bool visible) {
+        _canvasGroup.DOFade(visible ? 1 : 0, 0.3f);
+    }
+
     [Button]
     public void SetValue(float value)
     {
@@ -66,7 +75,9 @@ public class LifeBar : MonoBehaviour
     [Button,ShowIf("_isPlayerBar")]
     public void InitPlayerBar(int maxHP)
     {
+        _playerHP = maxHP;
         _playerMaxHP = maxHP;
+        _currentPlayerHP = maxHP;
         UpdatePlayerText();
     }
     

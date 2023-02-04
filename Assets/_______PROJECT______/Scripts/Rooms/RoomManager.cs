@@ -13,6 +13,10 @@ public class RoomManager : MonoBehaviour {
     [SerializeField] private CustomCharacterController _playerCustomController;
     [SerializeField] private TransitionUiController _transitionUi;
 
+    [Header("UI")]
+    [SerializeField] private LifeBar _playerLifeBar;
+    [SerializeField] private LifeBar _bossLifeBar;
+
     [Header("Resources")]
     [SerializeField] private BossRoomController _bossRoomPrefab;
 
@@ -41,6 +45,8 @@ public class RoomManager : MonoBehaviour {
         );
 
         _playerTransform.position = Vector3.zero;
+
+        _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
     }
 
 #endregion
@@ -58,6 +64,8 @@ public class RoomManager : MonoBehaviour {
             Destroy(bossObject.rightWeapon.armBehaviour.gameObject);
         }
         Destroy(bossObject.gameObject);
+
+        _bossLifeBar.FadeTo(visible: false);
     }
 
     public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
@@ -92,14 +100,14 @@ public class RoomManager : MonoBehaviour {
                     _playerCustomController
                 );
 
-                TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
-                TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
+                _bossLifeBar.SetBossName(chosenAncestor.Name);
 
                 _playerTransform.position = new Vector3(0, 0, -20f);
             },
 
             // When the transition is finished, we resume gameplay
             callbackAction: () => {
+                _bossLifeBar.FadeTo(visible: true);
                 _playerController.enabled = true;
             }
         );

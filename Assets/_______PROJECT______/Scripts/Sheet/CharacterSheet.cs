@@ -57,10 +57,7 @@ public abstract class CharacterSheet {
     }
 
     private void RefreshStats() {
-        List<PlayerStats> statIndexes = Stats.Keys.ToList();
-        foreach (PlayerStats statIdx in statIndexes) {
-            Stats[statIdx] = 0;
-        }
+        Stats = GetBaseStats();
         foreach (Item item in Equipment.Values) {
             Stats[PlayerStats.Strength] += item.Strength;
             Stats[PlayerStats.MagicPower] += item.Magic;
@@ -70,6 +67,8 @@ public abstract class CharacterSheet {
             Stats[PlayerStats.MaxHp] += item.MaxHp;
         }
     }
+
+    protected abstract Dictionary<PlayerStats, int> GetBaseStats();
 
     public ItemSlot GetSlotFromKind(ItemKind kind, bool forceRight = false)
     {
@@ -110,6 +109,7 @@ public abstract class CharacterSheet {
 
     public virtual void Hit(int damages) {
         CurrentHp -= damages;
+        if (CurrentHp < 0) CurrentHp = 0;
         EffectManager.Instance.DoDamageEffectOn(damages, _characterTransform.position);
     }
 

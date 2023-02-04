@@ -9,10 +9,11 @@ public class PlayerSheet : CharacterSheet {
 
     public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) : base(playerTransform) {
         PlayerVisual = playerVisual;
-        Stats = GetInitialStats();
+        Stats = GetBaseStats();
+        CurrentHp = Stats[PlayerStats.MaxHp];
     }
 
-    private Dictionary<PlayerStats, int> GetInitialStats() {
+    protected override Dictionary<PlayerStats, int> GetBaseStats() {
         return new Dictionary<PlayerStats, int> {
             {PlayerStats.Strength, 1},
             {PlayerStats.MagicPower, 1},
@@ -39,6 +40,9 @@ public class PlayerSheet : CharacterSheet {
         if (Invincible) return;
 
         base.Hit(damages);
+
+        LazyUiHook.Instance.PlayerLifeBar.SetPlayerHP(CurrentHp);
+
         if (CurrentHp <= 0) {
             GameOverManager.Instance.TriggerGameOver();
         }
