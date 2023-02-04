@@ -66,6 +66,9 @@ public class RoomManager : MonoBehaviour {
         (AncestorData, AncestorData) parents = AncestorGenerator.Instance.GetParents(chosenAncestor);
         _currentRoom.Configure(chosenAncestor, parents.Item1, parents.Item2);
 
+        TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
+        TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
+
         _playerTransform.position = Vector3.zero;
     }
 
