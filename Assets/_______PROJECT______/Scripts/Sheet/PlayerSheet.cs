@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,16 +33,19 @@ public class PlayerSheet {
 #endregion
 
 #region Inventory
-
+    
     public void PickUp(ItemSlot slot, LootableItem item) {
+        Equip(slot, item.Loot);
+    }
+
+    public void Equip(ItemSlot slot, Item item) {
         if (Equipment.ContainsKey(slot)) {
             var droppedItem = DropItem(slot);
             LootSpawner.Instance.SpawnLoot(droppedItem, _playerTransform.position);
         }
 
-        Item loot = item.Loot;
-        Equipment[slot] = loot;
-        loot.Equipped = true;
+        Equipment[slot] = item;
+        item.Equipped = true;
 
         RefreshStats();
 
