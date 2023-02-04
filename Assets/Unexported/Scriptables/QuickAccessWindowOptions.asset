@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c282a6f2618e54796bc9ae7984eee6eb, type: 3}
+  m_Name: QuickAccessWindowOptions
+  m_EditorClassIdentifier: 
+  GetScenesFromBuildSettings: 1
+  Assets:
+  - GroupName: Prefabs
+    GroupColor: {r: 0.1924603, g: 0.8634064, b: 0.6433319, a: 1}
+    Assets:
+    - {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d, type: 3}
+    - {fileID: 5965729106699208880, guid: 745426ccd217e044dac1a98269ab86ba, type: 3}
+  - GroupName: Group 1
+    GroupColor: {r: 0.101750255, g: 0.99194455, b: 0.48406655, a: 1}
+    Assets:
+    - {fileID: 102900000, guid: 24dd1384c81d3a246abf888e674e2ec5, type: 3}
+    - {fileID: 102900000, guid: e206dcd8e6492964a965d4cebdc03f1e, type: 3}

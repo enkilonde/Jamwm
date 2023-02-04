@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "cb178780-f272-4962-a595-7fb92e372c0d",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -144,6 +144,28 @@
                     "name": "",
                     "id": "a8f3a7c1-d3be-45d0-a707-dfcf0d1dd98d",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "230e5767-2843-413b-ab83-2ea8ac1ba95d",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5adce2d9-48fe-480b-8a34-f37ff6a197cc",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -6,30 +6,41 @@ using UnityEngine.InputSystem;
 public class CustomPlayerInputs : MonoBehaviour
 {
     public CustomCharacterController characterController;
+
+    private Vector2 move;
+    private Vector2 turn;
+
+    private void Update()
+    {
+        characterController.Move(move);
+        characterController.Turn(turn);
+    }
+
+
     public void Move(InputAction.CallbackContext context)
     {
-        characterController.Move(context.ReadValue<Vector2>());
+        move = context.ReadValue<Vector2>();
     }
 
     public void Turn(InputAction.CallbackContext context)
     {
-        characterController.Turn(context.ReadValue<Vector2>());
+        turn = context.ReadValue<Vector2>();
     }
 
     public void AttackLeft(InputAction.CallbackContext context)
     {
-        if (context.started) characterController.ChargeAttackLeft();
+        if (context.started) characterController.StartChargeAttackLeft();
         else if (context.canceled) characterController.LaunchAttackLeft();
     }
 
     public void AttackRight(InputAction.CallbackContext context)
     {
-        if (context.started) characterController.ChargeAttackRight();
+        if (context.started) characterController.StartChargeAttackRight();
         else if (context.canceled) characterController.LaunchAttackRight();
     }
 
     public void Dodge(InputAction.CallbackContext context)
     {
-        characterController.Dodge();
+        characterController.Dash();
     }
 }

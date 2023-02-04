@@ -1,8 +1,8 @@
 public enum ItemKind {
 
     Helmet,
-    ShoulderPads,
     Armor,
+    Ring,
     Weapon
 
 }
