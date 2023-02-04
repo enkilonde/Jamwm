@@ -44,6 +44,11 @@ public class PlayerSheet : CharacterSheet {
 
 #endregion
 
-   
+    public override void Hit(int damages) {
+        base.Hit(damages);
+        if (CurrentHp <= 0) {
+            GameOverManager.Instance.TriggerGameOver();
+        }
+    }
 
 }
