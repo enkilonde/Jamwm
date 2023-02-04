@@ -12,7 +12,7 @@ public abstract class CharacterSheet {
 
     protected Transform _characterTransform;
 
-    public int CurrentHp { get; private set; }
+    public int CurrentHp { get; protected set; }
     public int MaxHp => Stats[PlayerStats.MaxHp];
     public float HpRatio => CurrentHp / (float) MaxHp;
 

@@ -45,9 +45,19 @@ public class RoomManager : MonoBehaviour {
 
 #endregion
 
-    // TODO : call it on enemy's death
-    public void HandleBossDeath() {
+    public void HandleBossHealthZero() {
+        SaveManager.Instance.HandleDefeatedAncestor(_currentRoom.Ancestor);
         _currentRoom.SetExitDoorsLocked(false);
+
+        // TODO : animate the death / SFX / VFX / ...
+        var bossObject = _currentRoom.BossRef;
+        if (bossObject.leftWeapon != null) {
+            Destroy(bossObject.leftWeapon.armBehaviour.gameObject);
+        }
+        if (bossObject.rightWeapon != null) {
+            Destroy(bossObject.rightWeapon.armBehaviour.gameObject);
+        }
+        Destroy(bossObject.gameObject);
     }
 
     public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
