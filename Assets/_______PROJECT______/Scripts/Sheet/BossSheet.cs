@@ -1,13 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
 
 public class BossSheet : CharacterSheet {
 
     private readonly Dictionary<PlayerStats, int> _baseStats;
 
-    public BossSheet(PlayerVisual bossVisualPlayer, Dictionary<PlayerStats, int> stats) : base(bossVisualPlayer.transform.parent) {
+    public BossSheet(
+        PlayerVisual bossVisualPlayer,
+        Dictionary<PlayerStats, int> stats,
+        Dictionary<ItemSlot, Item> equipment
+    ) : base(bossVisualPlayer.transform.parent) {
         _baseStats = stats;
 
         base.PlayerVisual = bossVisualPlayer;
+        base.Equipment = equipment;
         base.Stats = _baseStats;
         CurrentHp = MaxHp;
     }
@@ -24,6 +30,10 @@ public class BossSheet : CharacterSheet {
         if (CurrentHp <= 0) {
             RoomManager.Instance.HandleBossHealthZero();
         }
+    }
+
+    public List<Item> BossLoots() {
+        return Equipment.Values.ToList();
     }
     
 }

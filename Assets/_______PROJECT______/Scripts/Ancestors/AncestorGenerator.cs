@@ -5,6 +5,8 @@ public class AncestorGenerator : MonoBehaviour {
 
     public static AncestorGenerator Instance;
 
+    [SerializeField] private ItemDatabase itemDatabase;
+
     private void Awake() {
         Instance = this;
     }
@@ -29,7 +31,7 @@ public class AncestorGenerator : MonoBehaviour {
 
 #endregion
 
-    public static Dictionary<PlayerStats, int> GenerateBossStats(int bossLevel) {
+    public Dictionary<PlayerStats, int> GenerateBossStats(int bossLevel) {
         return new Dictionary<PlayerStats, int>() {
             {PlayerStats.Strength, bossLevel * 2},
             {PlayerStats.MagicPower, bossLevel * 2},
@@ -37,6 +39,16 @@ public class AncestorGenerator : MonoBehaviour {
             {PlayerStats.MovementSpeed, bossLevel * 2},
             {PlayerStats.Defense, bossLevel * 2},
             {PlayerStats.MaxHp, bossLevel * 10}
+        };
+    }
+
+    public Dictionary<ItemSlot, Item> GenerateBossEquipment(int bossLevel) {
+        return new Dictionary<ItemSlot, Item>() {
+            {ItemSlot.Head, itemDatabase.GetRandomItem(ItemKind.Helmet)},
+            {ItemSlot.Torso, itemDatabase.GetRandomItem(ItemKind.Armor)},
+            {ItemSlot.LeftArm, itemDatabase.GetRandomItem(ItemKind.Ring)},
+            {ItemSlot.RightArm, itemDatabase.GetRandomItem(ItemKind.Ring)},
+            {ItemSlot.Ring1, itemDatabase.GetRandomItem(ItemKind.Ring)}
         };
     }
 

@@ -25,6 +25,11 @@ public abstract class CharacterSheet {
     public void Equip(ItemID itemID)
     {
         Item item = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
+        Equip(item);
+    }
+
+    public void Equip(Item item)
+    {
         Equip(GetSlotFromKind(item.Kind), item);
     }
 
@@ -38,6 +43,7 @@ public abstract class CharacterSheet {
             // Visual update
             PlayerVisual.ClearSlot(slot);
             LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
+            Debug.Log("Dropping " + droppedItem.name);
         }
 
         // Main Phase 2 : equip the item

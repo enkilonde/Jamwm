@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour {
@@ -54,9 +55,14 @@ public class RoomManager : MonoBehaviour {
     public void HandleBossHealthZero() {
         SaveManager.Instance.HandleDefeatedAncestor(_currentRoom.Ancestor);
         _currentRoom.SetExitDoorsLocked(false);
+    
+        // Gathering the boss data
+        CustomCharacterController bossObject = _currentRoom.BossRef;
+        Vector3 corpsePosition = bossObject.transform.position;
+        BossSheet bossSheet = (BossSheet)bossObject.CharacterSheet;
+        List<Item> bossLoots = bossSheet.BossLoots();
 
-        // TODO : animate the death / SFX / VFX / ...
-        var bossObject = _currentRoom.BossRef;
+        // Destroying the corpse - TODO : animate the death / SFX / VFX / ...
         if (bossObject.leftWeapon != null) {
             Destroy(bossObject.leftWeapon.armBehaviour.gameObject);
         }
@@ -64,6 +70,8 @@ public class RoomManager : MonoBehaviour {
             Destroy(bossObject.rightWeapon.armBehaviour.gameObject);
         }
         Destroy(bossObject.gameObject);
+
+        LootSpawner.Instance.SpawnLoots(bossLoots, corpsePosition);
 
         _bossLifeBar.FadeTo(visible: false);
     }

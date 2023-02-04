@@ -3,7 +3,7 @@ public class AncestorData {
     public readonly string Name;
     public readonly int Level;
     public bool InitialRoomAncestor => Level == 0;
-   
+
     private BossSheet _sheet;
 
     public AncestorData(string name, int level) {
@@ -15,7 +15,8 @@ public class AncestorData {
         if (_sheet == null) {
             _sheet = new BossSheet(
                 bossVisualPlayer: bossVisualPlayer,
-                stats:AncestorGenerator.GenerateBossStats(Level)
+                stats: AncestorGenerator.Instance.GenerateBossStats(Level),
+                equipment: AncestorGenerator.Instance.GenerateBossEquipment(Level)
             );
         }
 

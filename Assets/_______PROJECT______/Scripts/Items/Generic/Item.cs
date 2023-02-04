@@ -14,7 +14,6 @@ public abstract class Item : MonoBehaviour {
     [Header("Item Metadata")]
     public string Name;
     public ItemID ID;
-    public Color FxColor;
 
     [Header("Stats Modifiers")]
     public int Strength;

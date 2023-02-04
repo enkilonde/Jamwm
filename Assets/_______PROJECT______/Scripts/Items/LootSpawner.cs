@@ -1,8 +1,15 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class LootSpawner : MonoBehaviour {
+
+    private static readonly List<Vector3> SpawnPositionOffsets = new List<Vector3>() {
+        new Vector3(0,0,2),
+        new Vector3(2,0,0.4f),
+        new Vector3(0.6f,0,-1.4f),
+        new Vector3(-0.6f,0,-1.4f),
+        new Vector3(-2,0,0.4f)
+    };
 
     public static LootSpawner Instance
     {
@@ -19,13 +26,13 @@ public class LootSpawner : MonoBehaviour {
     [Header("Resources")]
     public ItemDatabase ItemDatabase;
 
-    public Item SpawnLoot(Item specificItem, Vector3 worldPosition) {
-        worldPosition += new Vector3(
-            Random.Range(0.5f, 1.5f),
-            0,
-            Random.Range(0.5f, 1.5f)
-        ).normalized;
+    public void SpawnLoots(List<Item> loots, Vector3 worldPosition) {
+        for (int i = 0; i < loots.Count; i++) {
+            SpawnLoot(loots[i], worldPosition + SpawnPositionOffsets[i]);
+        }
+    }
 
+    public Item SpawnLoot(Item specificItem, Vector3 worldPosition) {
         // TODO : spawn with animation (scale Up from nothing ? Falling from player's height ?)
         Item lootModel = specificItem ?? ItemDatabase.GetRandomItem();
         Item lootObject = Instantiate(original: lootModel, position: worldPosition, rotation: Quaternion.identity);

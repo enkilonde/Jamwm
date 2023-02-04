@@ -10,6 +10,17 @@ public class ItemDatabase : ScriptableObject {
         return Items[Random.Range(0, Items.Count)];
     }
 
+    public Item GetRandomItem(ItemKind specificKind) {
+        Item chosenItem = null;
+        while (chosenItem == null) {
+            chosenItem = GetRandomItem();
+            if (chosenItem.Kind != specificKind) {
+                chosenItem = null;
+            }
+        }
+        return chosenItem;
+    }
+
     public Item GetItem(ItemID itemID) {
         foreach (var item in Items) {
             if (item.ID == itemID) {

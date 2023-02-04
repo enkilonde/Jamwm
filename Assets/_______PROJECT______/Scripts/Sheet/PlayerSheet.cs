@@ -28,11 +28,11 @@ public class PlayerSheet : CharacterSheet {
 
 #region Inventory
 
-    public void PickUp(LootableItem lootable) {
+    /*public void PickUp(LootableItem lootable) {
         var itemKind = lootable.Loot.Kind;
         var slot = GetSlotFromKind(itemKind);
         Equip(slot, lootable.Loot);
-    }
+    }*/
 
 #endregion
 
