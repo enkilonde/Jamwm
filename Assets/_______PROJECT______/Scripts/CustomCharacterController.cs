@@ -43,7 +43,7 @@ public class CustomCharacterController : MonoBehaviour
 
     private bool isChargingLeft;
     private bool isChargingRight;
-    private float chargingLeft;
+    public float chargingLeft;
     private float chargingRight;
 
 
@@ -61,6 +61,7 @@ public class CustomCharacterController : MonoBehaviour
     private void Start()
     {
         EquipItem(ItemID.Fireball01);
+        //EquipItem(ItemID.IceSpear01);
 
     }
 
@@ -163,6 +164,7 @@ public class CustomCharacterController : MonoBehaviour
     public void LaunchAttackLeft()
     {
         if (!isChargingLeft) return;
+        isChargingLeft = false;
         leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.Release);
     }
 
@@ -185,6 +187,7 @@ public class CustomCharacterController : MonoBehaviour
     public void LaunchAttackRight()
     {
         if (!isChargingRight) return;
+        isChargingRight = false;
         rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.Release);
     }
 

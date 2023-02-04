@@ -42,12 +42,10 @@ public abstract class CharacterSheet {
         // Main Phase 2 : equip the item
 
         // Data update
-        Equipment[slot] = item;
-        item.Equipped = true;
-        RefreshStats();
-
-        // Visual update
-        PlayerVisual.DisplayItem(slot, item);
+        Item spawnedItem = PlayerVisual.DisplayItem(slot, item);
+        Equipment[slot] = spawnedItem;
+        spawnedItem.Equipped = true;
+        RefreshStats();       
     }
 
     private Item DropItem(ItemSlot slot) {
