@@ -82,7 +82,7 @@ public class RoomManager : MonoBehaviour {
         TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
 
         _playerController.enabled = false;
-        _playerTransform.position = Vector3.zero;
+        _playerTransform.position = new Vector3(0, 0, -20f);
         _playerController.enabled = true;
     }
 
