@@ -40,6 +40,7 @@ public abstract class Item : MonoBehaviour {
 
     internal void SendProjectile(float charge, CustomCharacterController owner, Vector3 spawnPosition)
     {
+        if (projectilePrefab == null) return;
         if (projectileDelay <= 0) SpawnProjectile(charge, owner, spawnPosition);
         else StartCoroutine(WaitSendProjectile(charge, owner, spawnPosition));
     }
