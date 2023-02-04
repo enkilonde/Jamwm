@@ -1,38 +1,49 @@
-using System;
 using UnityEngine;
 
-public class BossRoomController : GenericRoomController {
+public class BossRoomController : MonoBehaviour {
 
-    protected override RoomType RoomType => RoomType.Combat;
+    [Header("Room parts")]
+    [SerializeField] private DoorController _leftExitDoor;
+    [SerializeField] private DoorController _rightExitDoor;
 
-    public override int Width => 60;
-    public override int Depth => 60;
-    public override int Height => 5;
+    [Header("Resources")]
+    [SerializeField] private GameObject _enemyPrefab;
 
-    [SerializeField] private DoorController _entryDoor;
-    [SerializeField] private DoorController _exitDoor;
+    private AncestorData _leftDoorChoice;
+    private AncestorData _rightDoorChoice;
 
-    public override void HandleDoorPassed(DoorController.DoorKind doorKind) {
-        if (doorKind == DoorController.DoorKind.Entry) {
-            this.SetDoorsLocked(DoorController.DoorKind.Exit, true);
+    public void Configure(AncestorData boss, AncestorData leftChoice, AncestorData rightChoice) {
+        _leftDoorChoice = leftChoice;
+        _rightDoorChoice = rightChoice;
+        if (boss.InitialRoomAncestor == false) {
+            SpawnAncestor(boss);
         }
-        if (doorKind == DoorController.DoorKind.Exit) {
-            RoomManager.Instance.HandleBossRoomLeft();
-        }
-
-        base.HandleDoorPassed(doorKind);
     }
 
-    public override void SetDoorsLocked(DoorController.DoorKind doorKind, bool locked) {
+    private void SpawnAncestor(AncestorData ancestorData) {
+        var ancestor = Instantiate(
+            original: _enemyPrefab,
+            position: new Vector3(0, 0, 15),
+            rotation: Quaternion.identity
+        );
+
+        var ancestorController = ancestor.GetComponent<CustomCharacterController>();
+        ancestorController.SetBossSheet(ancestorData.GetDetailedSheet());
+    }
+
+    public void SetExitDoorsLocked(bool locked) {
+        _leftExitDoor.SetLocked(locked);
+        _rightExitDoor.SetLocked(locked);
+    }
+
+    public void HandleDoorPassed(DoorController.DoorKind doorKind) {
         switch (doorKind) {
-            case DoorController.DoorKind.Entry:
-                _entryDoor.SetLocked(locked);
+            case DoorController.DoorKind.LeftExit:
+                RoomManager.Instance.TransitionToNextBossRoom(_leftDoorChoice);
                 break;
-            case DoorController.DoorKind.Exit:
-                _exitDoor.SetLocked(locked);
+            case DoorController.DoorKind.RightExit:
+                RoomManager.Instance.TransitionToNextBossRoom(_rightDoorChoice);
                 break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(doorKind), doorKind, null);
         }
     }
 

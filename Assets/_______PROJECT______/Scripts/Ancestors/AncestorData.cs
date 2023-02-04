@@ -1,20 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+public class AncestorData {
 
-[Serializable]
-public class AncestorData
-{
-    public string Name;
+    public readonly string Name;
+    public readonly int Level;
+    public bool InitialRoomAncestor => Level == 0;
+   
+    private BossSheet _sheet;
 
-    public List<AncestorData> Parents;
-
-    public int Depth;
-    public AncestorData(string name, int depth)
-    {
+    public AncestorData(string name, int level) {
         Name = name;
-        Depth = depth;
-        Parents = new List<AncestorData>();
+        Level = level;
     }
+
+    public BossSheet GetDetailedSheet() {
+        if (_sheet == null) {
+            _sheet = new BossSheet(
+                stats:AncestorGenerator.GenerateBossStats(Level)
+            );
+        }
+
+        return _sheet;
+    }
+
 }

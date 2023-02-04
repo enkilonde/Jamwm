@@ -12,8 +12,8 @@ public class CustomCharacterController : MonoBehaviour
     public WeaponAction leftWeapon;
     public WeaponAction rightWeapon;
 
-    [Header("Resources")]
-    public ItemDatabase ItemDatabase;
+    [Header("Configuration")]
+    public bool IsPlayer; // True for the Player ; False for the Bosses
 
     [Header("Movement")]
     public float moveSpeed;
@@ -28,7 +28,7 @@ public class CustomCharacterController : MonoBehaviour
     private Vector3 lastMovingDirection;
 
     public List<float> movementPenalties = new List<float>();
-    public PlayerSheet PlayerSheet;
+    public CharacterSheet CharacterSheet;
 
     [Header("Combat")]
     public float attachChargeTime;
@@ -43,8 +43,19 @@ public class CustomCharacterController : MonoBehaviour
     private bool isLocked => isDashing; //may add more conditions
 
     private void Awake() {
-        PlayerSheet = new PlayerSheet(this.transform, ItemDatabase);
+        if (IsPlayer) {
+            CharacterSheet = new PlayerSheet(this.transform);
+        }
         dashTimer = dashCooldown;
+    }
+
+    public void SetBossSheet(BossSheet bossSheet) {
+        if (IsPlayer) {
+            Debug.LogError("This method should only be called for NPCs");
+            return;
+        }
+
+        CharacterSheet = bossSheet;
     }
 
     private void Update()

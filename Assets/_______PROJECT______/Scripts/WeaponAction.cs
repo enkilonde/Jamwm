@@ -2,31 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeapoonChargeState
-{
-    StartCharging,
-    Charging, 
-    Release
-}
-
 public class WeaponAction : MonoBehaviour
 {
     public CustomCharacterController characterController;
     public ItemSlot slot;
-    public ArmBehaviour armBehaviour;
 
-    delegate void attackMethod(Item item, float charge, WeapoonChargeState state);
+    delegate void attackMethod(Item item, float charge);
 
-    private void LateUpdate()
+    public void LaunchAttack(float charge)
     {
-        transform.position = armBehaviour.hand.position;
-    }
+        Item item = ((PlayerSheet)characterController.CharacterSheet).Equipment[slot];
 
-    public void LaunchAttack(float charge, WeapoonChargeState state)
-    {
-        Item item = characterController.PlayerSheet.Equipment[slot];
+        GetMethod(item).Invoke(item, charge);
 
-        GetMethod(item).Invoke(item, charge, state);
     }
 
     private attackMethod GetMethod(Item item)
@@ -44,41 +32,27 @@ public class WeaponAction : MonoBehaviour
         }
     }
 
-    private void Fireball(Item item, float charge, WeapoonChargeState state)
+    private void Fireball(Item item, float charge)
     {
         //instantiate fireball
-        switch (state)
-        {
-            case WeapoonChargeState.StartCharging:
-                armBehaviour.animator.SetTrigger("StartChargingSpell");
-                break;
-            case WeapoonChargeState.Charging:
-                armBehaviour.animator.SetFloat("ChargeAmount", charge);
-                break;
-            case WeapoonChargeState.Release:
-                armBehaviour.animator.SetFloat("LaunchAttack", charge);
-                break;
-            default:
-                break;
-        }
     }
 
-    private void IceSpear(Item item, float charge, WeapoonChargeState state)
+    private void IceSpear(Item item, float charge)
     {
 
     }
 
-    private void Sword(Item item, float charge, WeapoonChargeState state)
+    private void Sword(Item item, float charge)
     {
         //launch anim
     }
 
-    private void Axe(Item item, float charge, WeapoonChargeState state)
+    private void Axe(Item item, float charge)
     {
 
     }
 
-    private void Shield(Item item, float charge, WeapoonChargeState state)
+    private void Shield(Item item, float charge)
     {
 
     }

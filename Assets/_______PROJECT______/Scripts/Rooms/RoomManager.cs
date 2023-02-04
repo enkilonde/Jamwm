@@ -1,52 +1,84 @@
-using System;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour {
 
     public static RoomManager Instance;
 
+    [Header("Data")]
+    [SerializeField] private BossRoomController _currentRoom;
+
+    [Header("Other Managers")]
+    [SerializeField] private Transform _playerTransform;
+    [SerializeField] private CharacterController _playerController;
+
     [Header("Resources")]
-    [SerializeField] private ChoiceRoomController _choiceRoomPrefab;
     [SerializeField] private BossRoomController _bossRoomPrefab;
 
-    [Header("Loaded Rooms")]
-    private ChoiceRoomController _currentChoiceRoom;
-    private BossRoomController _leftBossRoom;
-    private BossRoomController _rightBossRoom;
-    
-    public RoomType CurrentRoomType;
-
     // TODO : might have to be kept elsewhere
-    public int CurrentLevel;
+    public int CurrentLevel { get; private set; }
 
     private void Awake() {
         Instance = this;
-        CurrentRoomType = RoomType.Choice;
     }
 
+#region Initial Room
+
+    private void Start() {
+        LoadInitialRoom();
+    }
+
+    private void LoadInitialRoom() {
+        CurrentLevel = 0;
+
+        (AncestorData, AncestorData) parents = AncestorGenerator.Instance.GetInitialParents();
+        _currentRoom.Configure(
+            AncestorGenerator.Instance.GenerateAncestor(0),
+            parents.Item1,
+            parents.Item2
+        );
+
+        _playerTransform.position = Vector3.zero;
+    }
+
+#endregion
+
+    // TODO : call it on enemy's death
     public void HandleBossDeath() {
-        // TODO : generate next "choice" room
+        _currentRoom.SetExitDoorsLocked(false);
     }
 
-    public void HandleBossRoomLeft() {
-        // TODO : generate the 2 next boss room
+    public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
+        // TODO : UI Fade Out
+        UnloadRoom();
+
+        // TODO : UI Fade In
+        // TODO : short walk/run animation
+        LoadRoom(CurrentLevel + 1, chosenAncestor);
     }
 
-    public void UnloadRoom(RoomType roomType) {
-        switch (roomType) {
-            case RoomType.Choice:
-                Destroy(_currentChoiceRoom);
-                _currentChoiceRoom = null;
-                return;
-            case RoomType.Combat:
-                Destroy(_leftBossRoom);
-                Destroy(_rightBossRoom);
-                _leftBossRoom = null;
-                _rightBossRoom = null;
-                return;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(roomType), roomType, null);
-        }
+#region Room Swapping
+
+    private void UnloadRoom() {
+        Destroy(_currentRoom.gameObject);
+        _currentRoom = null;
     }
+
+    private void LoadRoom(int roomLevel, AncestorData chosenAncestor) {
+        CurrentLevel = roomLevel;
+
+        _currentRoom = Instantiate(_bossRoomPrefab);
+
+        (AncestorData, AncestorData) parents = AncestorGenerator.Instance.GetParents(chosenAncestor);
+        _currentRoom.Configure(chosenAncestor, parents.Item1, parents.Item2);
+
+        TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
+        TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
+
+        _playerController.enabled = false;
+        _playerTransform.position = Vector3.zero;
+        _playerController.enabled = true;
+    }
+
+#endregion
 
 }
