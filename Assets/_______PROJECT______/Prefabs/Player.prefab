@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 7732532171614956756}
+  isUsingController: 0
 --- !u!54 &6905227573168998753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -342,6 +343,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: beb4c8b4-26bc-45d5-b2c9-89fa85986abc
     m_ActionName: MainGameplay/Dodge[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7727689203087003977}
+        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
+        m_MethodName: ActivateController
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd327770-8c51-4736-a68d-3e82f7bfef91
+    m_ActionName: MainGameplay/ActivateController[/XInputControllerWindows/leftStick,/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7727689203087003977}
+        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
+        m_MethodName: Activatemouse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ee7f677b-e1ba-46e6-ace3-264d41c1e801
+    m_ActionName: MainGameplay/ActivateMouse[/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MainGameplay
