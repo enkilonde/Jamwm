@@ -1,12 +1,18 @@
+using System;
 using UnityEngine;
 
-public class Item : MonoBehaviour {
+[Serializable]
+public abstract class Item {
+
+    public abstract ItemKind Kind { get; }
 
     [Header("Item Metadata")]
     public string Name;
     public ItemID ID;
-    public ItemKind Kind;
     public Color FxColor;
+
+    [Header("Item Visual")]
+    public GameObject EquippedPrefab;
 
     [Header("Stats Modifiers")]
     public int Strength;

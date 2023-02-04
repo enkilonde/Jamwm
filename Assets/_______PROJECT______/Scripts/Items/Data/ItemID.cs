@@ -1,10 +1,13 @@
 public enum ItemID {
 
-    Hat01,
-    Hat02,
+    Head01,
+    Head02,
 
     Armor01,
     Armor02,
+
+    Ring01,
+    Ring02,
 
     Sword01,
     Axe01,

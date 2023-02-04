@@ -1,9 +1,9 @@
 public enum ItemSlot {
 
     Head,
-    Shoulders,
     Torso,
-    LeftHand,
-    RightHand
+    LeftArm,
+    RightArm,
+    Ring1
 
 }

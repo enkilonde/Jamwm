@@ -10,6 +10,8 @@ public class CustomCharacterController : MonoBehaviour
     public CharacterController characterController;
     public PlayerVisual playerVisual;
 
+    [Header("Resources")]
+    public ItemDatabase ItemDatabase;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -24,7 +26,7 @@ public class CustomCharacterController : MonoBehaviour
     private Vector3 lastMovingDirection;
 
     public List<float> movementPenalties = new List<float>();
-    public PlayerSheet PlayerSheet = new PlayerSheet();
+    public PlayerSheet PlayerSheet;
 
     [Header("Combat")]
     public float attachChargeTime;
@@ -38,8 +40,8 @@ public class CustomCharacterController : MonoBehaviour
 
     private bool isLocked => isDashing; //may add more conditions
 
-    private void Awake()
-    {
+    private void Awake() {
+        PlayerSheet = new PlayerSheet(ItemDatabase);
         dashTimer = dashCooldown;
     }
 

@@ -5,9 +5,12 @@ public class PlayerSheet {
     public Dictionary<PlayerStats, int> Stats;
     public Dictionary<ItemSlot, Item> Equipment;
 
+    private readonly ItemDatabase _itemDatabase;
+    
 #region Initialization
 
-    public PlayerSheet() {
+    public PlayerSheet(ItemDatabase itemDatabase) {
+        _itemDatabase = itemDatabase;
         Stats = GetDefaultStats();
         Equipment = new Dictionary<ItemSlot, Item>();
     }
@@ -27,14 +30,15 @@ public class PlayerSheet {
 
 #region Inventory
 
-    public void Equip(ItemSlot slot, Item item) {
+    public void PickUp(ItemSlot slot, LootableItem item) {
         if (Equipment.ContainsKey(slot)) {
             var droppedItem = DropItem(slot);
             // TODO : spawn dropped item on ground
         }
 
-        Equipment[slot] = item;
-        item.Equipped = true;
+        Item loot = item.Loot;
+        Equipment[slot] = loot;
+        loot.Equipped = true;
 
         RefreshStats();
 

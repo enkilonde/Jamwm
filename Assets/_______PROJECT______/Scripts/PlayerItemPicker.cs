@@ -10,16 +10,12 @@ public class PlayerItemPicker : MonoBehaviour {
             return;
         }
 
-        var itemSheet = other.GetComponent<Item>();
-        if (itemSheet == null) {
+        var lootSheet = other.GetComponent<LootableItem>();
+        if (lootSheet == null) {
             return;
         }
 
-        if (itemSheet.Equipped) {
-            return;
-        }
-
-        Debug.LogError("START Collide with " + itemSheet.name);
+        Debug.LogError("START Collide with " + lootSheet.name);
     }
 
     private void OnTriggerExit(Collider other) {
@@ -28,12 +24,12 @@ public class PlayerItemPicker : MonoBehaviour {
             return;
         }
 
-        var itemSheet = other.GetComponent<Item>();
-        if (itemSheet == null) {
+        var lootSheet = other.GetComponent<LootableItem>();
+        if (lootSheet == null) {
             return;
         }
 
-        Debug.LogError("EXIT Collide with " + itemSheet.name);
+        Debug.LogError("EXIT Collide with " + lootSheet.name);
     }
 
 }

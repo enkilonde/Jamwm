@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 3403665463472213400}
   - component: {fileID: 4914497489864168355}
   - component: {fileID: 209509829974209500}
-  - component: {fileID: 5337429692424922348}
-  - component: {fileID: 844096412143999209}
   m_Layer: 0
-  m_Name: Sword01
+  m_Name: Helmet01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,46 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5337429692424922348
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242175290917952194}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &844096412143999209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242175290917952194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c68871b10a4d28978f6a64d3b914f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Grandma's Sword
-  ID: 4
-  Kind: 3
-  FxColor: {r: 0.13817197, g: 0.6509434, b: 0.21924633, a: 1}
-  Strength: 0
-  Magic: 0
-  AttackSpeed: 0
-  MovementSpeed: 0
-  Defense: 0
-  MaxHp: 0
