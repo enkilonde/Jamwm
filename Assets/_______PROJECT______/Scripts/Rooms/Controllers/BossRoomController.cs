@@ -33,7 +33,6 @@ public class BossRoomController : MonoBehaviour {
 
         var iaInputs = ancestor.GetComponent<CustomIAInputs>();
         iaInputs.player = _playerRef;
-        Debug.LogError("IA Inputs player ref set " + (_playerRef != null));
 
         var ancestorController = ancestor.GetComponent<CustomCharacterController>();
         var bossSheet = ancestorData.GetDetailedSheet(ancestorController.playerVisual);
