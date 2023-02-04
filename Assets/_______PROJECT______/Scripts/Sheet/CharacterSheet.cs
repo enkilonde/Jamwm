@@ -12,6 +12,14 @@ public abstract class CharacterSheet {
 
     protected Transform _playerTransform;
 
+    public int CurrentHp { get; private set; }
+    public int MaxHp => Stats[PlayerStats.MaxHp];
+    public float HpRatio => CurrentHp / (float) MaxHp;
+
+    protected CharacterSheet()
+    {
+        Equipment = new Dictionary<ItemSlot, Item>();
+    }
 
     public void Equip(ItemID itemID)
     {
@@ -22,8 +30,7 @@ public abstract class CharacterSheet {
     public void Equip(ItemSlot slot, Item item)
     {
         // Optional phase 1 : drop a replaced item
-        if (Equipment.ContainsKey(slot))
-        {
+        if (Equipment.ContainsKey(slot)) {
             // Data update
             var droppedItem = DropItem(slot);
 
@@ -43,23 +50,19 @@ public abstract class CharacterSheet {
         PlayerVisual.DisplayItem(slot, item);
     }
 
-    private Item DropItem(ItemSlot slot)
-    {
+    private Item DropItem(ItemSlot slot) {
         Item dropped = Equipment[slot];
         dropped.Equipped = false;
         Equipment[slot] = null;
         return dropped;
     }
 
-    private void RefreshStats()
-    {
+    private void RefreshStats() {
         List<PlayerStats> statIndexes = Stats.Keys.ToList();
-        foreach (PlayerStats statIdx in statIndexes)
-        {
+        foreach (PlayerStats statIdx in statIndexes) {
             Stats[statIdx] = 0;
         }
-        foreach (Item item in Equipment.Values)
-        {
+        foreach (Item item in Equipment.Values) {
             Stats[PlayerStats.Strength] += item.Strength;
             Stats[PlayerStats.MagicPower] += item.Magic;
             Stats[PlayerStats.AttackSpeed] += item.AttackSpeed;
@@ -99,5 +102,20 @@ public abstract class CharacterSheet {
         if (Equipment[slot] == null) return false;
         return true;
     }
+
+#region HP modification
+
+    public void Heal(int hitPoints) {
+        CurrentHp = Math.Min(CurrentHp + hitPoints, MaxHp);
+    }
+
+    public void Hit(int damages) {
+        CurrentHp -= damages;
+        if (CurrentHp <= 0) {
+            GameOverManager.Instance.TriggerGameOver();
+        }
+    }
+
+#endregion
 
 }

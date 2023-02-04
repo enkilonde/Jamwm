@@ -9,12 +9,15 @@ public class BossRoomController : MonoBehaviour {
     [Header("Resources")]
     [SerializeField] private GameObject _enemyPrefab;
 
+    private CustomCharacterController _playerRef;
     private AncestorData _leftDoorChoice;
     private AncestorData _rightDoorChoice;
 
-    public void Configure(AncestorData boss, AncestorData leftChoice, AncestorData rightChoice) {
+    public void Configure(AncestorData boss, AncestorData leftChoice, AncestorData rightChoice, 
+        CustomCharacterController playerRef) {
         _leftDoorChoice = leftChoice;
         _rightDoorChoice = rightChoice;
+        _playerRef = playerRef;
 
         if (boss.InitialRoomAncestor == false) {
             SpawnAncestor(boss);
@@ -27,6 +30,9 @@ public class BossRoomController : MonoBehaviour {
             position: new Vector3(0, 0, 15),
             rotation: Quaternion.identity
         );
+
+        var iaInputs = ancestor.GetComponent<CustomIAInputs>();
+        iaInputs.player = _playerRef;
 
         var ancestorController = ancestor.GetComponent<CustomCharacterController>();
         var bossSheet = ancestorData.GetDetailedSheet(ancestorController.playerVisual);

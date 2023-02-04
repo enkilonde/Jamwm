@@ -8,11 +8,10 @@ public class PlayerSheet : CharacterSheet {
 
 #region Initialization
 
-    public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) {
+    public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) : base() {
         PlayerVisual = playerVisual;
         _playerTransform = playerTransform;
         Stats = GetInitialStats();
-        Equipment = new Dictionary<ItemSlot, Item>();
     }
 
     private Dictionary<PlayerStats, int> GetInitialStats() {
