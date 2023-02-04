@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,8 +44,13 @@ public class CustomCharacterController : MonoBehaviour
 
     private bool isChargingLeft;
     private bool isChargingRight;
-    public float chargingLeft;
+    private float chargingLeft;
     private float chargingRight;
+
+    private float wantedAimAlpha = 0;
+    public float currentAimAlpha = 0;
+    public LineRenderer aimVisual;
+    public Vector2 aimVisualFadeInOutSpeed;
 
 
 
@@ -61,7 +67,8 @@ public class CustomCharacterController : MonoBehaviour
     private void Start()
     {
         EquipItem(ItemID.Fireball01);
-        EquipItem(ItemID.IceSpear01);
+        //EquipItem(ItemID.IceSpear01);        
+        EquipItem(ItemID.Sword01);
 
     }
 
@@ -78,6 +85,23 @@ public class CustomCharacterController : MonoBehaviour
     {
         ChargeAttackLeft();
         ChargeAttackRight();
+        SetAimAlpha();
+    }
+
+    private void SetAimAlpha()
+    {
+        if(currentAimAlpha < wantedAimAlpha)
+        {
+            currentAimAlpha = Mathf.Lerp(currentAimAlpha, wantedAimAlpha, Time.deltaTime * aimVisualFadeInOutSpeed.x);
+        }
+        else
+        {
+            currentAimAlpha = Mathf.Lerp(currentAimAlpha, wantedAimAlpha, Time.deltaTime * aimVisualFadeInOutSpeed.y);
+        }
+
+        Color col = aimVisual.material.color;
+        col.a = currentAimAlpha;
+        aimVisual.material.color = col;
     }
 
     public void Move(Vector3 direction)
@@ -153,6 +177,7 @@ public class CustomCharacterController : MonoBehaviour
         isChargingLeft = true;
         chargingLeft = 0;
         leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.StartCharging);
+        wantedAimAlpha++;
     }
 
     private void ChargeAttackLeft()
@@ -167,6 +192,7 @@ public class CustomCharacterController : MonoBehaviour
         if (!isChargingLeft) return;
         isChargingLeft = false;
         leftWeapon.LaunchAttack(chargingLeft, WeapoonChargeState.Release);
+        wantedAimAlpha--;
     }
 
     public void StartChargeAttackRight()
@@ -176,6 +202,7 @@ public class CustomCharacterController : MonoBehaviour
         isChargingRight = true;
         chargingRight = 0;
         rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.StartCharging);
+        wantedAimAlpha++;
     }
 
     private void ChargeAttackRight()
@@ -190,6 +217,7 @@ public class CustomCharacterController : MonoBehaviour
         if (!isChargingRight) return;
         isChargingRight = false;
         rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.Release);
+        wantedAimAlpha--;
     }
 
     [Button]

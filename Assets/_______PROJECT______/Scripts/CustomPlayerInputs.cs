@@ -8,12 +8,37 @@ public class CustomPlayerInputs : MonoBehaviour
     public CustomCharacterController characterController;
 
     private Vector2 move;
-    private Vector2 turn;
+    public Vector2 turn;
+    public Vector3 mousePosition;
+
+    public bool isUsingController = false;
+
+    private Camera mainCamera;
+    Plane ground;
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+        ground = new Plane(Vector3.up, Vector3.zero);
+
+    }
 
     private void Update()
     {
+        if (!isUsingController)
+        {
+            Ray ray = mainCamera.ScreenPointToRay(mousePosition);
+            float mousePosGround = 0;
+            ground.Raycast(ray, out mousePosGround);
+            Vector3 diff = ray.GetPoint(mousePosGround) - transform.position;
+            turn = new Vector2(diff.x, diff.z);
+        }
+
+
         characterController.Move(move);
         characterController.Turn(turn);
+
+ 
     }
 
 
@@ -42,5 +67,17 @@ public class CustomPlayerInputs : MonoBehaviour
     public void Dodge(InputAction.CallbackContext context)
     {
         characterController.Dash();
+    }
+
+    public void ActivateController(InputAction.CallbackContext context)
+    {
+        isUsingController = true;
+    }
+
+    public void Activatemouse(InputAction.CallbackContext context)
+    {
+        isUsingController = false;
+        mousePosition = context.ReadValue<Vector2>();
+        mousePosition.z = 1;
     }
 }

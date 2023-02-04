@@ -21,10 +21,10 @@ public class WeaponAction : MonoBehaviour
                 item.StartCharging();
                 break;
             case WeapoonChargeState.Charging:
-                armBehaviour.animator.SetFloat("ChargeAmount", charge);
+                //armBehaviour.animator.SetFloat("ChargeAmount", charge);
                 break;
             case WeapoonChargeState.Release:
-                armBehaviour.animator.SetFloat("LaunchAttack", charge);
+                armBehaviour.animator.SetTrigger("LaunchAttack");
 
                 item.Attack(charge, characterController, armBehaviour.hand.position);
 
@@ -43,6 +43,7 @@ public class WeaponAction : MonoBehaviour
         if (characterController.CharacterSheet == null || !characterController.CharacterSheet.Equipment.ContainsKey(slot)) return;
         Item item = characterController.CharacterSheet.Equipment[slot];
         transform.position = armBehaviour.hand.position;
+        transform.rotation = armBehaviour.hand.rotation;
     }
 
     private attackMethod GetMethod(Item item)
@@ -62,39 +63,32 @@ public class WeaponAction : MonoBehaviour
 
     private void Fireball(Item item, float charge, WeapoonChargeState state)
     {
-        //instantiate fireball
-        switch (state)
-        {
-            case WeapoonChargeState.StartCharging:
-                armBehaviour.animator.SetTrigger("StartChargingSpell");
-                break;
-            case WeapoonChargeState.Charging:
-                break;
-            case WeapoonChargeState.Release:
-                break;
-            default:
-                break;
-        }
+        if(state == WeapoonChargeState.StartCharging)
+            armBehaviour.animator.SetTrigger("Cast");
     }
 
     private void IceSpear(Item item, float charge, WeapoonChargeState state)
     {
-
+        if (state == WeapoonChargeState.StartCharging)
+            armBehaviour.animator.SetTrigger("Cast");
     }
 
     private void Sword(Item item, float charge, WeapoonChargeState state)
     {
-        //launch anim
+        if (state == WeapoonChargeState.StartCharging)
+            armBehaviour.animator.SetTrigger("Attack");
     }
 
     private void Axe(Item item, float charge, WeapoonChargeState state)
     {
-
+        if (state == WeapoonChargeState.StartCharging)
+            armBehaviour.animator.SetTrigger("Attack");
     }
 
     private void Shield(Item item, float charge, WeapoonChargeState state)
     {
-
+        if (state == WeapoonChargeState.StartCharging)
+            armBehaviour.animator.SetTrigger("Attack");
     }
 
 

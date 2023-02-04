@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinValue: -0.02
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.676
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_MinValue: -0.02
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.823
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -841,6 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2615226643965704467}
   - component: {fileID: 2615226643965704476}
+  - component: {fileID: 3854324765805304606}
   m_Layer: 5
   m_Name: LifeBar
   m_TagString: Untagged
@@ -886,9 +887,22 @@ MonoBehaviour:
   _HPText: {fileID: 1911998556}
   _slider1: {fileID: 2615226642650582709}
   _slider2: {fileID: 2615226643751586827}
+  _canvasGroup: {fileID: 3854324765805304606}
   _isPlayerBar: 0
   _playerAvatar: {fileID: 0}
   _playerWarning: {fileID: 0}
+--- !u!225 &3854324765805304606
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615226643965704466}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2615226644322999773
 GameObject:
   m_ObjectHideFlags: 0

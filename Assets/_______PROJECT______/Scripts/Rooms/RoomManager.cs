@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour {
@@ -12,6 +13,10 @@ public class RoomManager : MonoBehaviour {
     [SerializeField] private CharacterController _playerController;
     [SerializeField] private CustomCharacterController _playerCustomController;
     [SerializeField] private TransitionUiController _transitionUi;
+
+    [Header("UI")]
+    [SerializeField] private LifeBar _playerLifeBar;
+    [SerializeField] private LifeBar _bossLifeBar;
 
     [Header("Resources")]
     [SerializeField] private BossRoomController _bossRoomPrefab;
@@ -41,6 +46,8 @@ public class RoomManager : MonoBehaviour {
         );
 
         _playerTransform.position = Vector3.zero;
+
+        _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
     }
 
 #endregion
@@ -48,9 +55,14 @@ public class RoomManager : MonoBehaviour {
     public void HandleBossHealthZero() {
         SaveManager.Instance.HandleDefeatedAncestor(_currentRoom.Ancestor);
         _currentRoom.SetExitDoorsLocked(false);
+    
+        // Gathering the boss data
+        CustomCharacterController bossObject = _currentRoom.BossRef;
+        Vector3 corpsePosition = bossObject.transform.position;
+        BossSheet bossSheet = (BossSheet)bossObject.CharacterSheet;
+        List<Item> bossLoots = bossSheet.BossLoots();
 
-        // TODO : animate the death / SFX / VFX / ...
-        var bossObject = _currentRoom.BossRef;
+        // Destroying the corpse - TODO : animate the death / SFX / VFX / ...
         if (bossObject.leftWeapon != null) {
             Destroy(bossObject.leftWeapon.armBehaviour.gameObject);
         }
@@ -58,6 +70,10 @@ public class RoomManager : MonoBehaviour {
             Destroy(bossObject.rightWeapon.armBehaviour.gameObject);
         }
         Destroy(bossObject.gameObject);
+
+        LootSpawner.Instance.SpawnLoots(bossLoots, corpsePosition);
+
+        _bossLifeBar.FadeTo(visible: false);
     }
 
     public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
@@ -92,14 +108,15 @@ public class RoomManager : MonoBehaviour {
                     _playerCustomController
                 );
 
-                TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
-                TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
+                _bossLifeBar.SetBossName(chosenAncestor.Name);
 
                 _playerTransform.position = new Vector3(0, 0, -20f);
             },
 
             // When the transition is finished, we resume gameplay
             callbackAction: () => {
+                _bossLifeBar.SetValue(1);
+                _bossLifeBar.FadeTo(visible: true);
                 _playerController.enabled = true;
             }
         );

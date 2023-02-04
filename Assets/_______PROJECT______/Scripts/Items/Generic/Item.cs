@@ -14,7 +14,6 @@ public abstract class Item : MonoBehaviour {
     [Header("Item Metadata")]
     public string Name;
     public ItemID ID;
-    public Color FxColor;
 
     [Header("Stats Modifiers")]
     public int Strength;
@@ -41,6 +40,7 @@ public abstract class Item : MonoBehaviour {
 
     internal void SendProjectile(float charge, CustomCharacterController owner, Vector3 spawnPosition)
     {
+        if (projectilePrefab == null) return;
         if (projectileDelay <= 0) SpawnProjectile(charge, owner, spawnPosition);
         else StartCoroutine(WaitSendProjectile(charge, owner, spawnPosition));
     }

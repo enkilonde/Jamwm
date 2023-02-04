@@ -176,11 +176,6 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 25.7
       objectReference: {fileID: 0}
-    - target: {fileID: 2615226642650582709, guid: c5dfc6627f14b46a782cfdbc2515caaf,
-        type: 3}
-      propertyPath: m_Value
-      value: 0.695
-      objectReference: {fileID: 0}
     - target: {fileID: 2615226643277826665, guid: c5dfc6627f14b46a782cfdbc2515caaf,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -221,11 +216,6 @@ PrefabInstance:
       propertyPath: linearColor2.g
       value: 0.8991591
       objectReference: {fileID: 0}
-    - target: {fileID: 2615226643751586827, guid: c5dfc6627f14b46a782cfdbc2515caaf,
-        type: 3}
-      propertyPath: m_Value
-      value: 0.82
-      objectReference: {fileID: 0}
     - target: {fileID: 2615226643965704466, guid: c5dfc6627f14b46a782cfdbc2515caaf,
         type: 3}
       propertyPath: m_Name
@@ -244,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 2615226643965704467, guid: c5dfc6627f14b46a782cfdbc2515caaf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2615226643965704467, guid: c5dfc6627f14b46a782cfdbc2515caaf,
         type: 3}
