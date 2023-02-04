@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileBehaviour : MonoBehaviour
-{
+public class ProjectileBehaviour : MonoBehaviour {
+
+    private const int PoolingDistance = 60;
 
     public float speed;
 
@@ -18,9 +19,17 @@ public class ProjectileBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        transform.position += transform.forward * speed * Time.deltaTime;
+    void Update() {
+        Transform t = transform;
+        var newPos = t.position;
+        newPos += t.forward * speed * Time.deltaTime;
+        t.position = newPos;
+
+        if (newPos.x is < -PoolingDistance or > PoolingDistance || 
+            newPos.z is < -PoolingDistance or > PoolingDistance
+        ) {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
