@@ -11,9 +11,10 @@ public class AncestorData {
         Level = level;
     }
 
-    public BossSheet GetDetailedSheet() {
+    public BossSheet GetDetailedSheet(PlayerVisual bossVisualPlayer) {
         if (_sheet == null) {
             _sheet = new BossSheet(
+                bossVisualPlayer: bossVisualPlayer,
                 stats:AncestorGenerator.GenerateBossStats(Level)
             );
         }

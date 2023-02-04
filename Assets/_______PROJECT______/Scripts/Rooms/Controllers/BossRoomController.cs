@@ -15,6 +15,7 @@ public class BossRoomController : MonoBehaviour {
     public void Configure(AncestorData boss, AncestorData leftChoice, AncestorData rightChoice) {
         _leftDoorChoice = leftChoice;
         _rightDoorChoice = rightChoice;
+
         if (boss.InitialRoomAncestor == false) {
             SpawnAncestor(boss);
         }
@@ -28,7 +29,8 @@ public class BossRoomController : MonoBehaviour {
         );
 
         var ancestorController = ancestor.GetComponent<CustomCharacterController>();
-        ancestorController.SetBossSheet(ancestorData.GetDetailedSheet());
+        var bossSheet = ancestorData.GetDetailedSheet(ancestorController.playerVisual);
+        ancestorController.SetBossSheet(bossSheet);
     }
 
     public void SetExitDoorsLocked(bool locked) {

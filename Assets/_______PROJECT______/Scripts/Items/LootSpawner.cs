@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LootSpawner : MonoBehaviour {
 
@@ -20,7 +22,7 @@ public class LootSpawner : MonoBehaviour {
         ).normalized;
 
         // TODO : spawn with animation (scale Up from nothing ? Falling from player's height ?)
-        Instantiate(original: LootPrefab, position: worldPosition, rotation: Quaternion.identity);
+        var lootObject = Instantiate(original: LootPrefab, position: worldPosition, rotation: Quaternion.identity);
 
         Item lootItem = specificItem ?? ItemDatabase.GetRandomItem();
 
@@ -28,7 +30,9 @@ public class LootSpawner : MonoBehaviour {
             // TODO : apply some stats modifiers based on current progression / level
         }
 
-        LootPrefab.Configure(lootItem);
+        lootObject.Configure(lootItem);
+
+        Debug.Log("Spawned loot " + lootItem.Name);
     }
 
 }

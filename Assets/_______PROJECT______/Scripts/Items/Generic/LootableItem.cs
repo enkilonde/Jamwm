@@ -12,7 +12,7 @@ public class LootableItem : MonoBehaviour {
 
         // TODO : visual configuration of the "Lootable" item
         // (this is just an example)
-        _renderer.material.color = Loot.FxColor;
+        _renderer.sharedMaterial.color = Loot.FxColor;
     }
 
 }

@@ -10,12 +10,18 @@ public class PlayerItemPicker : MonoBehaviour {
             return;
         }
 
-        var lootSheet = other.GetComponent<LootableItem>();
-        if (lootSheet == null) {
+        var lootable = other.GetComponent<LootableItem>();
+        if (lootable == null) {
             return;
         }
 
-        Debug.LogError("START Collide with " + lootSheet.name);
+        Debug.Log("Picking up " + lootable.Loot.Name);
+        // TODO : only do that after a player confirmation
+        ((PlayerSheet)_character.CharacterSheet).PickUp(lootable);
+
+        // Making the Lootable disappear
+        lootable.enabled = false;
+        Destroy(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other) {
@@ -28,8 +34,6 @@ public class PlayerItemPicker : MonoBehaviour {
         if (lootSheet == null) {
             return;
         }
-
-        Debug.LogError("EXIT Collide with " + lootSheet.name);
     }
 
 }

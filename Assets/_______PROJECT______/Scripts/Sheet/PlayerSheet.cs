@@ -1,13 +1,16 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerSheet : CharacterSheet {
 
     private readonly Transform _playerTransform;
-    
+
 #region Initialization
 
-    public PlayerSheet(Transform playerTransform) {
+    public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) {
+        PlayerVisual = playerVisual;
         _playerTransform = playerTransform;
         Stats = GetInitialStats();
         Equipment = new Dictionary<ItemSlot, Item>();
@@ -27,23 +30,53 @@ public class PlayerSheet : CharacterSheet {
 #endregion
 
 #region Inventory
-    
-    public void PickUp(ItemSlot slot, LootableItem item) {
-        Equip(slot, item.Loot);
+
+    public void PickUp(LootableItem lootable) {
+        ItemSlot slot;
+        var itemKind = lootable.Loot.Kind;
+        switch (itemKind) {
+            case ItemKind.Helmet:
+                slot = ItemSlot.Head;
+                break;
+            case ItemKind.Armor:
+                slot = ItemSlot.Torso;
+                break;
+            case ItemKind.Ring:
+                slot = ItemSlot.Ring1;
+                break;
+            case ItemKind.Weapon:
+                if (Equipment.ContainsKey(ItemSlot.LeftArm) && Equipment[ItemSlot.LeftArm] != null) {
+                    slot = ItemSlot.RightArm;
+                } else {
+                    slot = ItemSlot.LeftArm;
+                }
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        Equip(slot, lootable.Loot);
     }
 
     public void Equip(ItemSlot slot, Item item) {
+        // Optional phase 1 : drop a replaced item
         if (Equipment.ContainsKey(slot)) {
+            // Data update
             var droppedItem = DropItem(slot);
+
+            // Visual update
+            PlayerVisual.ClearSlot(slot);
             LootSpawner.Instance.SpawnLoot(droppedItem, _playerTransform.position);
         }
 
+        // Main Phase 2 : equip the item
+
+        // Data update
         Equipment[slot] = item;
         item.Equipped = true;
-
         RefreshStats();
 
-        // TODO : visual model refresh
+        // Visual update
+        PlayerVisual.DisplayItem(slot, item);
     }
 
     private Item DropItem(ItemSlot slot) {
@@ -56,11 +89,11 @@ public class PlayerSheet : CharacterSheet {
 #endregion
 
     private void RefreshStats() {
-        foreach (var kvp in Stats) {
-            Stats[kvp.Key] = 0;
+        List<PlayerStats> statIndexes = Stats.Keys.ToList();
+        foreach (PlayerStats statIdx in statIndexes) {
+            Stats[statIdx] = 0;
         }
-        foreach (var kvp in Equipment) {
-            Item item = kvp.Value;
+        foreach (Item item in Equipment.Values) {
             Stats[PlayerStats.Strength] += item.Strength;
             Stats[PlayerStats.MagicPower] += item.Magic;
             Stats[PlayerStats.AttackSpeed] += item.AttackSpeed;
