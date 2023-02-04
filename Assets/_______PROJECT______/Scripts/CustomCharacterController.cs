@@ -91,7 +91,8 @@ public class CustomCharacterController : MonoBehaviour
         int attackPenalty = 0 + (isChargingLeft ? 1 : 0) + (isChargingRight ? 1 : 0);
 
         lastMovingDirection = new Vector3(direction.x, 0, direction.y);
-        characterController.Move(lastMovingDirection * moveSpeed * Time.deltaTime * movementPenalties[attackPenalty]);
+        float effectiveMoveSpeed = moveSpeed * (IsPlayer ? CheatsManager.PlayerSpeedModifier : 1);
+        characterController.Move(lastMovingDirection * effectiveMoveSpeed * Time.deltaTime * movementPenalties[attackPenalty]);
     }
 
     public void Turn(Vector2 vector2)

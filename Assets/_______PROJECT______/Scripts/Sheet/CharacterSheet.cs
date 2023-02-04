@@ -10,14 +10,15 @@ public abstract class CharacterSheet {
     public Dictionary<PlayerStats, int> Stats;
     protected PlayerVisual PlayerVisual;
 
-    protected Transform _playerTransform;
+    protected Transform _characterTransform;
 
     public int CurrentHp { get; private set; }
     public int MaxHp => Stats[PlayerStats.MaxHp];
     public float HpRatio => CurrentHp / (float) MaxHp;
 
-    protected CharacterSheet()
+    protected CharacterSheet(Transform characterTransform)
     {
+        _characterTransform = characterTransform;
         Equipment = new Dictionary<ItemSlot, Item>();
     }
 
@@ -36,7 +37,7 @@ public abstract class CharacterSheet {
 
             // Visual update
             PlayerVisual.ClearSlot(slot);
-            LootSpawner.Instance.SpawnLoot(droppedItem, _playerTransform.position);
+            LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
         }
 
         // Main Phase 2 : equip the item
@@ -109,7 +110,7 @@ public abstract class CharacterSheet {
 
     public virtual void Hit(int damages) {
         CurrentHp -= damages;
-        EffectManager.Instance.DoDamageEffectOn(damages, _playerTransform.position);
+        EffectManager.Instance.DoDamageEffectOn(damages, _characterTransform.position);
     }
 
 #endregion
