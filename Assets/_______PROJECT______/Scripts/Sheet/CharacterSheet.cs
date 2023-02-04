@@ -9,7 +9,7 @@ public abstract class CharacterSheet {
     public Dictionary<PlayerStats, int> Stats;
     protected PlayerVisual PlayerVisual;
 
-    private readonly Transform _playerTransform;
+    protected readonly Transform _playerTransform;
 
 
     public void Equip(ItemSlot slot, Item item)
