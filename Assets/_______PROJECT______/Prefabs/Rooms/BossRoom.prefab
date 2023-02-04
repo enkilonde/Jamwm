@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
+  _collider: {fileID: 0}
   _doorKind: 1
   _locked: 1
 --- !u!1 &2405903982978368213
@@ -839,6 +840,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftExitDoor: {fileID: 3764769956389996420}
   _rightExitDoor: {fileID: 5831182084011357556}
+  _enemyPrefab: {fileID: 9017294294369611623, guid: 120904d3ce9c2314986cf66b3e97bd60,
+    type: 3}
 --- !u!1 &2849311244097706996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
+  _collider: {fileID: 0}
   _doorKind: 0
   _locked: 0
 --- !u!1 &7114548684177292453
@@ -1323,5 +1327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
+  _collider: {fileID: 0}
   _doorKind: 1
   _locked: 1
