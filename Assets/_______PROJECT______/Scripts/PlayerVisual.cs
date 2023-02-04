@@ -11,24 +11,24 @@ public class PlayerVisual : MonoBehaviour {
     public Transform RightHandPoint;
 
     // Visual Body Parts
-    private GameObject Helmet;
-    private GameObject Armor;
-    private GameObject LeftArm;
-    private GameObject RightArm;
+    private Item Helmet;
+    private Item Armor;
+    private Item LeftArm;
+    private Item RightArm;
 
     public void DisplayItem(ItemSlot slot, Item item) {
         switch (slot) {
             case ItemSlot.Head:
-                Helmet = Instantiate(original: item.EquippedPrefab, parent: HeadPoint);
+                Helmet = Instantiate(original: item, parent: HeadPoint);
                 break;
             case ItemSlot.Torso:
-                Armor = Instantiate(original: item.EquippedPrefab, parent: TorsoPoint);
+                Armor = Instantiate(original: item, parent: TorsoPoint);
                 break;
             case ItemSlot.LeftArm:
-                LeftArm = Instantiate(original: item.EquippedPrefab, parent: LeftHandPoint);
+                LeftArm = Instantiate(original: item, parent: LeftHandPoint);
                 break;
             case ItemSlot.RightArm:
-                RightArm = Instantiate(original: item.EquippedPrefab, parent: RightHandPoint);
+                RightArm = Instantiate(original: item, parent: RightHandPoint);
                 break;
         }
     }

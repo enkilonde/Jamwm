@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,8 +10,14 @@ public abstract class CharacterSheet {
     public Dictionary<PlayerStats, int> Stats;
     protected PlayerVisual PlayerVisual;
 
-    protected readonly Transform _playerTransform;
+    protected Transform _playerTransform;
 
+
+    public void Equip(ItemID itemID)
+    {
+        Item item = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
+        Equip(GetSlotFromKind(item.Kind), item);
+    }
 
     public void Equip(ItemSlot slot, Item item)
     {
@@ -60,6 +67,37 @@ public abstract class CharacterSheet {
             Stats[PlayerStats.Defense] += item.Defense;
             Stats[PlayerStats.MaxHp] += item.MaxHp;
         }
+    }
+
+    public ItemSlot GetSlotFromKind(ItemKind kind, bool forceRight = false)
+    {
+        switch (kind)
+        {
+            case ItemKind.Helmet:
+                return ItemSlot.Head;
+            case ItemKind.Armor:
+                return ItemSlot.Torso;
+            case ItemKind.Ring:
+                return ItemSlot.Ring1;
+            case ItemKind.Weapon:
+                if (EmptySlot(ItemSlot.LeftArm))
+                    return ItemSlot.LeftArm;
+                else if (EmptySlot(ItemSlot.RightArm))
+                    return ItemSlot.RightArm;
+                else if (forceRight)
+                    return ItemSlot.RightArm;
+                else
+                    return ItemSlot.LeftArm;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    public bool EmptySlot(ItemSlot slot)
+    {
+        if (!Equipment.ContainsKey(slot)) return false;
+        if (Equipment[slot] == null) return false;
+        return true;
     }
 
 }

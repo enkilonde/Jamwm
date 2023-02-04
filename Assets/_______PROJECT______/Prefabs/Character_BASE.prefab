@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 5979747486772747467}
   playerVisual: {fileID: 2464562602284313748}
-  leftWeapon: {fileID: 0}
-  rightWeapon: {fileID: 0}
+  leftWeapon: {fileID: 7698875266720068739}
+  rightWeapon: {fileID: 8268965264815244474}
   IsPlayer: 0
   moveSpeed: 10
   turnSpeed: 10
@@ -312,3 +312,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 398456078453983055}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7698875266720068739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8021051617803219916, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+    type: 3}
+  m_PrefabInstance: {fileID: 398456078453983055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0005d5b7ab213e74eb765174ef9f2ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8268965264815244474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8594800660082525173, guid: 24d0aa9edc7f26a4fab59978c466ae09,
+    type: 3}
+  m_PrefabInstance: {fileID: 398456078453983055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0005d5b7ab213e74eb765174ef9f2ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

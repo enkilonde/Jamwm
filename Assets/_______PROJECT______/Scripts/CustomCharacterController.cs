@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -54,6 +55,13 @@ public class CustomCharacterController : MonoBehaviour
             CharacterSheet = new PlayerSheet(playerVisual, this.transform);
         }
         dashTimer = dashCooldown;
+
+    }
+
+    private void Start()
+    {
+        EquipItem(ItemID.Fireball01);
+
     }
 
     public void SetBossSheet(BossSheet bossSheet) {
@@ -180,8 +188,9 @@ public class CustomCharacterController : MonoBehaviour
         rightWeapon.LaunchAttack(chargingRight, WeapoonChargeState.Release);
     }
 
+    [Button]
     public void EquipItem(ItemID itemID) 
-    { 
-        //PlayerSheet.Equip
+    {
+        CharacterSheet.Equip(ItemID.Fireball01);
     }
 }

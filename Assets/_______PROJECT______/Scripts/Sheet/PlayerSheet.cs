@@ -31,30 +31,15 @@ public class PlayerSheet : CharacterSheet {
 #region Inventory
 
     public void PickUp(LootableItem lootable) {
-        ItemSlot slot;
         var itemKind = lootable.Loot.Kind;
-        switch (itemKind) {
-            case ItemKind.Helmet:
-                slot = ItemSlot.Head;
-                break;
-            case ItemKind.Armor:
-                slot = ItemSlot.Torso;
-                break;
-            case ItemKind.Ring:
-                slot = ItemSlot.Ring1;
-                break;
-            case ItemKind.Weapon:
-                if (Equipment.ContainsKey(ItemSlot.LeftArm) && Equipment[ItemSlot.LeftArm] != null) {
-                    slot = ItemSlot.RightArm;
-                } else {
-                    slot = ItemSlot.LeftArm;
-                }
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        var slot = GetSlotFromKind(itemKind);
         Equip(slot, lootable.Loot);
     }
+
+
+
+
+ 
 
 
 

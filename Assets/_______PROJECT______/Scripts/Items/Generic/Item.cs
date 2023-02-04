@@ -9,9 +9,6 @@ public abstract class Item : MonoBehaviour {
     public ItemID ID;
     public Color FxColor;
 
-    [Header("Item Visual")]
-    public GameObject EquippedPrefab;
-
     [Header("Stats Modifiers")]
     public int Strength;
     public int Magic;
