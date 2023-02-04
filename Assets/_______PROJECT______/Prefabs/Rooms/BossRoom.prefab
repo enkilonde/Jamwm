@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
   _doorKind: 1
-  _locked: 0
+  _locked: 1
 --- !u!1 &2405903982978368213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,4 +1324,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _room: {fileID: 3830500429140299838}
   _doorKind: 1
-  _locked: 0
+  _locked: 1

@@ -4,13 +4,14 @@ public class RoomManager : MonoBehaviour {
 
     public static RoomManager Instance;
 
+    [Header("Data")]
+    [SerializeField] private BossRoomController _currentRoom;
+
     [Header("Other Managers")]
     [SerializeField] private Transform _playerTransform;
 
     [Header("Resources")]
     [SerializeField] private BossRoomController _bossRoomPrefab;
-
-    private BossRoomController _currentRoom;
 
     // TODO : might have to be kept elsewhere
     public int CurrentLevel { get; private set; }
@@ -28,10 +29,12 @@ public class RoomManager : MonoBehaviour {
     private void LoadInitialRoom() {
         CurrentLevel = 0;
 
-        _currentRoom = Instantiate(_bossRoomPrefab);
-
         (AncestorData, AncestorData) parents = AncestorGenerator.Instance.GetInitialParents();
-        _currentRoom.Configure(null, parents.Item1, parents.Item2);
+        _currentRoom.Configure(
+            AncestorGenerator.Instance.GenerateAncestor(0),
+            parents.Item1,
+            parents.Item2
+        );
 
         _playerTransform.position = Vector3.zero;
     }
@@ -55,7 +58,8 @@ public class RoomManager : MonoBehaviour {
 #region Room Swapping
 
     private void UnloadRoom() {
-        Destroy(_currentRoom);
+        Destroy(_currentRoom.gameObject);
+        _currentRoom = null;
     }
 
     private void LoadRoom(int roomLevel, AncestorData chosenAncestor) {
