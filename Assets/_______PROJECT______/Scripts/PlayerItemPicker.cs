@@ -15,6 +15,10 @@ public class PlayerItemPicker : MonoBehaviour {
             return;
         }
 
+        if (loot.Equipped) {
+            return;
+        }
+
         Debug.LogError("Can pick up " + loot.Name);
         // TODO : only do that after a player confirmation
         /*((PlayerSheet)_character.CharacterSheet).Equip(loot);
