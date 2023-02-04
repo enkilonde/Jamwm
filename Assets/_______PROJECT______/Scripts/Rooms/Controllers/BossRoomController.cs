@@ -11,7 +11,7 @@ public class BossRoomController : MonoBehaviour {
 
     private CustomCharacterController _playerRef;
     private CustomCharacterController _bossRef;
-    public AncestorData CurrentBoss;
+    public AncestorData Ancestor;
     private AncestorData _leftDoorChoice;
     private AncestorData _rightDoorChoice;
 
@@ -21,9 +21,12 @@ public class BossRoomController : MonoBehaviour {
         _rightDoorChoice = rightChoice;
         _playerRef = playerRef;
 
-        CurrentBoss = boss;
-        if (boss.InitialRoomAncestor == false) {
-            SpawnAncestor(boss);
+        // This weird check only serve to exclude the cheat option "reshuffle current room"
+        if (boss != Ancestor) {
+            Ancestor = boss;
+            if (boss.InitialRoomAncestor == false) {
+                SpawnAncestor(boss);
+            }
         }
     }
 

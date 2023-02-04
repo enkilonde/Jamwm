@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PlayerSheet : CharacterSheet {
 
+    public bool Invincible;
 
 #region Initialization
 
@@ -35,16 +34,11 @@ public class PlayerSheet : CharacterSheet {
         Equip(slot, lootable.Loot);
     }
 
-
-
-
- 
-
-
-
 #endregion
 
     public override void Hit(int damages) {
+        if (Invincible) return;
+
         base.Hit(damages);
         if (CurrentHp <= 0) {
             GameOverManager.Instance.TriggerGameOver();

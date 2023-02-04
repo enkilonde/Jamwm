@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 1468415367}
   - component: {fileID: 1468415368}
   - component: {fileID: 1468415369}
+  - component: {fileID: 1468415370}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -655,8 +656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b1e8f5c0224aaa9fae2ad8f10111cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootPrefab: {fileID: 719639826239134278, guid: 9dd4d1871408245d9821b235071dcd57,
-    type: 3}
   ItemDatabase: {fileID: 11400000, guid: e06c90c8d33004b2da5fa7798079c7f2, type: 2}
 --- !u!4 &1468415364
 Transform:
@@ -743,6 +742,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd456b074e01454f939049e4948344e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1468415370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468415362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356b8f9c5f5d4a0bad72736fddb41737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1408110068}
 --- !u!114 &1539288436 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3830500429140299838, guid: 7e6b56adbd9de4a288c8d8733d4c103f,
