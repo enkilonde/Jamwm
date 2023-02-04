@@ -1,20 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+public class AncestorData {
 
-[Serializable]
-public class AncestorData
-{
-    public string Name;
+    public readonly string Name;
+    public readonly int Level;
 
-    public List<AncestorData> Parents;
-
-    public int Depth;
-    public AncestorData(string name, int depth)
-    {
+    public AncestorData(string name, int level) {
         Name = name;
-        Depth = depth;
-        Parents = new List<AncestorData>();
+        Level = level;
     }
+
 }

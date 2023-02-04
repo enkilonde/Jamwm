@@ -1,38 +1,38 @@
-using System;
 using UnityEngine;
 
-public class BossRoomController : GenericRoomController {
+public class BossRoomController : MonoBehaviour {
 
-    protected override RoomType RoomType => RoomType.Combat;
+    [SerializeField] private DoorController _leftExitDoor;
+    [SerializeField] private DoorController _rightExitDoor;
 
-    public override int Width => 60;
-    public override int Depth => 60;
-    public override int Height => 5;
+    private AncestorData _leftDoorChoice;
+    private AncestorData _rightDoorChoice;
 
-    [SerializeField] private DoorController _entryDoor;
-    [SerializeField] private DoorController _exitDoor;
-
-    public override void HandleDoorPassed(DoorController.DoorKind doorKind) {
-        if (doorKind == DoorController.DoorKind.Entry) {
-            this.SetDoorsLocked(DoorController.DoorKind.Exit, true);
+    public void Configure(AncestorData boss, AncestorData leftChoice, AncestorData rightChoice) {
+        _leftDoorChoice = leftChoice;
+        _rightDoorChoice = rightChoice;
+        if (boss != null) {
+            SpawnAncestor(boss);
         }
-        if (doorKind == DoorController.DoorKind.Exit) {
-            RoomManager.Instance.HandleBossRoomLeft();
-        }
-
-        base.HandleDoorPassed(doorKind);
     }
 
-    public override void SetDoorsLocked(DoorController.DoorKind doorKind, bool locked) {
+    private void SpawnAncestor(AncestorData ancestorData) {
+        // TODO
+    }
+
+    public void SetExitDoorsLocked(bool locked) {
+        _leftExitDoor.SetLocked(locked);
+        _rightExitDoor.SetLocked(locked);
+    }
+
+    public void HandleDoorPassed(DoorController.DoorKind doorKind) {
         switch (doorKind) {
-            case DoorController.DoorKind.Entry:
-                _entryDoor.SetLocked(locked);
+            case DoorController.DoorKind.LeftExit:
+                RoomManager.Instance.TransitionToNextBossRoom(_leftDoorChoice);
                 break;
-            case DoorController.DoorKind.Exit:
-                _exitDoor.SetLocked(locked);
+            case DoorController.DoorKind.RightExit:
+                RoomManager.Instance.TransitionToNextBossRoom(_rightDoorChoice);
                 break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(doorKind), doorKind, null);
         }
     }
 
