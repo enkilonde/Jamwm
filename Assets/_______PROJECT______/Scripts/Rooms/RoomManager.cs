@@ -107,6 +107,7 @@ public class RoomManager : MonoBehaviour {
 
             // When the transition is finished, we resume gameplay
             callbackAction: () => {
+                _bossLifeBar.SetValue(1);
                 _bossLifeBar.FadeTo(visible: true);
                 _playerController.enabled = true;
             }
