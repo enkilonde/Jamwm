@@ -28,7 +28,7 @@ public class DoorController : MonoBehaviour {
     }
 
     public void SetLocked(bool locked) {
-        _collider.isTrigger = locked;
+        _collider.isTrigger = !locked;
         _locked = locked;
     }
 
