@@ -51,8 +51,12 @@ MonoBehaviour:
   playerVisual: {fileID: 2464562602284313748}
   moveSpeed: 10
   turnSpeed: 10
-  dashSpeed: 0
-  dashTime: 0
+  dashSpeed: 100
+  dashTime: 0.1
+  movementPenalties:
+  - 1
+  - 0.5
+  - 1.15
   attachChargeTime: 0
 --- !u!143 &5979747486772747467
 CharacterController:

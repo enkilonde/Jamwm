@@ -428,7 +428,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904862755}
-  m_LocalRotation: {x: 0.35017398, y: -0.004813202, z: 0.0017994139, w: 0.9366706}
+  m_LocalRotation: {x: 0.35017398, y: -0.0048132343, z: 0.0017994264, w: 0.9366706}
   m_LocalPosition: {x: 0.435, y: 9.45, z: -7.1050005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -571,7 +571,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199062744}
-  m_LocalRotation: {x: 0.35017398, y: -0.004813202, z: 0.0017994139, w: 0.9366706}
+  m_LocalRotation: {x: 0.35017398, y: -0.0048132343, z: 0.0017994264, w: 0.9366706}
   m_LocalPosition: {x: 0.435, y: 9.45, z: -7.1050005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -885,13 +885,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7732532171614956756, guid: 21fa4862310a28a439fc4c09c6a1823b,
         type: 3}
-      propertyPath: dashTime
-      value: 0.1
+      propertyPath: dashCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7732532171614956756, guid: 21fa4862310a28a439fc4c09c6a1823b,
         type: 3}
-      propertyPath: dashSpeed
-      value: 100
+      propertyPath: dashDistance
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7732532171614956757, guid: 21fa4862310a28a439fc4c09c6a1823b,
         type: 3}

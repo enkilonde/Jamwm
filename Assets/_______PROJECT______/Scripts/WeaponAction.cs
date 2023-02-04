@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class WeaponAction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public void LaunchAttack(float charge)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

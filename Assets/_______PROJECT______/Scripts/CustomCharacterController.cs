@@ -16,10 +16,11 @@ public class CustomCharacterController : MonoBehaviour
     public float turnSpeed;
 
     public float dashSpeed;
-    public float dashTime;
+    public float dashDistance;
+    public float dashCooldown;
 
-    private bool isDodging;
-    private float dodgeTimer;
+    private bool isDashing;
+    private float dashTimer;
     private Vector3 lastMovingDirection;
 
     public List<float> movementPenalties = new List<float>();
@@ -35,7 +36,12 @@ public class CustomCharacterController : MonoBehaviour
 
 
 
-    private bool isLocked => isDodging; //may add more conditions
+    private bool isLocked => isDashing; //may add more conditions
+
+    private void Awake()
+    {
+        dashTimer = dashCooldown;
+    }
 
     private void Update()
     {
@@ -62,30 +68,47 @@ public class CustomCharacterController : MonoBehaviour
         characterController.transform.rotation = Quaternion.Slerp(oldRot, characterController.transform.rotation, Time.deltaTime * turnSpeed);
     }    
     
-    public void Dodge()
+    public void Dash()
     {
         if (isLocked) return;
-        StartCoroutine(DodgeRoutine());
+        if (dashTimer < dashCooldown) return;
+        StartCoroutine(DashRoutine());
     }
 
-    private IEnumerator DodgeRoutine()
+    private IEnumerator DashRoutine()
     {
-        isDodging = true;
+        isDashing = true;
         playerVisual.dashFX.Play();
 
-        dodgeTimer = 0;
-        Vector3 DashDirection = lastMovingDirection == Vector3.zero ? transform.forward : lastMovingDirection;
-        
-        while (dodgeTimer < dashTime)
+        dashTimer = 0;
+        Vector3 DashDirection = lastMovingDirection == Vector3.zero ? transform.forward : lastMovingDirection.normalized;
+        Vector3 dashDestination = transform.position + DashDirection.normalized * dashDistance;
+        float distance = Vector3.Distance(transform.position, dashDestination);
+
+        while (dashTimer < dashCooldown)
         {
-            dodgeTimer += Time.deltaTime;
-            characterController.Move(DashDirection * dashSpeed * Time.deltaTime);
+            dashTimer += Time.deltaTime;
+            distance = Vector3.Distance(transform.position, dashDestination);
+            Vector3 displacement = DashDirection * dashSpeed * Time.fixedDeltaTime;
+            if(displacement.magnitude > distance)
+            {
+                characterController.Move(displacement.normalized * distance);
+                break;
+            }
+            characterController.Move(displacement);
+            
             yield return null;
 
         }
 
         playerVisual.dashFX.Stop();
-        isDodging = false;
+        isDashing = false;
+
+        while (dashTimer < dashCooldown)
+        {
+            dashTimer += Time.deltaTime;
+            yield return null;
+        }
     }
 
     public void StartChargeAttackLeft()

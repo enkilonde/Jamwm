@@ -152,6 +152,28 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "230e5767-2843-413b-ab83-2ea8ac1ba95d",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5adce2d9-48fe-480b-8a34-f37ff6a197cc",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "KeyboardArrows",
                     "id": "3c0df666-0b87-4e9e-939b-0d78fec74a18",
                     "path": "2DVector",

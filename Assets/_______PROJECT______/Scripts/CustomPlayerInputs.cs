@@ -41,6 +41,6 @@ public class CustomPlayerInputs : MonoBehaviour
 
     public void Dodge(InputAction.CallbackContext context)
     {
-        characterController.Dodge();
+        characterController.Dash();
     }
 }
