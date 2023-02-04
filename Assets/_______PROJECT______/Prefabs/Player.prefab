@@ -79,7 +79,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 749074285002969107}
+      addedObject: {fileID: 6905227573168998753}
+    - targetCorrespondingSourceObject: {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1934207583432307975}
   m_SourcePrefab: {fileID: 100100000, guid: 807b2b7b646a43c4a83e023e0c8e8c4d, type: 3}
 --- !u!114 &7732532171614956756 stripped
 MonoBehaviour:
@@ -112,7 +116,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 7732532171614956756}
---- !u!114 &749074285002969107
+--- !u!54 &6905227573168998753
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732532171614956758}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1934207583432307975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,105 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7732532171614956758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 208937b7ddd74d06a83183231b9616bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0147d9da57ad38943bf210e976af428f,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7727689203087003977}
-        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: cb178780-f272-4962-a595-7fb92e372c0d
-    m_ActionName: MainGameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7727689203087003977}
-        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
-        m_MethodName: Turn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6c17e1c2-4a5e-448c-ab2a-49d755ba98c1
-    m_ActionName: MainGameplay/Turn[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/rightStick]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7727689203087003977}
-        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
-        m_MethodName: AttackLeft
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e31e30eb-f024-45b8-8faa-c7ee010bc1e1
-    m_ActionName: MainGameplay/AttackLeft[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7727689203087003977}
-        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
-        m_MethodName: AttackRight
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 44842cab-6822-4709-96ba-03827ecf9620
-    m_ActionName: MainGameplay/AttackRight[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7727689203087003977}
-        m_TargetAssemblyTypeName: CustomPlayerInputs, Assembly-CSharp
-        m_MethodName: Dodge
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: beb4c8b4-26bc-45d5-b2c9-89fa85986abc
-    m_ActionName: MainGameplay/Dodge[/Keyboard/space]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: MainGameplay
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  _character: {fileID: 7732532171614956756}

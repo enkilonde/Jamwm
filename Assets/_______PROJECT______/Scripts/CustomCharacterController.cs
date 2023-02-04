@@ -23,6 +23,7 @@ public class CustomCharacterController : MonoBehaviour
     private Vector3 lastMovingDirection;
 
     public List<float> movementPenalties = new List<float>();
+    public PlayerSheet PlayerSheet = new PlayerSheet();
 
     [Header("Combat")]
     public float attachChargeTime;
