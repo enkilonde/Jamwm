@@ -9,6 +9,7 @@ public class RoomManager : MonoBehaviour {
 
     [Header("Other Managers")]
     [SerializeField] private Transform _playerTransform;
+    [SerializeField] private CharacterController _playerController;
 
     [Header("Resources")]
     [SerializeField] private BossRoomController _bossRoomPrefab;
@@ -73,7 +74,9 @@ public class RoomManager : MonoBehaviour {
         TempUiController.Instance.UpdateAncestorName(chosenAncestor.Name);
         TempUiController.Instance.UpdateRoomLevel(CurrentLevel);
 
+        _playerController.enabled = false;
         _playerTransform.position = Vector3.zero;
+        _playerController.enabled = true;
     }
 
 #endregion

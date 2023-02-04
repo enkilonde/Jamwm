@@ -518,6 +518,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1169117987}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &1259459939 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 7732532171614956761, guid: 21fa4862310a28a439fc4c09c6a1823b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1169117987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1468415362
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentRoom: {fileID: 1539288436}
   _playerTransform: {fileID: 1169117988}
+  _playerController: {fileID: 1259459939}
   _bossRoomPrefab: {fileID: 3830500429140299838, guid: 7e6b56adbd9de4a288c8d8733d4c103f,
     type: 3}
 --- !u!114 &1539288436 stripped
