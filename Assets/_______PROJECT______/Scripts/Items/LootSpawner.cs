@@ -28,7 +28,7 @@ public class LootSpawner : MonoBehaviour {
             // TODO : apply some stats modifiers based on current progression / level
         }
 
-        LootPrefab.Loot = lootItem;
+        LootPrefab.Configure(lootItem);
     }
 
 }
