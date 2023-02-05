@@ -27,6 +27,8 @@ public class GameOverManager : MonoBehaviour {
 
     private IEnumerator WaitAndRelaunchGame() {
         yield return new WaitForSeconds(3);
+        _gameOverUi.FadeOut();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("MenuScene");
     }
 
