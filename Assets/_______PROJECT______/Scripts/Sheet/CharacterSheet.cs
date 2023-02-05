@@ -49,7 +49,6 @@ public abstract class CharacterSheet {
                 // Visual update
                 LootSpawner.Instance.SpawnLoot(droppedItem, _character.transform.position);
                 PlayerVisual.ClearSlot(slot);
-                Debug.Log("Dropping " + droppedItem.name);
             }
         }
 

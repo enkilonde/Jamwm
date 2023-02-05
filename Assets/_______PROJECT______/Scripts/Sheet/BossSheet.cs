@@ -13,7 +13,6 @@ public class BossSheet : CharacterSheet {
         _baseStats = stats;
 
         base.PlayerVisual = boss.playerVisual;
-        base.Equipment = equipment;
         base.Stats = _baseStats;
         CurrentHp = MaxHp;
 
