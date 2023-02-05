@@ -4,6 +4,7 @@ public class PlayerVisual : MonoBehaviour {
 
     public ParticleSystem dashFX;
     public ParticleSystem hitFx;
+    public Animator bodyAnimator;
 
     [Header("Body Parts")]
     public Transform HeadPoint;
