@@ -23,37 +23,11 @@ public abstract class Item : MonoBehaviour {
     public int Defense;
     public int MaxHp;
 
+    [Header("Model Components")]
+    public BoxCollider LootCollider;
+
     // Item State
     public bool Equipped { get; set; }
 
 
-    public void StartCharging()
-    {
-        chargeFX.Play();
-    }
-
-    public void Attack(float charge, CustomCharacterController owner, Vector3 handPosition)
-    {
-        chargeFX.Stop();
-        SendProjectile(charge, owner, handPosition);
-    }
-
-    internal void SendProjectile(float charge, CustomCharacterController owner, Vector3 spawnPosition)
-    {
-        if (projectilePrefab == null) return;
-        if (projectileDelay <= 0) SpawnProjectile(charge, owner, spawnPosition);
-        else StartCoroutine(WaitSendProjectile(charge, owner, spawnPosition));
-    }
-
-    private void SpawnProjectile(float charge, CustomCharacterController owner, Vector3 spawnPosition)
-    {
-        ProjectileBehaviour proj = Instantiate(projectilePrefab, spawnPosition, owner.transform.rotation);
-        proj.Setup(charge, Strength);
-    }
-
-    private IEnumerator WaitSendProjectile(float charge, CustomCharacterController owner, Vector3 spawnPosition)
-    {
-        yield return new WaitForSeconds(projectileDelay);
-        SpawnProjectile(charge, owner, spawnPosition);
-    }
 }

@@ -48,8 +48,11 @@ public class LifeBar : MonoBehaviour
         _HPText.text = bossName;
     }
 
-    public void FadeTo(bool visible) {
-        _canvasGroup.DOFade(visible ? 1 : 0, 0.3f);
+    public void FadeTo(bool visible, TweenCallback callback) {
+        Tween fade = _canvasGroup.DOFade(visible ? 1 : 0, 0.3f);
+        
+        if (callback != null)
+            fade.onComplete = callback;
     }
 
     [Button]
@@ -78,6 +81,21 @@ public class LifeBar : MonoBehaviour
         _playerHP = maxHP;
         _playerMaxHP = maxHP;
         _currentPlayerHP = maxHP;
+        UpdatePlayerText();
+    }
+
+    public void UpdateMaxHp(int maxHP)
+    {
+        _playerMaxHP = maxHP;
+
+        // Security in case you drop an HP-boosting item
+        if (_currentPlayerHP > _playerMaxHP) {
+            _currentPlayerHP = _playerMaxHP;
+        }
+        if (_playerHP > _playerMaxHP) {
+            _playerHP = _playerMaxHP;
+        }
+
         UpdatePlayerText();
     }
     

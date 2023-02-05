@@ -4,11 +4,11 @@ using UnityEngine;
 public class LootSpawner : MonoBehaviour {
 
     private static readonly List<Vector3> SpawnPositionOffsets = new List<Vector3>() {
-        new Vector3(0,0,2),
-        new Vector3(2,0,0.4f),
-        new Vector3(0.6f,0,-1.4f),
-        new Vector3(-0.6f,0,-1.4f),
-        new Vector3(-2,0,0.4f)
+        new Vector3(0,0,3),
+        new Vector3(2.8f,0,0.8f),
+        new Vector3(1.1f,0,-2.1f),
+        new Vector3(-1.1f,0,-2.1f),
+        new Vector3(-2.8f,0,0.8f)
     };
 
     public static LootSpawner Instance
@@ -35,7 +35,12 @@ public class LootSpawner : MonoBehaviour {
     public Item SpawnLoot(Item specificItem, Vector3 worldPosition) {
         // TODO : spawn with animation (scale Up from nothing ? Falling from player's height ?)
         Item lootModel = specificItem ?? ItemDatabase.GetRandomItem();
-        Item lootObject = Instantiate(original: lootModel, position: worldPosition, rotation: Quaternion.identity);
+        Item lootObject = Instantiate(
+            original: lootModel, 
+            parent: RoomManager.Instance._currentRoom.transform,
+            position: worldPosition, 
+            rotation: Quaternion.identity
+        );
 
         if (specificItem == null) {
             // TODO : apply some stats modifiers based on current progression / level

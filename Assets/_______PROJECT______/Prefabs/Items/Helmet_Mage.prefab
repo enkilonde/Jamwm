@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helmet_Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 400531409213001506, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b3d19c73da136b14bb27b208cb6164b1, type: 2}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: Name
@@ -28,6 +33,11 @@ PrefabInstance:
       propertyPath: AttackSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: LootCollider
+      value: 
+      objectReference: {fileID: 2249362040831781591}
     - target: {fileID: 2907797665109602662, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: m_RootOrder
@@ -88,3 +98,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b7537a3e0ac6d4f8b2644163e1d341, type: 3}
+--- !u!65 &2249362040831781591 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+    type: 3}
+  m_PrefabInstance: {fileID: 3057455701977559398}
+  m_PrefabAsset: {fileID: 0}

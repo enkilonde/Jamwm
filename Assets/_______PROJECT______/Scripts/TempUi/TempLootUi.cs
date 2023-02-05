@@ -51,28 +51,28 @@ public class TempLootUi : MonoBehaviour {
         else LabelSTR.color = Color.white;
 
         int currentMag = currentItem != null ? currentItem.Magic : 0;
-        LabelMAG.text = "MAG : " + (item.Magic >= 0 ? "+" : "") + (item.Magic - currentMag);
+        LabelMAG.text = "MAG : " + (item.Magic >= currentMag ? "+" : "") + (item.Magic - currentMag);
         if (item.Magic != currentMag) LabelMAG.color = (item.Magic > currentMag) ? Color.green : Color.red;
         else LabelMAG.color = Color.white;
 
         int currentDef = currentItem != null ? currentItem.Defense : 0;
-        LabelDEF.text = "DEF : " + (item.Defense >= 0 ? "+" : "") + (item.Defense - currentDef);
+        LabelDEF.text = "DEF : " + (item.Defense >= currentDef ? "+" : "") + (item.Defense - currentDef);
         if (item.Defense != currentDef) LabelDEF.color = (item.Defense > currentDef) ? Color.green : Color.red;
         else LabelDEF.color = Color.white;
 
         int currentSpd = currentItem != null ? currentItem.AttackSpeed : 0;
-        LabelSPD.text = "SPD : " + (item.AttackSpeed >= 0 ? "+" : "") + (item.AttackSpeed - currentSpd);
+        LabelSPD.text = "SPD : " + (item.AttackSpeed >= currentSpd ? "+" : "") + (item.AttackSpeed - currentSpd);
         if (item.AttackSpeed != currentSpd) LabelSPD.color = (item.AttackSpeed > currentSpd) ? Color.green : Color.red;
         else LabelSPD.color = Color.white;
 
         int currentMov = currentItem != null ? currentItem.MovementSpeed : 0;
-        LabelMOV.text = "MOV : " + (item.MovementSpeed >= 0 ? "+" : "") + (item.MovementSpeed - currentMov);
+        LabelMOV.text = "MOV : " + (item.MovementSpeed >= currentMov ? "+" : "") + (item.MovementSpeed - currentMov);
         if (item.MovementSpeed != currentMov)
             LabelMOV.color = (item.MovementSpeed > currentMov) ? Color.green : Color.red;
         else LabelMOV.color = Color.white;
 
         int currentHp = currentItem != null ? currentItem.MaxHp : 0;
-        LabelHP.text = "HP : " + (item.MaxHp >= 0 ? "+" : "") + (item.MaxHp - currentHp);
+        LabelHP.text = "HP : " + (item.MaxHp >= currentHp ? "+" : "") + (item.MaxHp - currentHp);
         if (item.MaxHp != currentHp) LabelHP.color = (item.MaxHp > currentHp) ? Color.green : Color.red;
         else LabelHP.color = Color.white;
 

@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest_Runner
       objectReference: {fileID: 0}
+    - target: {fileID: 400531409213001506, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4dca0ca8a370dc479639cbe52bd4ad7, type: 2}
     - target: {fileID: 2907797665109602662, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: m_RootOrder
@@ -85,6 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
+      propertyPath: LootCollider
+      value: 
+      objectReference: {fileID: 4614902347725973584}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
       propertyPath: MovementSpeed
       value: 30
       objectReference: {fileID: 0}
@@ -93,3 +103,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00e2715cd84e5eb4798b4dcd1a04dede, type: 3}
+--- !u!65 &4614902347725973584 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+    type: 3}
+  m_PrefabInstance: {fileID: 8453951549940003809}
+  m_PrefabAsset: {fileID: 0}

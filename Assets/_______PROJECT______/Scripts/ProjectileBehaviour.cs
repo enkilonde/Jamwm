@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,10 +13,10 @@ public class ProjectileBehaviour : MonoBehaviour {
     public AnimationCurve scaleByCharge;
 
     private float damage;
-    public void Setup(float charge, int _damage)
+    public void Setup(float charge, float rawDamages)
     {
         transform.localScale = Vector3.one * scaleByCharge.Evaluate(charge);
-        damage = _damage * charge;
+        damage = rawDamages;
     }
 
     // Update is called once per frame
@@ -35,9 +36,11 @@ public class ProjectileBehaviour : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         CustomCharacterController character = other.GetComponent<CustomCharacterController>();
-        if(character != null)
-        {
-            character.CharacterSheet.Hit(Mathf.CeilToInt(damage));
+        if(character != null) {
+            float defense = character.CharacterSheet.Stats[PlayerStats.Defense];
+            float reduction = Mathf.Max(defense * 0.5f, damage * 0.5f);
+            int lostHP = Mathf.CeilToInt(reduction);
+            character.CharacterSheet.Hit(lostHP);
         }
     }
 }

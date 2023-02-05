@@ -33,12 +33,12 @@ public class AncestorGenerator : MonoBehaviour {
 
     public Dictionary<PlayerStats, int> GenerateBossStats(int bossLevel) {
         return new Dictionary<PlayerStats, int>() {
-            {PlayerStats.Strength, bossLevel * 2},
-            {PlayerStats.MagicPower, bossLevel * 2},
-            {PlayerStats.AttackSpeed, bossLevel * 2},
-            {PlayerStats.MovementSpeed, bossLevel * 2},
-            {PlayerStats.Defense, bossLevel * 2},
-            {PlayerStats.MaxHp, bossLevel * 10}
+            {PlayerStats.Strength, 100 + bossLevel * 20},
+            {PlayerStats.MagicPower, 50 + bossLevel * 10},
+            {PlayerStats.AttackSpeed, 100 + bossLevel * 20},
+            {PlayerStats.MovementSpeed, 100 + bossLevel * 20},
+            {PlayerStats.Defense, 20 + bossLevel * 5},
+            {PlayerStats.MaxHp, 1000 + bossLevel * 100}
         };
     }
 
@@ -46,8 +46,8 @@ public class AncestorGenerator : MonoBehaviour {
         return new Dictionary<ItemSlot, Item>() {
             {ItemSlot.Head, itemDatabase.GetRandomItem(ItemKind.Helmet)},
             {ItemSlot.Torso, itemDatabase.GetRandomItem(ItemKind.Armor)},
-            {ItemSlot.LeftArm, itemDatabase.GetRandomItem(ItemKind.Ring)},
-            {ItemSlot.RightArm, itemDatabase.GetRandomItem(ItemKind.Ring)},
+            {ItemSlot.LeftArm, itemDatabase.GetRandomItem(ItemKind.Weapon)},
+            {ItemSlot.RightArm, itemDatabase.GetRandomItem(ItemKind.Weapon)},
             {ItemSlot.Ring1, itemDatabase.GetRandomItem(ItemKind.Ring)}
         };
     }

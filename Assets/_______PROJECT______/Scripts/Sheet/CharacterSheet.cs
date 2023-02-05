@@ -51,6 +51,7 @@ public abstract class CharacterSheet {
         if (spawnedItem != null) {
             Equipment[slot] = spawnedItem;
             spawnedItem.Equipped = true;
+            spawnedItem.LootCollider.enabled = false;
         }
         RefreshStats();
     }
@@ -59,12 +60,13 @@ public abstract class CharacterSheet {
         Item dropped = Equipment[slot];
         if (dropped != null) {
             dropped.Equipped = false;
+            dropped.LootCollider.enabled = true;
         }
         Equipment[slot] = null;
         return dropped;
     }
 
-    private void RefreshStats() {
+    public virtual void RefreshStats() {
         Stats = GetBaseStats();
         foreach (Item item in Equipment.Values) {
             Stats[PlayerStats.Strength] += item.Strength;

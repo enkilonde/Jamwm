@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helmet_Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 400531409213001506, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44885b48c3850c840869ada1909af9c4, type: 2}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: ID
@@ -33,6 +38,11 @@ PrefabInstance:
       propertyPath: Defense
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: LootCollider
+      value: 
+      objectReference: {fileID: 6902656693442234820}
     - target: {fileID: 2907797665109602662, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: m_RootOrder
@@ -93,3 +103,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b7537a3e0ac6d4f8b2644163e1d341, type: 3}
+--- !u!65 &6902656693442234820 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+    type: 3}
+  m_PrefabInstance: {fileID: 7679267007220617845}
+  m_PrefabAsset: {fileID: 0}
