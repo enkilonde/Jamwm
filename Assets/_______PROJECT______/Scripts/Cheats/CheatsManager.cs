@@ -14,6 +14,12 @@ public class CheatsManager : MonoBehaviour {
     }
 
     [Button]
+    public void BecomeOnePunchMan() {
+        ((PlayerSheet) _player.CharacterSheet).OnePunchMan = true;
+        ((PlayerSheet) _player.CharacterSheet).RefreshStats();
+    }
+
+    [Button]
     public void FullHeal() {
         _player.CharacterSheet.Heal(9999);
     }

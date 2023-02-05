@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helmet_Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 400531409213001506, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44885b48c3850c840869ada1909af9c4, type: 2}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: ID

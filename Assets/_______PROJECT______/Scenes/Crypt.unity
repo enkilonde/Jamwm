@@ -576,8 +576,7 @@ MonoBehaviour:
   _transitionUi: {fileID: 5407459190426313136}
   _playerLifeBar: {fileID: 1407751281}
   _bossLifeBar: {fileID: 1468790315}
-  _bossRoomPrefab: {fileID: 3830500429140299838, guid: 7e6b56adbd9de4a288c8d8733d4c103f,
-    type: 3}
+  _possibleRoomsPool: {fileID: 11400000, guid: 91647fe39f19e4a19bdaeadb89c12248, type: 2}
 --- !u!114 &1468415367
 MonoBehaviour:
   m_ObjectHideFlags: 0
