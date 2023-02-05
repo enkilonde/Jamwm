@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashFX: {fileID: 2084676940819519287}
+  hitFx: {fileID: 0}
+  bodyAnimator: {fileID: 763338685896915697}
   HeadPoint: {fileID: 0}
   TorsoPoint: {fileID: 0}
   LeftHandPoint: {fileID: 0}
@@ -5845,6 +5847,12 @@ PrefabInstance:
       addedObject: {fileID: 45022080661572459}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525f8e8a5f2b64c499b1865bd24d1fd0, type: 3}
+--- !u!95 &763338685896915697 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 525f8e8a5f2b64c499b1865bd24d1fd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6628588179810305888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5557944624253157446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7575985979138996442, guid: 525f8e8a5f2b64c499b1865bd24d1fd0,

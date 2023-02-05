@@ -16,8 +16,8 @@ public class BossRoomController : MonoBehaviour {
     [HideInInspector]
     public CustomCharacterController BossRef;
     private CustomCharacterController _playerRef;
-    public CustomCharacterController portraitLeft;
-    public CustomCharacterController portraitRight;
+    public PlayerVisual portraitLeft;
+    public PlayerVisual portraitRight;
 
     public AncestorData Ancestor;
     private AncestorData _leftDoorChoice;
@@ -37,9 +37,17 @@ public class BossRoomController : MonoBehaviour {
             }
         }
 
-        portraitLeft.SetBossSheet(leftChoice.GetDetailedSheet(portraitLeft));
-        portraitRight.SetBossSheet(leftChoice.GetDetailedSheet(portraitRight));
+        SetupPortrait(portraitLeft, leftChoice);
+        SetupPortrait(portraitRight, rightChoice);
+    }
 
+    private void SetupPortrait(PlayerVisual visual, AncestorData data)
+    {
+        foreach (var pair in data.equipment)
+        {
+            Item item = Instantiate(pair.Value);
+            visual.DisplayItem(pair.Key, item);
+        }
     }
 
     private void SpawnAncestor(AncestorData ancestorData) {
