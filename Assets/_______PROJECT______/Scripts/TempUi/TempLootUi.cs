@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,10 +16,18 @@ public class TempLootUi : MonoBehaviour {
     public Text LabelMOV;
     public Text LabelHP;
 
-    private Item _currentItem;
+    public Item CurrentItem { get; private set; }
 
     private void Awake() {
         Instance = this;
+    }
+
+    private void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            if (PlayerItemPicker.Instance.Lootable != null) {
+                PlayerItemPicker.Instance.ValidateLoot();
+            }
+        }
     }
 
     public void SetVisible(bool visible) {
@@ -28,10 +35,10 @@ public class TempLootUi : MonoBehaviour {
     }
 
     public void ForgetItem(Item item) {
-        if (_currentItem != item) return;
+        if (CurrentItem != item) return;
 
         SetVisible(false);
-        _currentItem = null;
+        CurrentItem = null;
         SetVisible(false);
     }
 
@@ -60,7 +67,8 @@ public class TempLootUi : MonoBehaviour {
 
         int currentMov = currentItem != null ? currentItem.MovementSpeed : 0;
         LabelMOV.text = "MOV : " + (item.MovementSpeed >= 0 ? "+" : "") + (item.MovementSpeed - currentMov);
-        if (item.MovementSpeed != currentMov) LabelMOV.color = (item.MovementSpeed > currentMov) ? Color.green : Color.red;
+        if (item.MovementSpeed != currentMov)
+            LabelMOV.color = (item.MovementSpeed > currentMov) ? Color.green : Color.red;
         else LabelMOV.color = Color.white;
 
         int currentHp = currentItem != null ? currentItem.MaxHp : 0;
@@ -68,7 +76,7 @@ public class TempLootUi : MonoBehaviour {
         if (item.MaxHp != currentHp) LabelHP.color = (item.MaxHp > currentHp) ? Color.green : Color.red;
         else LabelHP.color = Color.white;
 
-        _currentItem = item;
+        CurrentItem = item;
     }
 
 }

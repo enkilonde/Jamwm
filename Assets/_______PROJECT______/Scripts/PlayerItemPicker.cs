@@ -3,7 +3,15 @@ using UnityEngine;
 
 public class PlayerItemPicker : MonoBehaviour {
 
+    public static PlayerItemPicker Instance;
+
     [SerializeField] private CustomCharacterController _character;
+
+    public Item Lootable { get; private set; }
+
+    private void Awake() {
+        Instance = this;
+    }
 
     void OnTriggerEnter(Collider other) {
         if (other == null) {
@@ -20,8 +28,6 @@ public class PlayerItemPicker : MonoBehaviour {
             return;
         }
 
-        Debug.LogError("Can pick up " + loot.Name);
-
         ItemSlot slot = GetSlotForItemKind(loot.Kind);
         Item currentItem = null;
         if (_character.CharacterSheet.Equipment.ContainsKey(slot))
@@ -30,10 +36,7 @@ public class PlayerItemPicker : MonoBehaviour {
         TempLootUi.Instance.Configure(loot, currentItem);
         TempLootUi.Instance.SetVisible(true);
 
-        // TODO : only do that after a player confirmation
-        /*((PlayerSheet)_character.CharacterSheet).Equip(loot);
-
-        Destroy(loot.gameObject);*/
+        Lootable = loot;
     }
 
     private ItemSlot GetSlotForItemKind(ItemKind kind) {
@@ -71,6 +74,18 @@ public class PlayerItemPicker : MonoBehaviour {
         }
 
         TempLootUi.Instance.ForgetItem(loot);
+        if (Lootable == loot) {
+            Lootable = null;
+        }
+    }
+
+    public void ValidateLoot() {
+        ((PlayerSheet) _character.CharacterSheet).Equip(Lootable);
+        TempLootUi.Instance.ForgetItem(Lootable);
+
+        Destroy(Lootable.gameObject);
+
+        Lootable = null;
     }
 
 }
