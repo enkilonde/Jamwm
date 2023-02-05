@@ -574,6 +574,7 @@ MonoBehaviour:
   _playerController: {fileID: 1259459939}
   _playerCustomController: {fileID: 1408110068}
   _transitionUi: {fileID: 5407459190426313136}
+  _cameraGroup: {fileID: 7652281959757187067}
   _playerLifeBar: {fileID: 1407751281}
   _bossLifeBar: {fileID: 1468790315}
   _possibleRoomsPool: {fileID: 11400000, guid: 91647fe39f19e4a19bdaeadb89c12248, type: 2}

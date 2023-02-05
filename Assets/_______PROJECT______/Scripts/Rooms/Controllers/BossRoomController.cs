@@ -67,4 +67,9 @@ public class BossRoomController : MonoBehaviour {
         }
     }
 
+    public void SetBossAiEnabled(bool active) {
+        BossRef.enabled = active;
+        BossRef.GetComponent<CustomIAInputs>().enabled = active;
+    }
+
 }

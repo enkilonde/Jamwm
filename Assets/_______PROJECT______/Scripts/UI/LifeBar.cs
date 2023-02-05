@@ -48,8 +48,11 @@ public class LifeBar : MonoBehaviour
         _HPText.text = bossName;
     }
 
-    public void FadeTo(bool visible) {
-        _canvasGroup.DOFade(visible ? 1 : 0, 0.3f);
+    public void FadeTo(bool visible, TweenCallback callback) {
+        Tween fade = _canvasGroup.DOFade(visible ? 1 : 0, 0.3f);
+        
+        if (callback != null)
+            fade.onComplete = callback;
     }
 
     [Button]
