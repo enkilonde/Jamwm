@@ -38,13 +38,14 @@ public abstract class CharacterSheet {
     }
 
     public void EquipInstantiatedItem(ItemSlot slot, Item item) {
+        Debug.Log("Starting to pick up " + item.Name);
         // Optional phase 1 : drop a replaced item
         if (Equipment.ContainsKey(slot)) {
             // Data update
             var droppedItem = DropItem(slot);
 
             if (droppedItem != null) {
-                Debug.Log("Dropping " + droppedItem.name);
+                Debug.Log("Have to drop " + droppedItem.name);
 
                 // Visual update
                 LootSpawner.Instance.SpawnLoot(droppedItem, _character.transform.position);

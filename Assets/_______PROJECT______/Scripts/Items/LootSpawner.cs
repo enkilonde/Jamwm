@@ -43,6 +43,8 @@ public class LootSpawner : MonoBehaviour {
             rotation: Quaternion.identity
         );
 
+        lootObject.transform.localScale = Vector3.one;
+
         lootObject.LootCollider.enabled = true;
 
         // TODO : apply some stats modifiers based on current progression / level
