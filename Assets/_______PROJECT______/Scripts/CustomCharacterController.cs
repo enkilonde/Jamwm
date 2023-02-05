@@ -148,6 +148,8 @@ public class CustomCharacterController : MonoBehaviour
     {
         if (isLocked) return;
         if (dashTimer < dashCooldown) return;
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.Dash);
+
         StartCoroutine(DashRoutine());
     }
 
@@ -263,6 +265,8 @@ public class CustomCharacterController : MonoBehaviour
     [Button]
     public void EquipItem(ItemID itemID) 
     {
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.Loot);
+
         CharacterSheet.Equip(itemID);
     }
 }

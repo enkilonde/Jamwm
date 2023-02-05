@@ -45,6 +45,8 @@ public class PlayerSheet : CharacterSheet {
     }
 
     public override void Hit(int damages) {
+        
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.HitPlayer);
         if (Invincible) return;
 
         base.Hit(damages);
@@ -53,6 +55,8 @@ public class PlayerSheet : CharacterSheet {
 
         if (CurrentHp <= 0) {
             GameOverManager.Instance.TriggerGameOver();
+            SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.DeathPlayer);
+
         }
     }
 

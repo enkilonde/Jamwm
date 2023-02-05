@@ -54,6 +54,7 @@ public class UIMenuManager : MonoBehaviour
 
     public void SelectButton(Button button)
     {
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.ButtonUIScroll);
         DOTween.Complete(button);
         button.GetComponent<RectTransform>().DOShakeScale(0.2f, -0.2f).SetId(button);
         _targetCursor = button.GetComponent<RectTransform>().anchoredPosition.y;
@@ -64,6 +65,8 @@ public class UIMenuManager : MonoBehaviour
     
     public void Play()
     {
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.ButtonUITapIn);
+
         SoundManager.INSTANCE.SetMusicType(SoundManager.MusicType.Battle);
 
         SceneManager.LoadScene("Crypt", LoadSceneMode.Single);

@@ -37,6 +37,8 @@ public class Weapon : Item {
 
     public void StartCharging(CustomCharacterController _owner)
     {
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.AttackCharge);
+
         chargeFX.Play();
         isFullCharged = false;
         owner = _owner;
@@ -48,6 +50,8 @@ public class Weapon : Item {
         this.charge = charge;
         if (charge >= weaponChargeTime && !isFullCharged)
         {
+            //SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.AttackChargeEnemy);
+
             chargeFullFX.Play();
             isFullCharged = true;
         }
@@ -55,6 +59,8 @@ public class Weapon : Item {
 
     public void Attack(float charge, Vector3 handPosition)
     {
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.RangeAttack);
+
         this.charge = charge;
         chargeFX.Stop();
         SendProjectile(handPosition);

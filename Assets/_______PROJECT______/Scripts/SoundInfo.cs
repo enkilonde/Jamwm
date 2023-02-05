@@ -12,8 +12,9 @@ public class SoundInfo
     {
         Missing = -1,
         Nothing,
-        ButtonTap,
-        ButtonTapOut,
+        ButtonUIScroll,
+        ButtonUITapIn,
+        ButtonUITapOut,
         CloseAttack = 10,
         RangeAttack = 15,
         AttackCharge,
@@ -26,10 +27,6 @@ public class SoundInfo
         DeathPlayer,
         DeathEnemy,
         DoorOpen,
-        Parry,
-        FireballLaunch,
-        FireballHit,
-        ActiveActivation
     }
     
     public AudioClip Clip
@@ -38,7 +35,7 @@ public class SoundInfo
         {
             if (Clips==null|| Clips.Count==0 || Clips[0]==null)
                 return null;
-            return Clips[Random.Range(0, Clips.Count - 1)];
+            return Clips[Random.Range(0, Clips.Count)];
         }
     }
 

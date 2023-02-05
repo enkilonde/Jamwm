@@ -26,12 +26,17 @@ public class BossSheet : CharacterSheet {
     }
 
     public override void Hit(int damages) {
+        
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.HitEnemy);
+
         base.Hit(damages);
 
         LazyUiHook.Instance.BossLifeBar.SetValue(HpRatio);
         
         if (CurrentHp <= 0) {
             RoomManager.Instance.HandleBossHealthZero();
+            SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.DeathEnemy);
+
         }
     }
 

@@ -23,6 +23,7 @@ public class DoorController : MonoBehaviour {
 
         // Just to avoid multiple events' being sent
         this.enabled = false;
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.DoorOpen);
 
         _room.HandleDoorPassed(_doorKind);
     }

@@ -32,98 +32,128 @@ MonoBehaviour:
     Loop: 0
     _volume: 1
     _pitchRange: {x: 1, y: 1}
-  - Clips: []
+  - Clips:
+    - {fileID: 8300000, guid: c7154e809aef947879c82afae8fc9e4a, type: 3}
     Type: 1
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 182dde59f9b4f400f86659919292a3c8, type: 3}
     Type: 2
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: bb515fdb4376940d7b5aa78f2098ec7a, type: 3}
+    Type: 3
+    Loop: 0
+    _volume: 1
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 37c8e7a9bafcc47139323e33182a80b0, type: 3}
+    - {fileID: 8300000, guid: 6809208e6b8c14bd0ba23d247dc4cb0e, type: 3}
+    - {fileID: 8300000, guid: c61f5ca31b3794047b586e043a5115fd, type: 3}
     Type: 10
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 464743c435aba436ababf6ebd7d92ffa, type: 3}
+    - {fileID: 8300000, guid: d9a85f656a3a94ed798c78d68c32ff66, type: 3}
+    - {fileID: 8300000, guid: ab4782e60ea8b4b37a1f02155a8ecd34, type: 3}
     Type: 15
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 15d65f4157f844a8fac69e67820f8142, type: 3}
+    - {fileID: 8300000, guid: 1c00ef5dae7d045d582cc3bb0a187c3f, type: 3}
     Type: 16
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 15d65f4157f844a8fac69e67820f8142, type: 3}
+    - {fileID: 8300000, guid: 1c00ef5dae7d045d582cc3bb0a187c3f, type: 3}
     Type: 17
     Loop: 0
     _volume: 1
     _pitchRange: {x: 1, y: 1}
-  - Clips: []
+  - Clips:
+    - {fileID: 8300000, guid: 27c7e7cb9bfa3411a9cf09725d983bf6, type: 3}
+    - {fileID: 8300000, guid: bd19fc8c7dbc84c18bc6679687382c9e, type: 3}
+    - {fileID: 8300000, guid: 520a49e1329f045ea9aa79ab2a733474, type: 3}
+    - {fileID: 8300000, guid: ee6d64ade6a9a4d9d9ff890cdf227fb4, type: 3}
+    - {fileID: 8300000, guid: f84755dcc603e4e28b61944908f30abf, type: 3}
     Type: 20
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 7cb2db445612d4229b3f8c9a13716953, type: 3}
+    - {fileID: 8300000, guid: 7003d61d6f18c429498c42babe4ba394, type: 3}
+    - {fileID: 8300000, guid: a5f2295a600e54a289efd621a2bafe25, type: 3}
+    - {fileID: 8300000, guid: 3f0c60368a931423eb9e4f1508703874, type: 3}
+    - {fileID: 8300000, guid: 01400303e52204035b21922fb149be3e, type: 3}
+    - {fileID: 8300000, guid: c5efbe1b5c70d46ab8db5d594f19b7d4, type: 3}
     Type: 25
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: ff05a0b49f9594167898215097d9aafc, type: 3}
     Type: 26
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 6c70968116ada49028503c2904e118af, type: 3}
+    - {fileID: 8300000, guid: a009ce6640c4e460599b833acd8f36de, type: 3}
+    - {fileID: 8300000, guid: 4c545c90db17248579ba097afdf9218d, type: 3}
     Type: 27
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: f92570e4856af4c90bfba3053a3762b1, type: 3}
+    - {fileID: 8300000, guid: de2507ced03564607891d5952b0f63eb, type: 3}
+    - {fileID: 8300000, guid: d87077f810d914b8e991ecf18c18d38f, type: 3}
     Type: 28
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 0121346b584c44dbeb8112477b4df36b, type: 3}
+    - {fileID: 8300000, guid: d4fd94b8c1cd44907ac599b3bd43ec34, type: 3}
+    - {fileID: 8300000, guid: e11b24cb3b6f34f21a99a59c708e7a07, type: 3}
+    - {fileID: 8300000, guid: 03219c2d153fc4cd38eae8cd8069ddb2, type: 3}
     Type: 29
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: dbfb689fc6e40403ea3bccf17b4e8ea1, type: 3}
+    - {fileID: 8300000, guid: b8937568c54dd42a293eb1f5375b1044, type: 3}
+    - {fileID: 8300000, guid: e71b4d1fc4d144280b986f7c7bcb3645, type: 3}
+    - {fileID: 8300000, guid: 5d531bf8da06e442b8a9970849aaf3ce, type: 3}
+    - {fileID: 8300000, guid: 70b139fb995d14c35afa65ab919b1897, type: 3}
+    - {fileID: 8300000, guid: 34e7c5296b46c45049d381a49201a4af, type: 3}
+    - {fileID: 8300000, guid: b8188c5a6886143a8869fa5f2db93239, type: 3}
+    - {fileID: 8300000, guid: b274e8a8a78ee452383ba9dd49970cc6, type: 3}
     Type: 30
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: d89be06605571418797b31e6d18ad11b, type: 3}
     Type: 31
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
-    Type: 32
-    Loop: 0
-    _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
-    Type: 33
-    Loop: 0
-    _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
-    Type: 34
-    Loop: 0
-    _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
-    Type: 35
-    Loop: 0
-    _volume: 1
-    _pitchRange: {x: 1, y: 1}
-  - Clips: []
+    _pitchRange: {x: 0.9, y: 1.1}
+  - Clips:
+    - {fileID: 8300000, guid: 21ed919152a63462aaa3d9970c403158, type: 3}
     Type: -1
     Loop: 0
     _volume: 1
-    _pitchRange: {x: 1, y: 1}
+    _pitchRange: {x: 0.9, y: 1.1}
