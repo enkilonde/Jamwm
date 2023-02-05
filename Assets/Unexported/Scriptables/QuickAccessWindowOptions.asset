@@ -20,6 +20,7 @@ MonoBehaviour:
     - {fileID: 5979747486772747460, guid: 807b2b7b646a43c4a83e023e0c8e8c4d, type: 3}
     - {fileID: 5965729106699208880, guid: 745426ccd217e044dac1a98269ab86ba, type: 3}
     - {fileID: 304780231676077628, guid: 24b5ea87687fa4547b17afe84d166bc2, type: 3}
+    - {fileID: 9017294294369611623, guid: 120904d3ce9c2314986cf66b3e97bd60, type: 3}
   - GroupName: folders
     GroupColor: {r: 0.101750255, g: 0.99194455, b: 0.48406655, a: 1}
     Assets:
