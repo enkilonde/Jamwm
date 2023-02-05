@@ -9,6 +9,9 @@ public class ProjectileBehaviour : MonoBehaviour {
     private const int PoolingDistance = 60;
 
     public float speed;
+    public float maxLifetime;
+
+    private float lifetime;
 
     public AnimationCurve scaleByCharge;
 
@@ -32,9 +35,17 @@ public class ProjectileBehaviour : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         Transform t = transform;
+        float deltaTime = Time.deltaTime;
+
         var newPos = t.position;
-        newPos += t.forward * speed * Time.deltaTime;
+        newPos += t.forward * speed * deltaTime;
         t.position = newPos;
+
+        lifetime += deltaTime;
+        if (maxLifetime > 0 && lifetime >= maxLifetime) {
+            Destroy(this.gameObject);
+            return;
+        }
 
         if (newPos.x is < -PoolingDistance or > PoolingDistance || 
             newPos.z is < -PoolingDistance or > PoolingDistance
