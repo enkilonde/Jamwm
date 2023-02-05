@@ -5,7 +5,9 @@ public class AncestorGenerator : MonoBehaviour {
 
     public static AncestorGenerator Instance;
 
+    public NamesGenerator NamesGenerator;
     [SerializeField] private ItemDatabase itemDatabase;
+
 
     private void Awake() {
         Instance = this;
@@ -52,8 +54,8 @@ public class AncestorGenerator : MonoBehaviour {
         };
     }
 
-    private string GenerateAncestorName() {
-        return "ancestor_" + UnityEngine.Random.Range(0, 1000);
+    private string GenerateAncestorName()
+    {
+        return NamesGenerator.GenerateName();
     }
-
 }
