@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 73537223595797279, guid: 2c705ff6dc76c4ec386c043df7336d1b,
         type: 3}
       propertyPath: m_Name
-      value: PB_Weapon_Umbrella
+      value: PB_Weapon_Brush
       objectReference: {fileID: 0}
     - target: {fileID: 2698637398594073429, guid: 2c705ff6dc76c4ec386c043df7336d1b,
         type: 3}
@@ -72,7 +72,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -7026908839628367909, guid: b80d62f7fe7e347bab869bc90d5a6d2e,
+      objectReference: {fileID: 1682167815319775696, guid: b80d62f7fe7e347bab869bc90d5a6d2e,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
