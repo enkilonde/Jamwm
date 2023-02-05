@@ -97,10 +97,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   ID: 2
-  FxColor: {r: 0, g: 0, b: 0, a: 0}
   Strength: 0
   Magic: 0
   AttackSpeed: 0
   MovementSpeed: 0
   Defense: 0
   MaxHp: 0
+  LootCollider: {fileID: 0}
+  _fx: {fileID: 5030405073909272984}
+--- !u!198 &5030405073909272984 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2326640239103564493, guid: 8e698fccb4d726448b64322ca782c3b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7315662442959899477}
+  m_PrefabAsset: {fileID: 0}

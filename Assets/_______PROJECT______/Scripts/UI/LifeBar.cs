@@ -62,7 +62,7 @@ public class LifeBar : MonoBehaviour
         {
             DOTween.Complete(_HPText);
 
-            _HPText.transform.DOPunchScale(Vector3.one*-0.2f, 0.5f);
+            _HPText.transform.DOPunchScale(Vector3.one*-0.2f, 0.5f).SetId(_HPText);
             _HPText.DOColor(Color.red, 0.1f).SetId(_HPText).OnComplete(() =>
             {
                 _HPText.DOColor(Color.white, 0.5f).SetId(_HPText);

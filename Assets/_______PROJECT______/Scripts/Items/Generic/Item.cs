@@ -22,8 +22,23 @@ public abstract class Item : MonoBehaviour {
     [Header("Model Components")]
     public BoxCollider LootCollider;
 
+    private bool _equipped;
+    [SerializeField]private ParticleSystem _fx;
     // Item State
-    public bool Equipped { get; set; }
-
-
+    public bool Equipped
+    {
+        get=>_equipped;
+        set
+        {
+            _equipped = value;
+            if (_equipped)
+            {
+                _fx.Stop();
+            }
+            else
+            {
+                _fx.Play();
+            }
+        }
+    }
 }

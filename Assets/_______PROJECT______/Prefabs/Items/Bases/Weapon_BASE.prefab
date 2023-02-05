@@ -5169,6 +5169,7 @@ MonoBehaviour:
   Defense: 0
   MaxHp: 0
   LootCollider: {fileID: 0}
+  _fx: {fileID: 5030405073909272984}
   weaponChargeTime: 1
   chargeFX: {fileID: 5859792129014548656}
   chargeFullFX: {fileID: 6934157497492247264}
@@ -5206,6 +5207,12 @@ Rigidbody:
 --- !u!4 &2907797665109602662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5610612856347949619, guid: 8e698fccb4d726448b64322ca782c3b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7315662442959899477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5030405073909272984 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2326640239103564493, guid: 8e698fccb4d726448b64322ca782c3b3,
     type: 3}
   m_PrefabInstance: {fileID: 7315662442959899477}
   m_PrefabAsset: {fileID: 0}
