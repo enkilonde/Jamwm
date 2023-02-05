@@ -28,6 +28,7 @@ MonoBehaviour:
     - {fileID: 102900000, guid: f40ac985db9444d46acd9fd9e79374ef, type: 3}
     - {fileID: 102900000, guid: 65dc6f5c9f2ce4671a45443d523817f7, type: 3}
     - {fileID: 102900000, guid: c0f8ee32c05b0bc47b22298f1f8b72da, type: 3}
+    - {fileID: 102900000, guid: 5038cd0141aaf4dfe86faf4cb6926aae, type: 3}
   - GroupName: Group 2
     GroupColor: {r: 0.38832456, g: 0.3065155, b: 0.65373194, a: 1}
     Assets:

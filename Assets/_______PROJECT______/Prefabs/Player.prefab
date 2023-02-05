@@ -10,16 +10,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2464562602284313748, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
         type: 3}
-      propertyPath: HeadPoint
-      value: 
-      objectReference: {fileID: 7732532171895395479}
-    - target: {fileID: 2464562602284313748, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-        type: 3}
-      propertyPath: TorsoPoint
-      value: 
-      objectReference: {fileID: 7732532171570301559}
-    - target: {fileID: 2464562602284313748, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-        type: 3}
       propertyPath: LeftHandPoint
       value: 
       objectReference: {fileID: 7732532171370477242}
@@ -159,12 +149,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4157717057703276562}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7732532171570301559 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5979747486716541541, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4157717057703276562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7732532171614956756 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5979747486772747462, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
@@ -196,6 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 7732532171614956756}
+  turn: {x: 0, y: 0}
+  mousePosition: {x: 0, y: 0, z: 0}
   isUsingController: 0
 --- !u!54 &6905227573168998753
 Rigidbody:
@@ -380,12 +366,6 @@ MonoBehaviour:
   m_DefaultActionMap: MainGameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!4 &7732532171895395479 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5979747485854639237, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4157717057703276562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7732532172243864234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5979747486042716856, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
