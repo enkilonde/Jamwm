@@ -114,6 +114,10 @@ public class CustomCharacterController : MonoBehaviour
     public void Move(Vector3 direction)
     {
         Move(new Vector2(direction.x, direction.z));
+
+        direction = transform.TransformDirection(direction);
+        playerVisual.bodyAnimator.SetFloat("WalkDirectionX", direction.x);
+        playerVisual.bodyAnimator.SetFloat("WalkDirectionY", direction.z);
     }
 
     public void Move(Vector2 direction)
