@@ -15,26 +15,22 @@ public class PlayerSheet : CharacterSheet {
 
     protected override Dictionary<PlayerStats, int> GetBaseStats() {
         return new Dictionary<PlayerStats, int> {
-            {PlayerStats.Strength, 1},
-            {PlayerStats.MagicPower, 1},
-            {PlayerStats.AttackSpeed, 1},
-            {PlayerStats.MovementSpeed, 1},
-            {PlayerStats.Defense, 1},
-            {PlayerStats.MaxHp, 10}
+            {PlayerStats.Strength, 100},
+            {PlayerStats.MagicPower, 50},
+            {PlayerStats.AttackSpeed, 100},
+            {PlayerStats.MovementSpeed, 100},
+            {PlayerStats.Defense, 20},
+            {PlayerStats.MaxHp, 1000}
         };
     }
 
 #endregion
 
-#region Inventory
+    protected override void RefreshStats() {
+        base.RefreshStats();
 
-    /*public void PickUp(LootableItem lootable) {
-        var itemKind = lootable.Loot.Kind;
-        var slot = GetSlotFromKind(itemKind);
-        Equip(slot, lootable.Loot);
-    }*/
-
-#endregion
+        LazyUiHook.Instance.PlayerLifeBar.UpdateMaxHp(Stats[PlayerStats.MaxHp]);
+    }
 
     public override void Hit(int damages) {
         if (Invincible) return;

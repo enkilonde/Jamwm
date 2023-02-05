@@ -64,7 +64,7 @@ public abstract class CharacterSheet {
         return dropped;
     }
 
-    private void RefreshStats() {
+    protected virtual void RefreshStats() {
         Stats = GetBaseStats();
         foreach (Item item in Equipment.Values) {
             Stats[PlayerStats.Strength] += item.Strength;

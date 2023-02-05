@@ -80,6 +80,21 @@ public class LifeBar : MonoBehaviour
         _currentPlayerHP = maxHP;
         UpdatePlayerText();
     }
+
+    public void UpdateMaxHp(int maxHP)
+    {
+        _playerMaxHP = maxHP;
+
+        // Security in case you drop an HP-boosting item
+        if (_currentPlayerHP > _playerMaxHP) {
+            _currentPlayerHP = _playerMaxHP;
+        }
+        if (_playerHP > _playerMaxHP) {
+            _playerHP = _playerMaxHP;
+        }
+
+        UpdatePlayerText();
+    }
     
     [Button,ShowIf("_isPlayerBar")]
     public void SetPlayerHP(int hp)
