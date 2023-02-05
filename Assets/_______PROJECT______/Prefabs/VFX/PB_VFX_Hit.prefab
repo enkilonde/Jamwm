@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8711861341918995789}
   - component: {fileID: 4585571781632854865}
   m_Layer: 0
-  m_Name: PB_VFX_ReceiveHit
+  m_Name: PB_VFX_Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
