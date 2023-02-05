@@ -6,11 +6,17 @@ public class BossRoomController : MonoBehaviour {
     [SerializeField] private DoorController _leftExitDoor;
     [SerializeField] private DoorController _rightExitDoor;
 
+    [Header("Room configuration")]
+    [SerializeField] private Vector3 BossSpawnPoint;
+    [SerializeField] public Vector3 PlayerSpawnPoint;
+
     [Header("Resources")]
     [SerializeField] private GameObject _enemyPrefab;
 
-    private CustomCharacterController _playerRef;
+    [HideInInspector]
     public CustomCharacterController BossRef;
+    private CustomCharacterController _playerRef;
+
     public AncestorData Ancestor;
     private AncestorData _leftDoorChoice;
     private AncestorData _rightDoorChoice;
@@ -33,7 +39,7 @@ public class BossRoomController : MonoBehaviour {
     private void SpawnAncestor(AncestorData ancestorData) {
         var ancestor = Instantiate(
             original: _enemyPrefab,
-            position: new Vector3(0, 0, 15),
+            position: BossSpawnPoint,
             rotation: Quaternion.identity
         );
 

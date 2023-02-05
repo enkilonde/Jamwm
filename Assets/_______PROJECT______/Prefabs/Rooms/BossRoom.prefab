@@ -841,8 +841,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftExitDoor: {fileID: 3764769956389996420}
   _rightExitDoor: {fileID: 5831182084011357556}
+  BossSpawnPoint: {x: 0, y: 0, z: 15}
+  PlayerSpawnPoint: {x: 0, y: 0, z: -20}
   _enemyPrefab: {fileID: 9017294294369611623, guid: 120904d3ce9c2314986cf66b3e97bd60,
     type: 3}
+  BossRef: {fileID: 0}
 --- !u!1 &2849311244097706996
 GameObject:
   m_ObjectHideFlags: 0

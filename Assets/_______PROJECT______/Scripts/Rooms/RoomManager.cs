@@ -110,7 +110,7 @@ public class RoomManager : MonoBehaviour {
 
                 _bossLifeBar.SetBossName(chosenAncestor.Name);
 
-                _playerTransform.position = new Vector3(0, 0, -20f);
+                _playerTransform.position = _currentRoom.PlayerSpawnPoint;
             },
 
             // When the transition is finished, we resume gameplay
