@@ -116,15 +116,22 @@ public class CustomCharacterController : MonoBehaviour
     public void Move(Vector2 direction)
     {
         if (isLocked) return;
-        int attackPenalty = 0 + (isChargingLeft ? 1 : 0) + (isChargingRight ? 1 : 0);
+
+        float attackPenalty = 1;
+        if ((isChargingLeft && !isChargingRight) || (!isChargingLeft && isChargingRight)) {
+            attackPenalty = 0.5f;
+        } else if (isChargingLeft && isChargingRight) {
+            attackPenalty = 0.15f;
+        }
 
         lastMovingDirection = new Vector3(direction.x, 0, direction.y);
 
         float speedStat = CharacterSheet.Stats[PlayerStats.MovementSpeed];
         float speedFactor = speedStat / 100f;
         float effectiveMoveSpeed = moveSpeed * speedFactor * (IsPlayer ? CheatsManager.PlayerSpeedModifier : 1);
+        effectiveMoveSpeed *= attackPenalty;
 
-        characterController.Move(lastMovingDirection * effectiveMoveSpeed * Time.deltaTime * movementPenalties[attackPenalty]);
+        characterController.Move(lastMovingDirection * effectiveMoveSpeed * Time.deltaTime);
     }
 
     public void Turn(Vector2 vector2)
