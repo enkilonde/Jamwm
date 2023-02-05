@@ -73,6 +73,8 @@ public class CustomCharacterController : MonoBehaviour
             //EquipItem(ItemID.IceSpear01);        
             EquipItem(ItemID.Sword01);
             EquipItem(ItemID.Sword01);
+            EquipItem(ItemID.Armor01);
+            EquipItem(ItemID.Head01);
         }
 
     }

@@ -29,11 +29,12 @@ public class BossSheet : CharacterSheet {
         
         SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.HitEnemy);
 
+        bool alive = CurrentHp > 0;
         base.Hit(damages);
 
         LazyUiHook.Instance.BossLifeBar.SetValue(HpRatio);
         
-        if (CurrentHp <= 0) {
+        if (alive && CurrentHp <= 0) {
             RoomManager.Instance.HandleBossHealthZero();
             SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.DeathEnemy);
 

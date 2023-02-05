@@ -19,6 +19,10 @@ public class PlayerVisual : MonoBehaviour {
     private Item Ring; // not really visible, but kept the same way as others for simplicity
 
     public void DisplayItem(ItemSlot slot, Item instantiatedItem) {
+        instantiatedItem.transform.SetParent(null);
+        instantiatedItem.transform.localScale = Vector3.one;
+
+
         switch (slot) {
             case ItemSlot.Head:
                 instantiatedItem.transform.SetParent(HeadPoint);
@@ -42,7 +46,6 @@ public class PlayerVisual : MonoBehaviour {
         }
 
         instantiatedItem.gameObject.name = instantiatedItem.Name;
-        instantiatedItem.transform.localScale = Vector3.one;
         instantiatedItem.transform.localPosition = Vector3.zero;
         instantiatedItem.transform.localRotation = Quaternion.identity;
 
