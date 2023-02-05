@@ -59,7 +59,7 @@ public class CustomCharacterController : MonoBehaviour
 
     private void Awake() {
         if (IsPlayer) {
-            CharacterSheet = new PlayerSheet(playerVisual, this.transform);
+            CharacterSheet = new PlayerSheet(playerVisual, this);
         }
         dashTimer = dashCooldown;
 

@@ -269,7 +269,7 @@ MonoBehaviour:
   IA: {fileID: 9017294294369611621}
   state: 0
   animatorIA: {fileID: 6263407111358354465}
-  attackChance: 0
+  attackChance: 0.8
   rushChance: 1
   minRushDistance: 5
   minDashDistance: 0

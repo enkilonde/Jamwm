@@ -6,13 +6,12 @@ public class BossSheet : CharacterSheet {
     private readonly Dictionary<PlayerStats, int> _baseStats;
 
     public BossSheet(
-        PlayerVisual bossVisualPlayer,
+        CustomCharacterController boss,
         Dictionary<PlayerStats, int> stats,
         Dictionary<ItemSlot, Item> equipment
-    ) : base(bossVisualPlayer.transform.parent) {
+    ) : base(boss) {
         _baseStats = stats;
-
-        base.PlayerVisual = bossVisualPlayer;
+        base.PlayerVisual = boss.playerVisual;
         base.Equipment = equipment;
         base.Stats = _baseStats;
         CurrentHp = MaxHp;

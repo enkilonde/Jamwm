@@ -6,10 +6,6 @@ public abstract class Item : MonoBehaviour {
 
     public abstract ItemKind Kind { get; }
 
-    public ParticleSystem chargeFX;
-
-    public ProjectileBehaviour projectilePrefab;
-    public float projectileDelay;
 
     [Header("Item Metadata")]
     public string Name;

@@ -9,24 +9,26 @@ public class WeaponAction : MonoBehaviour
 
     public ArmBehaviour armBehaviour;
 
+    
+
     delegate void attackMethod(Item item, float charge, WeapoonChargeState state);
 
     public void LaunchAttack(float charge, WeapoonChargeState state)
     {
-        Weapon weapon = (Weapon)((PlayerSheet)characterController.CharacterSheet).Equipment[slot];
+        Weapon weapon = (Weapon)((CharacterSheet)characterController.CharacterSheet).Equipment[slot];
 
         switch (state)
         {
             case WeapoonChargeState.StartCharging:
-                weapon.StartCharging();
+                weapon.StartCharging(characterController);
                 break;
             case WeapoonChargeState.Charging:
-                //armBehaviour.animator.SetFloat("ChargeAmount", charge);
+                weapon.Charging(charge);
                 break;
             case WeapoonChargeState.Release:
                 armBehaviour.animator.SetTrigger("LaunchAttack");
 
-                weapon.Attack(charge, characterController, armBehaviour.hand.position);
+                weapon.Attack(charge, armBehaviour.hand.position);
 
                 break;
             default:

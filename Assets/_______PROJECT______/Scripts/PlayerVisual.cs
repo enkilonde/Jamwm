@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerVisual : MonoBehaviour {
 
     public ParticleSystem dashFX;
+    public ParticleSystem hitFx;
 
     [Header("Body Parts")]
     public Transform HeadPoint;

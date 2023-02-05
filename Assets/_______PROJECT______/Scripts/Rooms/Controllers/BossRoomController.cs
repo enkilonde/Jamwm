@@ -48,7 +48,7 @@ public class BossRoomController : MonoBehaviour {
         iaInputs.player = _playerRef;
 
         BossRef = ancestor.GetComponent<CustomCharacterController>();
-        var bossSheet = ancestorData.GetDetailedSheet(BossRef.playerVisual);
+        var bossSheet = ancestorData.GetDetailedSheet(BossRef);
         BossRef.SetBossSheet(bossSheet);
     }
 
