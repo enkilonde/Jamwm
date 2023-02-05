@@ -97,8 +97,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rig|Chara_Move_Strafe
-      takeName: rig|Chara_Move_Strafe
+      name: rig|Chara_Idle
+      takeName: rig|Chara_Idle
       internalID: 3808881714817879025
       firstFrame: 0
       lastFrame: 24
