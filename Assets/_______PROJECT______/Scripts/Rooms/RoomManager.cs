@@ -31,6 +31,8 @@ public class RoomManager : MonoBehaviour {
     // Temporary use field
     private readonly List<Behaviour> _disabledDuringTransition = new List<Behaviour>();
 
+    private bool _antispam;
+
     private void Awake() {
         Instance = this;
     }
@@ -98,6 +100,8 @@ public class RoomManager : MonoBehaviour {
     }
 
     public void TransitionToNextBossRoom(AncestorData chosenAncestor) {
+        if(_antispam) return;
+        _antispam = true;
         LoadRoom(CurrentLevel + 1, chosenAncestor);
     }
 
@@ -148,6 +152,7 @@ public class RoomManager : MonoBehaviour {
             callbackAction: () => {
                 _bossLifeBar.SetValue(1);
                 _bossLifeBar.FadeTo(visible: true, MakeCameraSlide);
+                _antispam = false;
             }
         );
     }
