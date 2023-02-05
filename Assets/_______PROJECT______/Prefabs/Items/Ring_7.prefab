@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 304780231676077628, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: m_Name
-      value: Ring_Mag
+      value: Ring_7
       objectReference: {fileID: 0}
     - target: {fileID: 400531409213001506, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: ID
-      value: 5
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}

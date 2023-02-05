@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7317958384760870468
+--- !u!1001 &3347736273893780957
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,43 +11,38 @@ PrefabInstance:
     - target: {fileID: 304780231676077628, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: m_Name
-      value: Ring_Atk
-      objectReference: {fileID: 0}
-    - target: {fileID: 400531409213001506, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      value: Ring_6
       objectReference: {fileID: 0}
     - target: {fileID: 400531409213001506, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 44885b48c3850c840869ada1909af9c4, type: 2}
+      objectReference: {fileID: 2100000, guid: 1c5f7a524cac09141af506cee15a1ee8, type: 2}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: ID
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: Name
-      value: Steel Fingers
+      value: Grandma's Ring
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: Magic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
-        type: 3}
-      propertyPath: Strength
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
-        type: 3}
-      propertyPath: AttackSpeed
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: LootCollider
       value: 
-      objectReference: {fileID: 5825275792507571701}
+      objectReference: {fileID: 1958108711440037484}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: MovementSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2907797665109602662, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: m_RootOrder
@@ -108,9 +103,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8887f8d18c0873d4ca4dadbeed2f8f74, type: 3}
---- !u!65 &5825275792507571701 stripped
+--- !u!65 &1958108711440037484 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
     type: 3}
-  m_PrefabInstance: {fileID: 7317958384760870468}
+  m_PrefabInstance: {fileID: 3347736273893780957}
   m_PrefabAsset: {fileID: 0}
