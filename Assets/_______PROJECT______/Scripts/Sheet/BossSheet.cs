@@ -26,11 +26,12 @@ public class BossSheet : CharacterSheet {
     }
 
     public override void Hit(int damages) {
+        bool alive = CurrentHp > 0;
         base.Hit(damages);
 
         LazyUiHook.Instance.BossLifeBar.SetValue(HpRatio);
         
-        if (CurrentHp <= 0) {
+        if (alive && CurrentHp <= 0) {
             RoomManager.Instance.HandleBossHealthZero();
         }
     }
