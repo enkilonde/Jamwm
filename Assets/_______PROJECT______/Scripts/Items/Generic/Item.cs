@@ -30,7 +30,7 @@ public abstract class Item : MonoBehaviour {
     public BoxCollider LootCollider;
 
     private bool _equipped;
-    [SerializeField]private ParticleSystem _fx;
+    public ParticleSystem _fx;
     // Item State
     public bool Equipped
     {
