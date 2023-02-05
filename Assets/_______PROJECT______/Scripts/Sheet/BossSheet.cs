@@ -13,9 +13,12 @@ public class BossSheet : CharacterSheet {
         _baseStats = stats;
 
         base.PlayerVisual = bossVisualPlayer;
-        base.Equipment = equipment;
         base.Stats = _baseStats;
         CurrentHp = MaxHp;
+
+        foreach (var itemModel in equipment.Values) {
+            EquipFromItemModel(itemModel);
+        }
     }
 
     protected override Dictionary<PlayerStats, int> GetBaseStats() {

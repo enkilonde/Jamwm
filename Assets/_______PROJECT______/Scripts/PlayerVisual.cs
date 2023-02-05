@@ -15,6 +15,7 @@ public class PlayerVisual : MonoBehaviour {
     private Item Armor;
     private Item LeftArm;
     private Item RightArm;
+    private Item Ring; // not really visible, but kept the same way as others for simplicity
 
     public void DisplayItem(ItemSlot slot, Item instantiatedItem) {
         switch (slot) {
@@ -34,11 +35,18 @@ public class PlayerVisual : MonoBehaviour {
                 instantiatedItem.transform.SetParent(RightHandPoint);
                 RightArm = instantiatedItem;
                 break;
+            case ItemSlot.Ring1:
+                Ring = instantiatedItem;
+                break;
         }
 
         instantiatedItem.gameObject.name = instantiatedItem.Name;
         instantiatedItem.transform.localScale = Vector3.one;
         instantiatedItem.transform.localPosition = Vector3.zero;
+
+        if (slot == ItemSlot.Ring1) {
+            Ring.transform.position = Vector3.one * 10000; // b-bye
+        }
     }
 
     public void ClearSlot(ItemSlot slot) {
@@ -58,6 +66,10 @@ public class PlayerVisual : MonoBehaviour {
             case ItemSlot.RightArm:
                 Destroy(RightArm.gameObject);
                 RightArm = null;
+                break;
+            case ItemSlot.Ring1:
+                Destroy(Ring.gameObject);
+                Ring = null;
                 break;
         }
     }

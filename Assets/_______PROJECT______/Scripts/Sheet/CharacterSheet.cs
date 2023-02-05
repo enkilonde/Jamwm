@@ -24,26 +24,31 @@ public abstract class CharacterSheet {
 
     public void Equip(ItemID itemID) {
         Item itemModel = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
+        EquipFromItemModel(itemModel);
+    }
+
+    public void EquipFromItemModel(Item itemModel) {
         Item item = Object.Instantiate(itemModel);
         item.Equipped = false;
-        Equip(item);
+        EquipInstantiatedItem(item);
     }
 
-    public void Equip(Item item) {
-        Equip(GetSlotFromKind(item.Kind), item);
+    public void EquipInstantiatedItem(Item itemModel) {
+        EquipInstantiatedItem(GetSlotFromKind(itemModel.Kind), itemModel);
     }
 
-    public void Equip(ItemSlot slot, Item item) {
+    public void EquipInstantiatedItem(ItemSlot slot, Item item) {
         // Optional phase 1 : drop a replaced item
         if (Equipment.ContainsKey(slot)) {
             // Data update
             var droppedItem = DropItem(slot);
 
             if (droppedItem != null) {
-                // Visual update
-                PlayerVisual.ClearSlot(slot);
-                LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
                 Debug.Log("Dropping " + droppedItem.name);
+
+                // Visual update
+                LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
+                PlayerVisual.ClearSlot(slot);
             }
         }
 
