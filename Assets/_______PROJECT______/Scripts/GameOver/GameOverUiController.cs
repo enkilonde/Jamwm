@@ -1,15 +1,16 @@
-using System;
 using System.Collections.Generic;
 using Coffee.UIEffects;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameOverUiController : MonoBehaviour {
 
     [SerializeField] private CanvasGroup _group;
+    [SerializeField] private RawImage _fadeToBlack;
 
 
     [SerializeField] private AnimationCurve _valueCurve;
@@ -25,8 +26,9 @@ public class GameOverUiController : MonoBehaviour {
     }
 
     [Button]
-    public void Appear(List<AncestorData> victories)
-    {
+    public void Appear(List<AncestorData> victories) {
+        _fadeToBlack.color = Color.clear;
+
         _text.text = "";
         _text.color = new Color(1f,1f,1f,0f);
         
@@ -35,6 +37,10 @@ public class GameOverUiController : MonoBehaviour {
         gameOverFadeIn.Append(_text.DOFade(1, 1f));
         gameOverFadeIn.Join(_text.DOText(_messages[Random.Range(0, _messages.Count - 1)], 1f));
         
+    }
+
+    public void FadeOut() {
+        _fadeToBlack.DOFade(1, 0.5f);
     }
 
 }

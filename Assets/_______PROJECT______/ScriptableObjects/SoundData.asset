@@ -42,7 +42,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 182dde59f9b4f400f86659919292a3c8, type: 3}
     Type: 2
     Loop: 0
-    _volume: 1
+    _volume: 0.49
     _pitchRange: {x: 0.9, y: 1.1}
   - Clips:
     - {fileID: 8300000, guid: bb515fdb4376940d7b5aa78f2098ec7a, type: 3}

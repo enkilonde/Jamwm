@@ -50,7 +50,7 @@ public class Weapon : Item {
         this.charge = charge;
         if (charge >= weaponChargeTime && !isFullCharged)
         {
-            //SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.AttackChargeEnemy);
+            SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.FullCharge);
 
             chargeFullFX.Play();
             isFullCharged = true;

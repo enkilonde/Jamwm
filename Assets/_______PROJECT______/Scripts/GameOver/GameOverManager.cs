@@ -20,13 +20,17 @@ public class GameOverManager : MonoBehaviour {
         _gameOverUi.Appear(defeatedAncestors);
         
         RoomManager.Instance._playerTransform.gameObject.SetActive(false);
-        RoomManager.Instance._currentRoom.BossRef.gameObject.SetActive(false);
+        if (RoomManager.Instance._currentRoom.BossRef != null) {
+            RoomManager.Instance._currentRoom.BossRef.gameObject.SetActive(false);
+        }
 
         StartCoroutine(WaitAndRelaunchGame());
     }
 
     private IEnumerator WaitAndRelaunchGame() {
         yield return new WaitForSeconds(3);
+        _gameOverUi.FadeOut();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("MenuScene");
     }
 

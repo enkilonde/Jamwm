@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 3242053959371372295}
   - component: {fileID: 3242053959371372294}
   - component: {fileID: 3242053959371372290}
+  - component: {fileID: 5261496077859230550}
   m_Layer: 5
   m_Name: CanvasMenu
   m_TagString: Untagged
@@ -790,12 +791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -840,6 +841,110 @@ MonoBehaviour:
   _logoDetail: {fileID: 6076605713942594359}
   _cursor: {fileID: 1227923363187580972}
   _cursorGlow: {fileID: 5349859705020329417}
+  _buttons: []
+--- !u!114 &5261496077859230550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3242053959371372293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 0147d9da57ad38943bf210e976af428f,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3242053959371372290}
+        m_TargetAssemblyTypeName: UIMenuManager, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cb178780-f272-4962-a595-7fb92e372c0d
+    m_ActionName: MainGameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/SwitchProControllerHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6c17e1c2-4a5e-448c-ab2a-49d755ba98c1
+    m_ActionName: MainGameplay/Turn[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/SwitchProControllerHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e31e30eb-f024-45b8-8faa-c7ee010bc1e1
+    m_ActionName: MainGameplay/AttackLeft[/Mouse/leftButton,/SwitchProControllerHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 44842cab-6822-4709-96ba-03827ecf9620
+    m_ActionName: MainGameplay/AttackRight[/Mouse/rightButton,/SwitchProControllerHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: beb4c8b4-26bc-45d5-b2c9-89fa85986abc
+    m_ActionName: MainGameplay/Dodge[/Keyboard/space,/SwitchProControllerHID/rightShoulder,/SwitchProControllerHID/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd327770-8c51-4736-a68d-3e82f7bfef91
+    m_ActionName: MainGameplay/ActivateController[/SwitchProControllerHID/leftStick,/SwitchProControllerHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee7f677b-e1ba-46e6-ace3-264d41c1e801
+    m_ActionName: MainGameplay/ActivateMouse[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3242053959371372290}
+        m_TargetAssemblyTypeName: UIMenuManager, Assembly-CSharp
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f8e3ddb5-0c13-40c3-b62e-3ecf8d1881f8
+    m_ActionName: MainGameplay/PressA[/SwitchProControllerHID/buttonEast,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3242053959371372290}
+        m_TargetAssemblyTypeName: UIMenuManager, Assembly-CSharp
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a78205eb-b883-4a2a-b9d8-aae986000780
+    m_ActionName: MainGameplay/PressStart[/SwitchProControllerHID/start,/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: MainGameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &3242053959982856693
 GameObject:
   m_ObjectHideFlags: 0
