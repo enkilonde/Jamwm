@@ -19,7 +19,7 @@ public class RoomManager : MonoBehaviour {
     [SerializeField] private LifeBar _bossLifeBar;
 
     [Header("Resources")]
-    [SerializeField] private BossRoomController _bossRoomPrefab;
+    [SerializeField] private RoomDatabase _possibleRoomsPool;
 
     // TODO : might have to be kept elsewhere
     public int CurrentLevel { get; private set; }
@@ -99,7 +99,7 @@ public class RoomManager : MonoBehaviour {
                 UnloadRoom();
                 CurrentLevel = roomLevel;
 
-                _currentRoom = Instantiate(_bossRoomPrefab);
+                _currentRoom = Instantiate(_possibleRoomsPool.GetRandomRoomModel());
 
                 _currentRoom.Configure(
                     chosenAncestor,
