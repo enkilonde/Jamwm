@@ -30,9 +30,10 @@ public class BossRoomController : MonoBehaviour {
         // This weird check only serve to exclude the cheat option "reshuffle current room"
         if (boss != Ancestor) {
             Ancestor = boss;
-            if (boss.InitialRoomAncestor == false) {
+            // TODO AB - reenable (no enemy in first room)
+            //if (boss.InitialRoomAncestor == false) {
                 SpawnAncestor(boss);
-            }
+            //}
         }
     }
 

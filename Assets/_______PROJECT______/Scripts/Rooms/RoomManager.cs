@@ -38,7 +38,9 @@ public class RoomManager : MonoBehaviour {
 #region Initial Room
 
     private void Start() {
-        LoadInitialRoom();
+//        LoadInitialRoom();
+        _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
+        LoadRoom(0, AncestorGenerator.Instance.GenerateAncestor(0));
     }
 
     private void LoadInitialRoom() {
