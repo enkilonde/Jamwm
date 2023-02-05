@@ -165,7 +165,7 @@ PrefabInstance:
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: Name
-      value: Wide Lungs
+      value: Itty Billy Ribs
       objectReference: {fileID: 0}
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
@@ -180,6 +180,26 @@ PrefabInstance:
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: MovementSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _AttackSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _AttackSpeed.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _MovementSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _MovementSpeed.y
       value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []

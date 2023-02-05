@@ -26,12 +26,27 @@ PrefabInstance:
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: Name
-      value: Grandma's Ring
+      value: The Ring of the Lord
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: Magic
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _Magic.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _Magic.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _Defense.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
@@ -42,6 +57,16 @@ PrefabInstance:
         type: 3}
       propertyPath: MovementSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _AttackSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _AttackSpeed.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2907797665109602662, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}

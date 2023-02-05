@@ -165,12 +165,22 @@ PrefabInstance:
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: Name
-      value: Wide Lungs
+      value: Keanu Ribs
       objectReference: {fileID: 0}
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: AttackSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _Strength.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _Strength.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}

@@ -26,12 +26,22 @@ PrefabInstance:
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: Name
-      value: Grandma's Ring
+      value: Grandpa's Ring
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
       propertyPath: Magic
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _Strength.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _Strength.y
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}

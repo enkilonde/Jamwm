@@ -110,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: Name
-      value: Thick Skull
+      value: Sombrero de los muertos
       objectReference: {fileID: 0}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
@@ -124,9 +124,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
+      propertyPath: _Magic.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _Magic.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _Strength.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _Strength.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
       propertyPath: LootCollider
       value: 
       objectReference: {fileID: 6902656693442234820}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _AttackSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _AttackSpeed.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2907797665109602662, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: m_RootOrder

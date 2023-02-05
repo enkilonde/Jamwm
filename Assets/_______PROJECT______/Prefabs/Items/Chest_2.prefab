@@ -90,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 304780231676077628, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: m_Name
-      value: Chest_Runner
+      value: Chest_2
       objectReference: {fileID: 0}
     - target: {fileID: 400531409213001506, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
@@ -169,6 +169,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
+      propertyPath: _MaxHp.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _MaxHp.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
       propertyPath: AttackSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -180,6 +190,26 @@ PrefabInstance:
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: MovementSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _AttackSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _AttackSpeed.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _MovementSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _MovementSpeed.y
       value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []

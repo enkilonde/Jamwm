@@ -35,6 +35,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
+      propertyPath: _Magic.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
+      propertyPath: _Magic.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
       propertyPath: LootCollider
       value: 
       objectReference: {fileID: 1958108711440037484}
