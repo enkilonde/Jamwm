@@ -29,6 +29,7 @@ public abstract class CharacterSheet {
 
     public void EquipFromItemModel(Item itemModel) {
         Item item = Object.Instantiate(itemModel);
+        item.Init();
         item.Equipped = false;
         EquipInstantiatedItem(item);
     }

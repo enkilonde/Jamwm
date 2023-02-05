@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Jam/ItemDatabase", fileName = "ItemDatabase", order = 0)]
 public class ItemDatabase : ScriptableObject {
 
-    [SerializeField] private List<Item> Items;
+    public List<Item> Items;
 
     public Item GetRandomItem() {
         return Items[Random.Range(0, Items.Count)];

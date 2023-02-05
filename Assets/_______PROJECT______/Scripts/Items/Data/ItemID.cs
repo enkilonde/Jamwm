@@ -34,6 +34,16 @@ public enum ItemID {
     Ring10,
 
     Sword01,
+    Sword02,
+    Sword03,
+    Sword04,
+    Sword05,
+    Sword06,
+    Sword07,
+    Sword08,
+    Sword09,
+    Sword10,
+
     Axe01,
     Shield01,
     Fireball01,
