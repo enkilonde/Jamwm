@@ -110,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
       propertyPath: Name
-      value: Thick Skull
+      value: Ocult Stashe
       objectReference: {fileID: 0}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}
@@ -121,6 +121,16 @@ PrefabInstance:
         type: 3}
       propertyPath: Defense
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _Magic.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
+        type: 3}
+      propertyPath: _Magic.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1259049242018340335, guid: 45b7537a3e0ac6d4f8b2644163e1d341,
         type: 3}

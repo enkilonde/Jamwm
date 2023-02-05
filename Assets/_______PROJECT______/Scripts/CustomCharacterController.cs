@@ -136,6 +136,10 @@ public class CustomCharacterController : MonoBehaviour
 
         characterController.Move(lastMovingDirection * effectiveMoveSpeed * Time.deltaTime);
         if (transform.position.y > 0) characterController.Move(-transform.up * transform.position.y);
+
+        Vector3 dir = transform.TransformDirection(lastMovingDirection);
+        playerVisual.bodyAnimator.SetFloat("WalkDirectionX", dir.x);
+        playerVisual.bodyAnimator.SetFloat("WalkDirectionY", dir.z);
     }
 
     public void Turn(Vector2 vector2)

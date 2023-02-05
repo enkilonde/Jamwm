@@ -27,6 +27,11 @@ public class ArmBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if(originalParent == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         float dist = Vector3.Distance(transform.position, wantedPosition);
 
         currentSpeed = Mathf.Lerp(currentSpeed, dist * moveSpeed, Time.deltaTime * moveSpeedSpring);

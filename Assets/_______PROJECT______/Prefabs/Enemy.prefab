@@ -144,16 +144,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2464562602284313748, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
         type: 3}
-      propertyPath: HeadPoint
-      value: 
-      objectReference: {fileID: 9017294294795933478}
-    - target: {fileID: 2464562602284313748, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-        type: 3}
-      propertyPath: TorsoPoint
-      value: 
-      objectReference: {fileID: 9017294294332426694}
-    - target: {fileID: 2464562602284313748, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-        type: 3}
       propertyPath: LeftHandPoint
       value: 
       objectReference: {fileID: 9017294294263543051}
@@ -303,12 +293,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3449627343093592995}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &9017294294332426694 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5979747486716541541, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 3449627343093592995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9017294294369611620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5979747486772747463, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
@@ -375,12 +359,6 @@ MonoBehaviour:
   minStraffDistance: 2
   dashChance: 0.01
   moveChance: 0.6
---- !u!4 &9017294294795933478 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5979747485854639237, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 3449627343093592995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9017294294998649115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5979747486042716856, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,

@@ -165,7 +165,17 @@ PrefabInstance:
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
       propertyPath: Name
-      value: Wide Lungs
+      value: Cute Ribs
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _Defense.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
+        type: 3}
+      propertyPath: _Defense.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8667598296685262020, guid: 00e2715cd84e5eb4798b4dcd1a04dede,
         type: 3}
