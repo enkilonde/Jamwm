@@ -60,7 +60,7 @@ public class LifeBar : MonoBehaviour
     {
         if (value<_slider1.value && !_isPlayerBar)
         {
-            DOTween.Kill(_HPText);
+            DOTween.Complete(_HPText);
 
             _HPText.transform.DOPunchScale(Vector3.one*-0.2f, 0.5f);
             _HPText.DOColor(Color.red, 0.1f).SetId(_HPText).OnComplete(() =>
