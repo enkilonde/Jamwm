@@ -1,3 +1,5 @@
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,14 +9,15 @@ public class TempLootUi : MonoBehaviour {
 
     public CanvasGroup CanvasGroup;
 
-    public Text Title;
+    public TextMeshProUGUI Title;
+    public TextMeshProUGUI OldTitle;
 
-    public Text LabelSTR;
-    public Text LabelMAG;
-    public Text LabelDEF;
-    public Text LabelSPD;
-    public Text LabelMOV;
-    public Text LabelHP;
+    public ElementLoot str;
+    public ElementLoot mag;
+    public ElementLoot def;
+    public ElementLoot spd;
+    public ElementLoot mov;
+    public ElementLoot hp;
 
     public Item CurrentItem { get; private set; }
 
@@ -44,8 +47,11 @@ public class TempLootUi : MonoBehaviour {
         PlayerItemPicker.Instance.ValidateLoot(true);
     }
 
-    public void SetVisible(bool visible) {
-        CanvasGroup.alpha = visible ? 1 : 0;
+    public void SetVisible(bool visible)
+    {
+        print("set visible");
+        DOTween.Kill(gameObject);
+        CanvasGroup.DOFade(visible ? 1 : 0, 0.5f).SetId(gameObject); 
     }
 
     public void ForgetItem(Item item) {
@@ -57,38 +63,66 @@ public class TempLootUi : MonoBehaviour {
     }
 
     public void Configure(Item item, Item currentItem = null) {
+
+        if (currentItem!=null)
+        {
+            OldTitle.gameObject.SetActive(true);
+            OldTitle.text = currentItem.Name;
+        }
+        else
+        {
+            OldTitle.gameObject.SetActive(false);
+        }
+
         Title.text = item.Name;
-
+        
+        
+        print(item.Strength);
         int currentStr = currentItem != null ? currentItem.Strength : 0;
-        LabelSTR.text = "STR : " + (item.Strength >= currentStr ? "+" : "") + (item.Strength - currentStr);
-        if (item.Strength != currentStr) LabelSTR.color = (item.Strength > currentStr) ? Color.green : Color.red;
-        else LabelSTR.color = Color.white;
 
+        print(currentStr);
+        //
+        str.SetValue( item.Strength - currentStr);
         int currentMag = currentItem != null ? currentItem.Magic : 0;
-        LabelMAG.text = "MAG : " + (item.Magic >= currentMag ? "+" : "") + (item.Magic - currentMag);
-        if (item.Magic != currentMag) LabelMAG.color = (item.Magic > currentMag) ? Color.green : Color.red;
-        else LabelMAG.color = Color.white;
-
+        mag.SetValue( item.Magic - currentMag);
         int currentDef = currentItem != null ? currentItem.Defense : 0;
-        LabelDEF.text = "DEF : " + (item.Defense >= currentDef ? "+" : "") + (item.Defense - currentDef);
-        if (item.Defense != currentDef) LabelDEF.color = (item.Defense > currentDef) ? Color.green : Color.red;
-        else LabelDEF.color = Color.white;
+        def.SetValue( item.Defense - currentDef);
+        int currentAttackSpeed = currentItem != null ? currentItem.AttackSpeed : 0;
+        spd.SetValue( item.AttackSpeed - currentAttackSpeed);
+        int currentSpeed = currentItem != null ? currentItem.MovementSpeed : 0;
+        mov.SetValue( item.MovementSpeed - currentSpeed);
+        int currentHP = currentItem != null ? currentItem.MaxHp : 0;
+        hp.SetValue( item.MaxHp - currentHP);
 
-        int currentSpd = currentItem != null ? currentItem.AttackSpeed : 0;
-        LabelSPD.text = "SPD : " + (item.AttackSpeed >= currentSpd ? "+" : "") + (item.AttackSpeed - currentSpd);
-        if (item.AttackSpeed != currentSpd) LabelSPD.color = (item.AttackSpeed > currentSpd) ? Color.green : Color.red;
-        else LabelSPD.color = Color.white;
-
-        int currentMov = currentItem != null ? currentItem.MovementSpeed : 0;
-        LabelMOV.text = "MOV : " + (item.MovementSpeed >= currentMov ? "+" : "") + (item.MovementSpeed - currentMov);
-        if (item.MovementSpeed != currentMov)
-            LabelMOV.color = (item.MovementSpeed > currentMov) ? Color.green : Color.red;
-        else LabelMOV.color = Color.white;
-
-        int currentHp = currentItem != null ? currentItem.MaxHp : 0;
-        LabelHP.text = "HP : " + (item.MaxHp >= currentHp ? "+" : "") + (item.MaxHp - currentHp);
-        if (item.MaxHp != currentHp) LabelHP.color = (item.MaxHp > currentHp) ? Color.green : Color.red;
-        else LabelHP.color = Color.white;
+        // LabelSTR.text = "STR : " + (item.Strength >= currentStr ? "+" : "") + (item.Strength - currentStr);
+        // if (item.Strength != currentStr) LabelSTR.color = (item.Strength > currentStr) ? Color.green : Color.red;
+        // else LabelSTR.color = Color.white;
+        //
+        // int currentMag = currentItem != null ? currentItem.Magic : 0;
+        // LabelMAG.text = "MAG : " + (item.Magic >= currentMag ? "+" : "") + (item.Magic - currentMag);
+        // if (item.Magic != currentMag) LabelMAG.color = (item.Magic > currentMag) ? Color.green : Color.red;
+        // else LabelMAG.color = Color.white;
+        //
+        // int currentDef = currentItem != null ? currentItem.Defense : 0;
+        // LabelDEF.text = "DEF : " + (item.Defense >= currentDef ? "+" : "") + (item.Defense - currentDef);
+        // if (item.Defense != currentDef) LabelDEF.color = (item.Defense > currentDef) ? Color.green : Color.red;
+        // else LabelDEF.color = Color.white;
+        //
+        // int currentSpd = currentItem != null ? currentItem.AttackSpeed : 0;
+        // LabelSPD.text = "SPD : " + (item.AttackSpeed >= currentSpd ? "+" : "") + (item.AttackSpeed - currentSpd);
+        // if (item.AttackSpeed != currentSpd) LabelSPD.color = (item.AttackSpeed > currentSpd) ? Color.green : Color.red;
+        // else LabelSPD.color = Color.white;
+        //
+        // int currentMov = currentItem != null ? currentItem.MovementSpeed : 0;
+        // LabelMOV.text = "MOV : " + (item.MovementSpeed >= currentMov ? "+" : "") + (item.MovementSpeed - currentMov);
+        // if (item.MovementSpeed != currentMov)
+        //     LabelMOV.color = (item.MovementSpeed > currentMov) ? Color.green : Color.red;
+        // else LabelMOV.color = Color.white;
+        //
+        // int currentHp = currentItem != null ? currentItem.MaxHp : 0;
+        // LabelHP.text = "HP : " + (item.MaxHp >= currentHp ? "+" : "") + (item.MaxHp - currentHp);
+        // if (item.MaxHp != currentHp) LabelHP.color = (item.MaxHp > currentHp) ? Color.green : Color.red;
+        // else LabelHP.color = Color.white;
 
         CurrentItem = item;
     }
