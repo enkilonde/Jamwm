@@ -164,6 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4625669561234674947, guid: 20772e8edc16dfd449a700a23dfef2ff,
         type: 3}
+      propertyPath: maxLifetime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625669561234674947, guid: 20772e8edc16dfd449a700a23dfef2ff,
+        type: 3}
       propertyPath: scaleByCharge.m_Curve.Array.size
       value: 2
       objectReference: {fileID: 0}
