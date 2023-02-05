@@ -29,7 +29,6 @@ public class Weapon : Item {
 
     private CustomCharacterController owner;
     private float charge;
-    private bool triggeredSound = false;
 
     public override ItemKind Kind => ItemKind.Weapon;
 
@@ -38,7 +37,7 @@ public class Weapon : Item {
 
     public void StartCharging(CustomCharacterController _owner)
     {
-        //SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.AttackCharge);
+        SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.AttackCharge);
 
         chargeFX.Play();
         isFullCharged = false;
@@ -49,19 +48,12 @@ public class Weapon : Item {
     public void Charging(float charge)
     {
         this.charge = charge;
-        if (charge>= 0.1f && !triggeredSound)
-        {
-            SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.AttackCharge);
-
-            triggeredSound = true;
-        }
         if (charge >= weaponChargeTime && !isFullCharged)
         {
             SoundManager.INSTANCE.PlaySound(SoundInfo.SoundType.FullCharge);
 
             chargeFullFX.Play();
             isFullCharged = true;
-            triggeredSound = false;
         }
     }
 

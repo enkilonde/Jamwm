@@ -157,9 +157,3 @@ MonoBehaviour:
     Loop: 0
     _volume: 1
     _pitchRange: {x: 0.9, y: 1.1}
-  - Clips:
-    - {fileID: 8300000, guid: 29981ccf79b8044d299e52870ae3fa8e, type: 3}
-    Type: 32
-    Loop: 0
-    _volume: 1
-    _pitchRange: {x: 0.9, y: 1.1}
