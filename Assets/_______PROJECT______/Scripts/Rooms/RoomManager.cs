@@ -63,6 +63,15 @@ public class RoomManager : MonoBehaviour {
         SaveManager.Instance.HandleDefeatedAncestor(_currentRoom.Ancestor);
         _currentRoom.SetExitDoorsLocked(false);
 
+        // Clearing the "dual camera targetting"
+        _cameraGroup.m_Targets = new CinemachineTargetGroup.Target[] {
+            new CinemachineTargetGroup.Target() {
+                target = _playerController.transform,
+                weight = 1,
+                radius = 0
+            }
+        };
+
         // Gathering the boss data
         CustomCharacterController bossObject = _currentRoom.BossRef;
         Vector3 corpsePosition = bossObject.transform.position;
