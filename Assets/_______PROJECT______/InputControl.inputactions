@@ -67,6 +67,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "PressA",
+                    "type": "Button",
+                    "id": "f8e3ddb5-0c13-40c3-b62e-3ecf8d1881f8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PressStart",
+                    "type": "Button",
+                    "id": "a78205eb-b883-4a2a-b9d8-aae986000780",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -131,6 +149,17 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "StickDeadzone",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "232d8a2e-e651-4ed1-81e3-cdf26557fbb0",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
@@ -309,6 +338,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "ActivateMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d93ade7-fc3f-4bbc-ad2e-210e887fb56e",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c59c2f72-5ffb-4e9d-9a20-ce13cd378965",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5180b1b1-1d23-4909-86fe-446d2d95c84e",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "488b6b3f-a0ca-4cf5-8fcb-3d5bb9e6d976",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressStart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

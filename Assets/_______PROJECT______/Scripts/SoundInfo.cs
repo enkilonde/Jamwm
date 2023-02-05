@@ -27,6 +27,7 @@ public class SoundInfo
         DeathPlayer,
         DeathEnemy,
         DoorOpen,
+        FullCharge
     }
     
     public AudioClip Clip

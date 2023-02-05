@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &296335232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3242053960443327287, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3242053959220229884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &358283727
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +339,42 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1352641565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5970885349575823494, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3242053959220229884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1463794003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5970885350800628902, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3242053959220229884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2108754479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5970885349721128856, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3242053959220229884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3242053959220229884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +383,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3004058806400972939, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.199997
+      objectReference: {fileID: 0}
     - target: {fileID: 3242053959371372288, guid: 2f9d97a3332374f4eb57630989c3b7d3,
         type: 3}
       propertyPath: m_Camera
@@ -445,6 +498,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3242053959371372290, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: _buttons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242053959371372290, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: _buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 296335232}
+    - target: {fileID: 3242053959371372290, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: _buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1352641565}
+    - target: {fileID: 3242053959371372290, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: _buttons.Array.data[2]
+      value: 
+      objectReference: {fileID: 2108754479}
+    - target: {fileID: 3242053959371372290, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: _buttons.Array.data[3]
+      value: 
+      objectReference: {fileID: 1463794003}
     - target: {fileID: 3242053959371372293, guid: 2f9d97a3332374f4eb57630989c3b7d3,
         type: 3}
       propertyPath: m_Name
@@ -549,6 +627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565416186920788586, guid: 2f9d97a3332374f4eb57630989c3b7d3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 126.29999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
