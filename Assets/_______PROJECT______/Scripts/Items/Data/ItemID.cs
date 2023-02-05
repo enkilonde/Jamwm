@@ -47,5 +47,13 @@ public enum ItemID {
     Axe01,
     Shield01,
     Fireball01,
-    IceSpear01
+    Fireball02,
+    Fireball03,
+    Fireball04,
+    Fireball05,
+    IceSpear01,
+    IceSpear02,
+    IceSpear03,
+    IceSpear04,
+    IceSpear05
 }
