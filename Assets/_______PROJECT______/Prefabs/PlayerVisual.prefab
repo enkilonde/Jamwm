@@ -206,7 +206,7 @@ Transform:
   - {fileID: 6853270716162796981}
   - {fileID: 692549538036891784}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2451419493545684143
 MonoBehaviour:
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashFX: {fileID: 2084676940819519287}
   hitFx: {fileID: 231477909161651292}
+  bodyAnimator: {fileID: 763338685896915697}
   HeadPoint: {fileID: 5557944624253157446}
   TorsoPoint: {fileID: 5572575084140815447}
   LeftHandPoint: {fileID: 0}
@@ -5538,11 +5539,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5d055a1b4e71204478d673350222ef5e, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 525f8e8a5f2b64c499b1865bd24d1fd0,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525f8e8a5f2b64c499b1865bd24d1fd0, type: 3}
+--- !u!95 &763338685896915697 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 525f8e8a5f2b64c499b1865bd24d1fd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6628588179810305888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5557944624253157446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7575985979138996442, guid: 525f8e8a5f2b64c499b1865bd24d1fd0,
