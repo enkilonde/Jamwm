@@ -12,7 +12,7 @@ public class RoomManager : MonoBehaviour {
     [SerializeField] public BossRoomController _currentRoom;
 
     [Header("Other Managers")]
-    [SerializeField] private Transform _playerTransform;
+    [SerializeField] public Transform _playerTransform;
     [SerializeField] private CharacterController _playerController;
     [SerializeField] private CustomCharacterController _playerCustomController;
     [SerializeField] private TransitionUiController _transitionUi;

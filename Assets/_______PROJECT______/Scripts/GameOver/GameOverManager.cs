@@ -16,6 +16,9 @@ public class GameOverManager : MonoBehaviour {
         SaveManager.Instance.ClearCurrentData();
 
         _gameOverUi.Appear(defeatedAncestors);
+        
+        RoomManager.Instance._playerTransform.gameObject.SetActive(false);
+        RoomManager.Instance._currentRoom.BossRef.gameObject.SetActive(false);
     }
 
 }
