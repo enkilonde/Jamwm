@@ -46,7 +46,7 @@ public class SoundManager : MonoBehaviour
     private const string SoundDataFileName = "sound_data";
     private const string SoundOnKey = "sound_on";
 
-    private void Start()
+    private void Awake()
     {
         Init();
     }
