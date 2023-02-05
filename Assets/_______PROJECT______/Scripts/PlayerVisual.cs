@@ -16,46 +16,47 @@ public class PlayerVisual : MonoBehaviour {
     private Item LeftArm;
     private Item RightArm;
 
-    public Item DisplayItem(ItemSlot slot, Item model) {
-        Item spawned = null;
+    public void DisplayItem(ItemSlot slot, Item instantiatedItem) {
         switch (slot) {
             case ItemSlot.Head:
-                spawned = Instantiate(original: model, parent: HeadPoint);
+                instantiatedItem.transform.SetParent(HeadPoint);
+                Helmet = instantiatedItem;
                 break;
             case ItemSlot.Torso:
-                spawned = Instantiate(original: model, parent: TorsoPoint);
+                instantiatedItem.transform.SetParent(TorsoPoint);
+                Armor = instantiatedItem;
                 break;
             case ItemSlot.LeftArm:
-                spawned = Instantiate(original: model, parent: LeftHandPoint);
+                instantiatedItem.transform.SetParent(LeftHandPoint);
+                LeftArm = instantiatedItem;
                 break;
             case ItemSlot.RightArm:
-                spawned = Instantiate(original: model, parent: RightHandPoint);
+                instantiatedItem.transform.SetParent(RightHandPoint);
+                RightArm = instantiatedItem;
                 break;
         }
-        if (spawned != null) {
-            spawned.gameObject.name = spawned.Name;
-            spawned.transform.localScale = Vector3.one;
-            spawned.transform.localPosition = Vector3.zero;
-        }
-        return spawned;
+
+        instantiatedItem.gameObject.name = instantiatedItem.Name;
+        instantiatedItem.transform.localScale = Vector3.one;
+        instantiatedItem.transform.localPosition = Vector3.zero;
     }
 
     public void ClearSlot(ItemSlot slot) {
         switch (slot) {
             case ItemSlot.Head:
-                Destroy(Helmet);
+                Destroy(Helmet.gameObject);
                 Helmet = null;
                 break;
             case ItemSlot.Torso:
-                Destroy(Armor);
+                Destroy(Armor.gameObject);
                 Armor = null;
                 break;
             case ItemSlot.LeftArm:
-                Destroy(LeftArm);
+                Destroy(LeftArm.gameObject);
                 LeftArm = null;
                 break;
             case ItemSlot.RightArm:
-                Destroy(RightArm);
+                Destroy(RightArm.gameObject);
                 RightArm = null;
                 break;
         }

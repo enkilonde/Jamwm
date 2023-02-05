@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public abstract class CharacterSheet {
 
@@ -22,7 +23,9 @@ public abstract class CharacterSheet {
     }
 
     public void Equip(ItemID itemID) {
-        Item item = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
+        Item itemModel = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
+        Item item = Object.Instantiate(itemModel);
+        item.Equipped = false;
         Equip(item);
     }
 
@@ -47,12 +50,12 @@ public abstract class CharacterSheet {
         // Main Phase 2 : equip the item
 
         // Data update
-        Item spawnedItem = PlayerVisual.DisplayItem(slot, item);
-        if (spawnedItem != null) {
-            Equipment[slot] = spawnedItem;
-            spawnedItem.Equipped = true;
-            spawnedItem.LootCollider.enabled = false;
-        }
+        PlayerVisual.DisplayItem(slot, item);
+
+        Equipment[slot] = item;
+        item.Equipped = true;
+        item.LootCollider.enabled = false;
+
         RefreshStats();
     }
 

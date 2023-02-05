@@ -64,8 +64,6 @@ public class PlayerItemPicker : MonoBehaviour {
         ((PlayerSheet) _character.CharacterSheet).Equip(Lootable);
         TempLootUi.Instance.ForgetItem(Lootable);
 
-        Destroy(Lootable.gameObject);
-
         Lootable = null;
     }
 
