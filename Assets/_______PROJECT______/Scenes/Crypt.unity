@@ -640,6 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356b8f9c5f5d4a0bad72736fddb41737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuickTesting: 0
   _player: {fileID: 1408110068}
 --- !u!114 &1468790315 stripped
 MonoBehaviour:
