@@ -16,22 +16,28 @@ public class PlayerVisual : MonoBehaviour {
     private Item LeftArm;
     private Item RightArm;
 
-    public Item DisplayItem(ItemSlot slot, Item item) {
+    public Item DisplayItem(ItemSlot slot, Item model) {
+        Item spawned = null;
         switch (slot) {
             case ItemSlot.Head:
-                Helmet = Instantiate(original: item, parent: HeadPoint);
-                return Helmet;
+                spawned = Instantiate(original: model, parent: HeadPoint);
+                break;
             case ItemSlot.Torso:
-                Armor = Instantiate(original: item, parent: TorsoPoint);
-                return Armor;
+                spawned = Instantiate(original: model, parent: TorsoPoint);
+                break;
             case ItemSlot.LeftArm:
-                LeftArm = Instantiate(original: item, parent: LeftHandPoint);
-                return LeftArm;
+                spawned = Instantiate(original: model, parent: LeftHandPoint);
+                break;
             case ItemSlot.RightArm:
-                RightArm = Instantiate(original: item, parent: RightHandPoint);
-                return RightArm;
-                default: return null;
+                spawned = Instantiate(original: model, parent: RightHandPoint);
+                break;
         }
+        if (spawned != null) {
+            spawned.gameObject.name = spawned.Name;
+            spawned.transform.localScale = Vector3.one;
+            spawned.transform.localPosition = Vector3.zero;
+        }
+        return spawned;
     }
 
     public void ClearSlot(ItemSlot slot) {

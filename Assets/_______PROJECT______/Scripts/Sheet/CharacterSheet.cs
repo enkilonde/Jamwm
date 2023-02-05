@@ -16,48 +16,50 @@ public abstract class CharacterSheet {
     public int MaxHp => Stats[PlayerStats.MaxHp];
     public float HpRatio => CurrentHp / (float) MaxHp;
 
-    protected CharacterSheet(Transform characterTransform)
-    {
+    protected CharacterSheet(Transform characterTransform) {
         _characterTransform = characterTransform;
         Equipment = new Dictionary<ItemSlot, Item>();
     }
 
-    public void Equip(ItemID itemID)
-    {
+    public void Equip(ItemID itemID) {
         Item item = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
         Equip(item);
     }
 
-    public void Equip(Item item)
-    {
+    public void Equip(Item item) {
         Equip(GetSlotFromKind(item.Kind), item);
     }
 
-    public void Equip(ItemSlot slot, Item item)
-    {
+    public void Equip(ItemSlot slot, Item item) {
         // Optional phase 1 : drop a replaced item
         if (Equipment.ContainsKey(slot)) {
             // Data update
             var droppedItem = DropItem(slot);
 
-            // Visual update
-            PlayerVisual.ClearSlot(slot);
-            LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
-            Debug.Log("Dropping " + droppedItem.name);
+            if (droppedItem != null) {
+                // Visual update
+                PlayerVisual.ClearSlot(slot);
+                LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
+                Debug.Log("Dropping " + droppedItem.name);
+            }
         }
 
         // Main Phase 2 : equip the item
 
         // Data update
         Item spawnedItem = PlayerVisual.DisplayItem(slot, item);
-        Equipment[slot] = spawnedItem;
-        spawnedItem.Equipped = true;
-        RefreshStats();       
+        if (spawnedItem != null) {
+            Equipment[slot] = spawnedItem;
+            spawnedItem.Equipped = true;
+        }
+        RefreshStats();
     }
 
     private Item DropItem(ItemSlot slot) {
         Item dropped = Equipment[slot];
-        dropped.Equipped = false;
+        if (dropped != null) {
+            dropped.Equipped = false;
+        }
         Equipment[slot] = null;
         return dropped;
     }
@@ -76,10 +78,8 @@ public abstract class CharacterSheet {
 
     protected abstract Dictionary<PlayerStats, int> GetBaseStats();
 
-    public ItemSlot GetSlotFromKind(ItemKind kind, bool forceRight = false)
-    {
-        switch (kind)
-        {
+    public ItemSlot GetSlotFromKind(ItemKind kind, bool forceRight = false) {
+        switch (kind) {
             case ItemKind.Helmet:
                 return ItemSlot.Head;
             case ItemKind.Armor:
@@ -100,8 +100,7 @@ public abstract class CharacterSheet {
         }
     }
 
-    public bool EmptySlot(ItemSlot slot)
-    {
+    public bool EmptySlot(ItemSlot slot) {
         if (!Equipment.ContainsKey(slot)) return true;
         if (Equipment[slot] == null) return true;
         return false;
