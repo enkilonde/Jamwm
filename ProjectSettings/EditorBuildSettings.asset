@@ -8,15 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_______PROJECT______/Scenes/MenuScene.unity
     guid: d717a0cd7752648fcb88ddc54c20f209
-  - enabled: 1
-    path: Assets/_______PROJECT______/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/_______PROJECT______/Scenes/Crypt.unity
     guid: 746e519dd022745b894ae23d988f682f
-  - enabled: 1
-    path: Assets/_______PROJECT______/Scenes/Combat.unity
-    guid: 696d1a26d13d6a44c80f081380ed9b98
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a86669bfb8345dc43872382e30d215d5,
       type: 2}

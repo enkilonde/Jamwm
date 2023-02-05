@@ -135,6 +135,7 @@ public class CustomCharacterController : MonoBehaviour
         effectiveMoveSpeed *= attackPenalty;
 
         characterController.Move(lastMovingDirection * effectiveMoveSpeed * Time.deltaTime);
+        if (transform.position.y > 0) characterController.Move(-transform.up * transform.position.y);
     }
 
     public void Turn(Vector2 vector2)
