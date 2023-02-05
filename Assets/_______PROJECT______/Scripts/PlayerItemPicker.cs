@@ -28,7 +28,7 @@ public class PlayerItemPicker : MonoBehaviour {
             return;
         }
 
-        ItemSlot slot = GetSlotForItemKind(loot.Kind);
+        ItemSlot slot = _character.CharacterSheet.GetSlotFromKind(loot.Kind);
         Item currentItem = null;
         if (_character.CharacterSheet.Equipment.ContainsKey(slot))
             currentItem = _character.CharacterSheet.Equipment[slot];
@@ -37,25 +37,6 @@ public class PlayerItemPicker : MonoBehaviour {
         TempLootUi.Instance.SetVisible(true);
 
         Lootable = loot;
-    }
-
-    private ItemSlot GetSlotForItemKind(ItemKind kind) {
-        switch (kind) {
-            case ItemKind.Helmet:
-                return ItemSlot.Head;
-            case ItemKind.Armor:
-                return ItemSlot.Torso;
-            case ItemKind.Ring:
-                return ItemSlot.Ring1;
-            case ItemKind.Weapon:
-                var equipment = _character.CharacterSheet.Equipment;
-                if (equipment.ContainsKey(ItemSlot.LeftArm) && equipment[ItemSlot.LeftArm] != null) {
-                    return ItemSlot.RightArm;
-                }
-                return ItemSlot.LeftArm;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(kind), kind, null);
-        }
     }
 
     private void OnTriggerExit(Collider other) {

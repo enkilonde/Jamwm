@@ -50,7 +50,6 @@ public abstract class CharacterSheet {
         Item spawnedItem = PlayerVisual.DisplayItem(slot, item);
         if (spawnedItem != null) {
             Equipment[slot] = spawnedItem;
-            spawnedItem.gameObject.name = item.Name;
             spawnedItem.Equipped = true;
         }
         RefreshStats();
