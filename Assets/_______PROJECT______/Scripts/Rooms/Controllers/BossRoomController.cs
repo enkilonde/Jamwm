@@ -47,6 +47,7 @@ public class BossRoomController : MonoBehaviour {
         {
             Item item = Instantiate(pair.Value);
             visual.DisplayItem(pair.Key, item);
+            item._fx.Stop();
         }
     }
 

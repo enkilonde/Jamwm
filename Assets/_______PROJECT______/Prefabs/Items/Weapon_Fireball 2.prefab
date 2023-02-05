@@ -4839,7 +4839,7 @@ PrefabInstance:
     - target: {fileID: 304780231676077628, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: m_Name
-      value: Weapon_Fireball
+      value: Weapon_Fireball 2
       objectReference: {fileID: 0}
     - target: {fileID: 400531409213001506, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -4849,12 +4849,12 @@ PrefabInstance:
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: ID
-      value: 46
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: Name
-      value: 'How To Burn a Throat : Cooking Book'
+      value: Super Heavy Fire Book
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -4869,12 +4869,12 @@ PrefabInstance:
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: _Magic.x
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: _Magic.y
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -4888,23 +4888,13 @@ PrefabInstance:
       objectReference: {fileID: 3773467429856427785}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
-      propertyPath: _AttackSpeed.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
-        type: 3}
-      propertyPath: _AttackSpeed.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
-        type: 3}
       propertyPath: _MovementSpeed.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: _MovementSpeed.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
