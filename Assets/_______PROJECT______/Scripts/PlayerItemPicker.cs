@@ -60,8 +60,8 @@ public class PlayerItemPicker : MonoBehaviour {
         }
     }
 
-    public void ValidateLoot() {
-        ((PlayerSheet) _character.CharacterSheet).EquipInstantiatedItem(Lootable);
+    public void ValidateLoot(bool forceRightHand) {
+        ((PlayerSheet) _character.CharacterSheet).EquipInstantiatedItem(Lootable, forceRightHand);
         TempLootUi.Instance.ForgetItem(Lootable);
 
         Lootable = null;

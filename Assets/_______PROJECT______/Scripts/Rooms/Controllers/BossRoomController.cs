@@ -30,10 +30,9 @@ public class BossRoomController : MonoBehaviour {
         // This weird check only serve to exclude the cheat option "reshuffle current room"
         if (boss != Ancestor) {
             Ancestor = boss;
-            // TODO AB - reenable (no enemy in first room)
-            //if (boss.InitialRoomAncestor == false) {
+            if ((boss.InitialRoomAncestor == false) || CheatsManager.Instance.QuickTesting) {
                 SpawnAncestor(boss);
-            //}
+            }
         }
     }
 
@@ -48,7 +47,7 @@ public class BossRoomController : MonoBehaviour {
         iaInputs.player = _playerRef;
 
         BossRef = ancestor.GetComponent<CustomCharacterController>();
-        var bossSheet = ancestorData.GetDetailedSheet(BossRef.playerVisual);
+        var bossSheet = ancestorData.GetDetailedSheet(BossRef);
         BossRef.SetBossSheet(bossSheet);
     }
 
@@ -69,6 +68,7 @@ public class BossRoomController : MonoBehaviour {
     }
 
     public void SetBossAiEnabled(bool active) {
+        if(BossRef == null) return;
         BossRef.enabled = active;
         BossRef.GetComponent<CustomIAInputs>().enabled = active;
     }

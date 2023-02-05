@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &980465539841166992
 Transform:
   m_ObjectHideFlags: 0
@@ -4944,6 +4944,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 980465539841166992}
+    - targetCorrespondingSourceObject: {fileID: 2907797665109602662, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1016559439963733089}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24b5ea87687fa4547b17afe84d166bc2, type: 3}
 --- !u!4 &2980691548214367710 stripped
@@ -4957,4 +4961,83 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 24b5ea87687fa4547b17afe84d166bc2,
     type: 3}
   m_PrefabInstance: {fileID: 74056206867686584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5289417508411952298
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2980691548214367710}
+    m_Modifications:
+    - target: {fileID: 2169980179383091115, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_Name
+      value: PB_VFX_MagicAttack_Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3983e5045705845c498e646a9990772c, type: 3}
+--- !u!4 &1016559439963733089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5151065052576215243, guid: 3983e5045705845c498e646a9990772c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5289417508411952298}
   m_PrefabAsset: {fileID: 0}

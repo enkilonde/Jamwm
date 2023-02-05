@@ -59,7 +59,7 @@ public class CustomCharacterController : MonoBehaviour
 
     private void Awake() {
         if (IsPlayer) {
-            CharacterSheet = new PlayerSheet(playerVisual, this.transform);
+            CharacterSheet = new PlayerSheet(playerVisual, this);
         }
         dashTimer = dashCooldown;
 
@@ -69,8 +69,9 @@ public class CustomCharacterController : MonoBehaviour
     {
         if(IsPlayer)
         {
-            EquipItem(ItemID.Fireball01);
+            //EquipItem(ItemID.Fireball01);
             //EquipItem(ItemID.IceSpear01);        
+            EquipItem(ItemID.Sword01);
             EquipItem(ItemID.Sword01);
         }
 

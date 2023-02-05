@@ -99,7 +99,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -206,7 +206,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -272,8 +272,19 @@ PrefabInstance:
       objectReference: {fileID: 3773467429856427785}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
+      propertyPath: projectileDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
       propertyPath: projectilePrefab
       value: 
+      objectReference: {fileID: 1251062797315697600, guid: d523b266ca2a0d44ab8d6fd32cc53a55,
+        type: 3}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
+      propertyPath: projectilOnlyOnFullCharge
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2907797665109602662, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}

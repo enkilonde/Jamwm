@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerVisual : MonoBehaviour {
 
     public ParticleSystem dashFX;
+    public ParticleSystem hitFx;
 
     [Header("Body Parts")]
     public Transform HeadPoint;
@@ -43,6 +44,7 @@ public class PlayerVisual : MonoBehaviour {
         instantiatedItem.gameObject.name = instantiatedItem.Name;
         instantiatedItem.transform.localScale = Vector3.one;
         instantiatedItem.transform.localPosition = Vector3.zero;
+        instantiatedItem.transform.localRotation = Quaternion.identity;
 
         if (slot == ItemSlot.Ring1) {
             Ring.transform.position = Vector3.one * 10000; // b-bye

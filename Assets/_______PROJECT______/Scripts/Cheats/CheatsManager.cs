@@ -3,10 +3,19 @@ using UnityEngine;
 
 public class CheatsManager : MonoBehaviour {
 
+    public static CheatsManager Instance;
+
+    [Header("Configuration")]
+    public bool QuickTesting = false;
+
     [Header("Necessary references")]
     [SerializeField] private CustomCharacterController _player;
 
     public static float PlayerSpeedModifier = 1;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     [Button]
     public void SetInvincible() {

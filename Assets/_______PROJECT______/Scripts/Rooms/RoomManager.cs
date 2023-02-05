@@ -38,9 +38,12 @@ public class RoomManager : MonoBehaviour {
 #region Initial Room
 
     private void Start() {
-//        LoadInitialRoom();
-        _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
-        LoadRoom(0, AncestorGenerator.Instance.GenerateAncestor(0));
+        if (CheatsManager.Instance.QuickTesting) {
+            _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
+            LoadRoom(0, AncestorGenerator.Instance.GenerateAncestor(0));
+        } else {
+            LoadInitialRoom();
+        }
     }
 
     private void LoadInitialRoom() {
@@ -54,7 +57,7 @@ public class RoomManager : MonoBehaviour {
             _playerCustomController
         );
 
-        _playerTransform.position = Vector3.zero;
+        _currentRoom.SetExitDoorsLocked(false);
 
         _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
     }

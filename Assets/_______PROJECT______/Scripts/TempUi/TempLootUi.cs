@@ -25,9 +25,23 @@ public class TempLootUi : MonoBehaviour {
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
             if (PlayerItemPicker.Instance.Lootable != null) {
-                PlayerItemPicker.Instance.ValidateLoot();
+
+
+                PlayerItemPicker.Instance.ValidateLoot(false);
             }
         }
+    }
+
+    public void PickupLeft()
+    {
+        if (PlayerItemPicker.Instance.Lootable == null) return;
+        PlayerItemPicker.Instance.ValidateLoot(false);
+    }
+
+    public void PickupRight()
+    {
+        if (PlayerItemPicker.Instance.Lootable == null) return;
+        PlayerItemPicker.Instance.ValidateLoot(true);
     }
 
     public void SetVisible(bool visible) {

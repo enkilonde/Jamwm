@@ -11,14 +11,14 @@ public abstract class CharacterSheet {
     public Dictionary<PlayerStats, int> Stats;
     protected PlayerVisual PlayerVisual;
 
-    protected Transform _characterTransform;
+    protected CustomCharacterController _character;
 
     public int CurrentHp { get; protected set; }
     public int MaxHp => Stats[PlayerStats.MaxHp];
     public float HpRatio => CurrentHp / (float) MaxHp;
 
-    protected CharacterSheet(Transform characterTransform) {
-        _characterTransform = characterTransform;
+    protected CharacterSheet(CustomCharacterController characterTransform) {
+        _character = characterTransform;
         Equipment = new Dictionary<ItemSlot, Item>();
     }
 
@@ -33,8 +33,8 @@ public abstract class CharacterSheet {
         EquipInstantiatedItem(item);
     }
 
-    public void EquipInstantiatedItem(Item itemModel) {
-        EquipInstantiatedItem(GetSlotFromKind(itemModel.Kind), itemModel);
+    public void EquipInstantiatedItem(Item itemModel, bool forceRighthand = false) {
+        EquipInstantiatedItem(GetSlotFromKind(itemModel.Kind, forceRighthand), itemModel);
     }
 
     public void EquipInstantiatedItem(ItemSlot slot, Item item) {
@@ -47,7 +47,7 @@ public abstract class CharacterSheet {
                 Debug.Log("Dropping " + droppedItem.name);
 
                 // Visual update
-                LootSpawner.Instance.SpawnLoot(droppedItem, _characterTransform.position);
+                LootSpawner.Instance.SpawnLoot(droppedItem, _character.transform.position);
                 PlayerVisual.ClearSlot(slot);
             }
         }
@@ -125,7 +125,7 @@ public abstract class CharacterSheet {
     public virtual void Hit(int damages) {
         CurrentHp -= damages;
         if (CurrentHp < 0) CurrentHp = 0;
-        EffectManager.Instance.DoDamageEffectOn(damages, _characterTransform.position);
+        EffectManager.Instance.DoDamageEffectOn(damages, _character.transform.position);
     }
 
 #endregion

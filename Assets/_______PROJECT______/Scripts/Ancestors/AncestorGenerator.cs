@@ -53,7 +53,6 @@ public class AncestorGenerator : MonoBehaviour {
             {ItemSlot.Ring1, itemDatabase.GetRandomItem(ItemKind.Ring)}
         };
     }
-
     private string GenerateAncestorName()
     {
         return NamesGenerator.GenerateName();

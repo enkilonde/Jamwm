@@ -54,13 +54,27 @@ public class CustomPlayerInputs : MonoBehaviour
 
     public void AttackLeft(InputAction.CallbackContext context)
     {
-        if (context.started) characterController.StartChargeAttackLeft();
+
+        if (context.started)
+        {
+            if (TempLootUi.Instance.CurrentItem != null)
+                TempLootUi.Instance.PickupLeft();
+            else
+                characterController.StartChargeAttackLeft();
+        }
         else if (context.canceled) characterController.LaunchAttackLeft();
     }
 
     public void AttackRight(InputAction.CallbackContext context)
     {
-        if (context.started) characterController.StartChargeAttackRight();
+        if (context.started)
+        {
+            if (TempLootUi.Instance.CurrentItem != null)
+            TempLootUi.Instance.PickupRight();
+            else
+                characterController.StartChargeAttackRight();
+            
+        }
         else if (context.canceled) characterController.LaunchAttackRight();
     }
 

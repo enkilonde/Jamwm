@@ -9688,7 +9688,7 @@ PrefabInstance:
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: Magic
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}

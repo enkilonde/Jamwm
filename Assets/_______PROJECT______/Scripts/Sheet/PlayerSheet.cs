@@ -8,7 +8,7 @@ public class PlayerSheet : CharacterSheet {
 
 #region Initialization
 
-    public PlayerSheet(PlayerVisual playerVisual, Transform playerTransform) : base(playerTransform) {
+    public PlayerSheet(PlayerVisual playerVisual, CustomCharacterController playerTransform) : base(playerTransform) {
         PlayerVisual = playerVisual;
         Stats = GetBaseStats();
         CurrentHp = Stats[PlayerStats.MaxHp];
