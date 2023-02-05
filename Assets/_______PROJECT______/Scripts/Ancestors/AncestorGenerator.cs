@@ -46,8 +46,8 @@ public class AncestorGenerator : MonoBehaviour {
         return new Dictionary<ItemSlot, Item>() {
             {ItemSlot.Head, itemDatabase.GetRandomItem(ItemKind.Helmet)},
             {ItemSlot.Torso, itemDatabase.GetRandomItem(ItemKind.Armor)},
-            {ItemSlot.LeftArm, itemDatabase.GetRandomItem(ItemKind.Ring)},
-            {ItemSlot.RightArm, itemDatabase.GetRandomItem(ItemKind.Ring)},
+            {ItemSlot.LeftArm, itemDatabase.GetRandomItem(ItemKind.Weapon)},
+            {ItemSlot.RightArm, itemDatabase.GetRandomItem(ItemKind.Weapon)},
             {ItemSlot.Ring1, itemDatabase.GetRandomItem(ItemKind.Ring)}
         };
     }

@@ -4,11 +4,11 @@ using UnityEngine;
 public class LootSpawner : MonoBehaviour {
 
     private static readonly List<Vector3> SpawnPositionOffsets = new List<Vector3>() {
-        new Vector3(0,0,2),
-        new Vector3(2,0,0.4f),
-        new Vector3(0.6f,0,-1.4f),
-        new Vector3(-0.6f,0,-1.4f),
-        new Vector3(-2,0,0.4f)
+        new Vector3(0,0,3),
+        new Vector3(2.8f,0,0.8f),
+        new Vector3(1.1f,0,-2.1f),
+        new Vector3(-1.1f,0,-2.1f),
+        new Vector3(-2.8f,0,0.8f)
     };
 
     public static LootSpawner Instance
