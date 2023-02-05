@@ -223,7 +223,7 @@ PrefabInstance:
     - target: {fileID: 304780231676077628, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: m_Name
-      value: Weapon_Sword
+      value: Weapon_Sword 3
       objectReference: {fileID: 0}
     - target: {fileID: 400531409213001506, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -233,17 +233,27 @@ PrefabInstance:
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: ID
-      value: 39
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: Name
-      value: Funniest Maracas
+      value: Grandpa's Baking Roll
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: Strength
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
+      propertyPath: _Magic.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
+      propertyPath: _Magic.y
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -267,29 +277,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
-      propertyPath: _Strength.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
-        type: 3}
-      propertyPath: _Strength.y
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
-        type: 3}
       propertyPath: LootCollider
       value: 
       objectReference: {fileID: 3773467429856427785}
-    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
-        type: 3}
-      propertyPath: _AttackSpeed.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
-        type: 3}
-      propertyPath: _AttackSpeed.y
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: projectileDelay

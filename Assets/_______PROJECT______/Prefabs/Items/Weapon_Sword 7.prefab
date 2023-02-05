@@ -223,7 +223,7 @@ PrefabInstance:
     - target: {fileID: 304780231676077628, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: m_Name
-      value: Weapon_Sword
+      value: Weapon_Sword 7
       objectReference: {fileID: 0}
     - target: {fileID: 400531409213001506, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -233,12 +233,12 @@ PrefabInstance:
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: ID
-      value: 39
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
       propertyPath: Name
-      value: Funniest Maracas
+      value: Party Sword
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
@@ -294,6 +294,16 @@ PrefabInstance:
         type: 3}
       propertyPath: projectileDelay
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
+      propertyPath: _MovementSpeed.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
+      propertyPath: _MovementSpeed.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
