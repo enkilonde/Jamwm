@@ -40,7 +40,7 @@ public class BossRoomController : MonoBehaviour {
         var ancestor = Instantiate(
             original: _enemyPrefab,
             position: BossSpawnPoint,
-            rotation: Quaternion.identity
+            rotation: Quaternion.Euler(0, 180, 0)
         );
 
         var iaInputs = ancestor.GetComponent<CustomIAInputs>();
