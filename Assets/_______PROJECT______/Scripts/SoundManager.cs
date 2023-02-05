@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager INSTANCE;
     public bool IsSoundOn => _isSoundOn;
     
     [SerializeField] private SoundData _soundData;
@@ -44,14 +45,29 @@ public class SoundManager : MonoBehaviour
     private bool _isSoundOn;
     private const string SoundDataFileName = "sound_data";
     private const string SoundOnKey = "sound_on";
-    
+
+    private void Start()
+    {
+        Init();
+    }
+
     public void Init()
     {
         DebugPrint("[SFX] Init");
+        if (INSTANCE!=null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            INSTANCE = this;
+        }
+
 
         CreateDictionaries();
-
-        _isSoundOn = PlayerPrefs.GetInt("sound_on", 1)==1;
+        _isSoundOn = PlayerPrefs.GetInt(SoundOnKey, 1)==1;
         
         _musicHome = GetMusicSource(MusicType.Home);
         _musicBattle = GetMusicSource(MusicType.Battle);
@@ -60,14 +76,14 @@ public class SoundManager : MonoBehaviour
     public void EnableSound()
     {
         _isSoundOn = true;
-        PlayerPrefs.SetInt("sound_on", 1);
+        PlayerPrefs.SetInt(SoundOnKey, 1);
         SetMusicState(_musicState);
     }
 
     public void DisableSound()
     {
         _isSoundOn = false;
-        PlayerPrefs.SetInt("sound_on", 0);
+        PlayerPrefs.SetInt(SoundOnKey, 0);
         StartCoroutine(MusicFadeTo(0, false,0));
     }
 
@@ -172,7 +188,7 @@ public class SoundManager : MonoBehaviour
     
     private AudioSource GetAudioSource()
     {
-        return Instantiate(_sourceObject).GetComponent<AudioSource>();
+        return Instantiate(_sourceObject, transform).GetComponent<AudioSource>();
     }
     private void CreateDictionaries()
     {
@@ -194,12 +210,12 @@ public class SoundManager : MonoBehaviour
             case MusicType.Uninitialized:
                 break;
             case MusicType.Home:
-                if (_musicHome!=null)
-                    DestroyImmediate(_musicHome);
+                if (_musicHome != null)
+                    return _musicHome;
                 return PrepareSound(_soundData.MusicHome);
             case MusicType.Battle:
                 if (_musicBattle!=null)
-                    DestroyImmediate(_musicBattle);
+                    return _musicBattle;
                 return PrepareSound(_soundData.MusicBattle);
         }
         return null;

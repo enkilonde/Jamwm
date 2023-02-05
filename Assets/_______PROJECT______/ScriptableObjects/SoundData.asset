@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: SoundData
   m_EditorClassIdentifier: 
   _musicHome:
-    Clips: []
+    Clips:
+    - {fileID: 8300000, guid: bd1a9b0b426504c5eabf38437c7890dc, type: 3}
     Type: 0
     Loop: 1
     _volume: 1
     _pitchRange: {x: 1, y: 1}
   _musicBattle:
-    Clips: []
+    Clips:
+    - {fileID: 8300000, guid: 55a3b752a373747b4946371d09724baf, type: 3}
     Type: 0
     Loop: 1
     _volume: 1

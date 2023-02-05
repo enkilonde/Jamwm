@@ -28,8 +28,10 @@ public class UIMenuManager : MonoBehaviour
     {
         _highScoresWindow.Init();
         _creditsWindow.Init();
-        
-       // _playButton.OnPointerEnter(() => { Play();});
+        SoundManager.INSTANCE.SetMusicType(SoundManager.MusicType.Home);
+        SoundManager.INSTANCE.SetMusicState(SoundManager.MusicState.Playing);
+   
+        // _playButton.OnPointerEnter(() => { Play();});
         
         _playButton.onClick.AddListener(Play);
         _quitButton.onClick.AddListener(Quit);
@@ -62,6 +64,8 @@ public class UIMenuManager : MonoBehaviour
     
     public void Play()
     {
+        SoundManager.INSTANCE.SetMusicType(SoundManager.MusicType.Battle);
+
         SceneManager.LoadScene("Crypt", LoadSceneMode.Single);
     }
     public void Quit()
