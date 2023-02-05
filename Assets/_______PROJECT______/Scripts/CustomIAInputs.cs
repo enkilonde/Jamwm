@@ -40,6 +40,7 @@ public class CustomIAInputs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IA.CharacterSheet == null) return;
 
         AnimatorStateInfo animatorState = animatorIA.GetCurrentAnimatorStateInfo(0);
         if (animatorState.IsName("Choose"))

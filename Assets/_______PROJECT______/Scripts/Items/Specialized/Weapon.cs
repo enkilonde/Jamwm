@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using static UnityEngine.UI.GridLayoutGroup;
 
 public enum DamageType {
@@ -120,6 +121,7 @@ public class Weapon : Item {
     {
         if (!isAttacking) return;
         if (hasHit) return;
+        if (owner == null) return;
         if (other.gameObject == owner.gameObject) return;
 
         CustomCharacterController character = other.GetComponent<CustomCharacterController>();

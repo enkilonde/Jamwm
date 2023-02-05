@@ -45,6 +45,7 @@ public class ProjectileBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if (owner == null) return;
         if (other.gameObject == owner.gameObject) return;
 
         CustomCharacterController character = other.GetComponent<CustomCharacterController>();

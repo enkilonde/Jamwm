@@ -33,8 +33,8 @@ public abstract class CharacterSheet {
         EquipInstantiatedItem(item);
     }
 
-    public void EquipInstantiatedItem(Item itemModel) {
-        EquipInstantiatedItem(GetSlotFromKind(itemModel.Kind), itemModel);
+    public void EquipInstantiatedItem(Item itemModel, bool forceRighthand = false) {
+        EquipInstantiatedItem(GetSlotFromKind(itemModel.Kind, forceRighthand), itemModel);
     }
 
     public void EquipInstantiatedItem(ItemSlot slot, Item item) {
