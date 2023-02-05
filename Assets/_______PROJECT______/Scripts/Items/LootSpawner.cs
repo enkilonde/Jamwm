@@ -34,7 +34,8 @@ public class LootSpawner : MonoBehaviour {
 
     public Item SpawnLoot(Item specificItem, Vector3 worldPosition) {
         // TODO : spawn with animation (scale Up from nothing ? Falling from player's height ?)
-        Item lootModel = specificItem ?? ItemDatabase.GetRandomItem();
+
+        Item lootModel = specificItem != null ? specificItem : ItemDatabase.GetRandomItem();
         Item lootObject = Instantiate(
             original: lootModel, 
             parent: RoomManager.Instance._currentRoom.transform,
@@ -42,12 +43,12 @@ public class LootSpawner : MonoBehaviour {
             rotation: Quaternion.identity
         );
 
-        if (specificItem == null) {
-            // TODO : apply some stats modifiers based on current progression / level
-        }
+        lootObject.LootCollider.enabled = true;
 
-        Debug.Log("Spawned loot " + lootModel.Name);
-        return lootModel;
+        // TODO : apply some stats modifiers based on current progression / level
+
+        Debug.Log("Spawned loot " + lootObject.Name);
+        return lootObject;
     }
 /*
     private void Start() {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public abstract class CharacterSheet {
 
@@ -22,24 +23,32 @@ public abstract class CharacterSheet {
     }
 
     public void Equip(ItemID itemID) {
-        Item item = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
-        Equip(item);
+        Item itemModel = LootSpawner.Instance.ItemDatabase.GetItem(itemID);
+        EquipFromItemModel(itemModel);
     }
 
-    public void Equip(Item item) {
-        Equip(GetSlotFromKind(item.Kind), item);
+    public void EquipFromItemModel(Item itemModel) {
+        Item item = Object.Instantiate(itemModel);
+        item.Equipped = false;
+        EquipInstantiatedItem(item);
     }
 
-    public void Equip(ItemSlot slot, Item item) {
+    public void EquipInstantiatedItem(Item itemModel) {
+        EquipInstantiatedItem(GetSlotFromKind(itemModel.Kind), itemModel);
+    }
+
+    public void EquipInstantiatedItem(ItemSlot slot, Item item) {
         // Optional phase 1 : drop a replaced item
         if (Equipment.ContainsKey(slot)) {
             // Data update
             var droppedItem = DropItem(slot);
 
             if (droppedItem != null) {
+                Debug.Log("Dropping " + droppedItem.name);
+
                 // Visual update
-                PlayerVisual.ClearSlot(slot);
                 LootSpawner.Instance.SpawnLoot(droppedItem, _character.transform.position);
+                PlayerVisual.ClearSlot(slot);
                 Debug.Log("Dropping " + droppedItem.name);
             }
         }
@@ -47,12 +56,12 @@ public abstract class CharacterSheet {
         // Main Phase 2 : equip the item
 
         // Data update
-        Item spawnedItem = PlayerVisual.DisplayItem(slot, item);
-        if (spawnedItem != null) {
-            Equipment[slot] = spawnedItem;
-            spawnedItem.Equipped = true;
-            spawnedItem.LootCollider.enabled = false;
-        }
+        PlayerVisual.DisplayItem(slot, item);
+
+        Equipment[slot] = item;
+        item.Equipped = true;
+        item.LootCollider.enabled = false;
+
         RefreshStats();
     }
 
@@ -118,7 +127,6 @@ public abstract class CharacterSheet {
         CurrentHp -= damages;
         if (CurrentHp < 0) CurrentHp = 0;
         EffectManager.Instance.DoDamageEffectOn(damages, _character.transform.position);
-        _character.playerVisual.hitFx.Play();
     }
 
 #endregion

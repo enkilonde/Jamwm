@@ -11,10 +11,15 @@ public class BossSheet : CharacterSheet {
         Dictionary<ItemSlot, Item> equipment
     ) : base(boss) {
         _baseStats = stats;
+
         base.PlayerVisual = boss.playerVisual;
         base.Equipment = equipment;
         base.Stats = _baseStats;
         CurrentHp = MaxHp;
+
+        foreach (var itemModel in equipment.Values) {
+            EquipFromItemModel(itemModel);
+        }
     }
 
     protected override Dictionary<PlayerStats, int> GetBaseStats() {

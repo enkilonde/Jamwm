@@ -16,48 +16,61 @@ public class PlayerVisual : MonoBehaviour {
     private Item Armor;
     private Item LeftArm;
     private Item RightArm;
+    private Item Ring; // not really visible, but kept the same way as others for simplicity
 
-    public Item DisplayItem(ItemSlot slot, Item model) {
-        Item spawned = null;
+    public void DisplayItem(ItemSlot slot, Item instantiatedItem) {
         switch (slot) {
             case ItemSlot.Head:
-                spawned = Instantiate(original: model, parent: HeadPoint);
+                instantiatedItem.transform.SetParent(HeadPoint);
+                Helmet = instantiatedItem;
                 break;
             case ItemSlot.Torso:
-                spawned = Instantiate(original: model, parent: TorsoPoint);
+                instantiatedItem.transform.SetParent(TorsoPoint);
+                Armor = instantiatedItem;
                 break;
             case ItemSlot.LeftArm:
-                spawned = Instantiate(original: model, parent: LeftHandPoint);
+                instantiatedItem.transform.SetParent(LeftHandPoint);
+                LeftArm = instantiatedItem;
                 break;
             case ItemSlot.RightArm:
-                spawned = Instantiate(original: model, parent: RightHandPoint);
+                instantiatedItem.transform.SetParent(RightHandPoint);
+                RightArm = instantiatedItem;
+                break;
+            case ItemSlot.Ring1:
+                Ring = instantiatedItem;
                 break;
         }
-        if (spawned != null) {
-            spawned.gameObject.name = spawned.Name;
-            spawned.transform.localScale = Vector3.one;
-            spawned.transform.localPosition = Vector3.zero;
+
+        instantiatedItem.gameObject.name = instantiatedItem.Name;
+        instantiatedItem.transform.localScale = Vector3.one;
+        instantiatedItem.transform.localPosition = Vector3.zero;
+
+        if (slot == ItemSlot.Ring1) {
+            Ring.transform.position = Vector3.one * 10000; // b-bye
         }
-        return spawned;
     }
 
     public void ClearSlot(ItemSlot slot) {
         switch (slot) {
             case ItemSlot.Head:
-                Destroy(Helmet);
+                Destroy(Helmet.gameObject);
                 Helmet = null;
                 break;
             case ItemSlot.Torso:
-                Destroy(Armor);
+                Destroy(Armor.gameObject);
                 Armor = null;
                 break;
             case ItemSlot.LeftArm:
-                Destroy(LeftArm);
+                Destroy(LeftArm.gameObject);
                 LeftArm = null;
                 break;
             case ItemSlot.RightArm:
-                Destroy(RightArm);
+                Destroy(RightArm.gameObject);
                 RightArm = null;
+                break;
+            case ItemSlot.Ring1:
+                Destroy(Ring.gameObject);
+                Ring = null;
                 break;
         }
     }
