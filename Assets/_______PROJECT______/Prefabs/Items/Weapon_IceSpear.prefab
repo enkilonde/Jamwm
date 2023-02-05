@@ -9702,6 +9702,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
         type: 3}
+      propertyPath: LootCollider
+      value: 
+      objectReference: {fileID: 3773467429856427785}
+    - target: {fileID: 1856950904400794058, guid: 24b5ea87687fa4547b17afe84d166bc2,
+        type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1251062797315697600, guid: 22f74514e1a91c1469cd8432080e90e0,
@@ -9773,6 +9778,12 @@ PrefabInstance:
 --- !u!4 &2980691548214367710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2907797665109602662, guid: 24b5ea87687fa4547b17afe84d166bc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 74056206867686584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3773467429856427785 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 24b5ea87687fa4547b17afe84d166bc2,
     type: 3}
   m_PrefabInstance: {fileID: 74056206867686584}
   m_PrefabAsset: {fileID: 0}

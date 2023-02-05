@@ -23,6 +23,9 @@ public abstract class Item : MonoBehaviour {
     public int Defense;
     public int MaxHp;
 
+    [Header("Model Components")]
+    public BoxCollider LootCollider;
+
     // Item State
     public bool Equipped { get; set; }
 

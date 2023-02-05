@@ -51,6 +51,7 @@ public abstract class CharacterSheet {
         if (spawnedItem != null) {
             Equipment[slot] = spawnedItem;
             spawnedItem.Equipped = true;
+            spawnedItem.LootCollider.enabled = false;
         }
         RefreshStats();
     }
@@ -59,6 +60,7 @@ public abstract class CharacterSheet {
         Item dropped = Equipment[slot];
         if (dropped != null) {
             dropped.Equipped = false;
+            dropped.LootCollider.enabled = true;
         }
         Equipment[slot] = null;
         return dropped;

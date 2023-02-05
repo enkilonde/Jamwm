@@ -30,6 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
         type: 3}
+      propertyPath: LootCollider
+      value: 
+      objectReference: {fileID: 1958108711440037484}
+    - target: {fileID: 2267672452323379029, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+        type: 3}
       propertyPath: MovementSpeed
       value: 0
       objectReference: {fileID: 0}
@@ -93,3 +98,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8887f8d18c0873d4ca4dadbeed2f8f74, type: 3}
+--- !u!65 &1958108711440037484 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3844126953248119729, guid: 8887f8d18c0873d4ca4dadbeed2f8f74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3347736273893780957}
+  m_PrefabAsset: {fileID: 0}
