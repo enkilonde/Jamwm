@@ -110,6 +110,11 @@ PrefabInstance:
       propertyPath: rightWeapon
       value: 
       objectReference: {fileID: 6710026798228977433}
+    - target: {fileID: 5979747486772747462, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
+        type: 3}
+      propertyPath: dashCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5979747486772747463, guid: 807b2b7b646a43c4a83e023e0c8e8c4d,
         type: 3}
       propertyPath: m_RootOrder
