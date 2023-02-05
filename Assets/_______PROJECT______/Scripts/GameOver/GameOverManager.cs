@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour {
 
@@ -19,6 +21,13 @@ public class GameOverManager : MonoBehaviour {
         
         RoomManager.Instance._playerTransform.gameObject.SetActive(false);
         RoomManager.Instance._currentRoom.BossRef.gameObject.SetActive(false);
+
+        StartCoroutine(WaitAndRelaunchGame());
+    }
+
+    private IEnumerator WaitAndRelaunchGame() {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MenuScene");
     }
 
 }
