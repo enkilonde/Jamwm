@@ -57,8 +57,6 @@ public class RoomManager : MonoBehaviour {
             _playerCustomController
         );
 
-        _playerTransform.position = _currentRoom.PlayerSpawnPoint;
-
         _currentRoom.SetExitDoorsLocked(false);
 
         _playerLifeBar.InitPlayerBar(_playerCustomController.CharacterSheet.MaxHp);
