@@ -30,6 +30,13 @@ public class WeaponAction : MonoBehaviour
 
                 weapon.Attack(charge, armBehaviour.hand.position);
 
+                // Not sure why this is NEEDED, but this forcefully fixes the player's skeleton drifting from
+                // its expected position
+                if (characterController.IsPlayer) {
+                    var playerSkeleton = characterController.transform.GetChild(0).GetChild(0);
+                    playerSkeleton.localPosition = Vector3.zero;
+                    playerSkeleton.localRotation = Quaternion.identity;
+                }
                 break;
             default:
                 break;
