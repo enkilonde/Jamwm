@@ -1435,8 +1435,8 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 9017294294369611623, guid: 120904d3ce9c2314986cf66b3e97bd60,
     type: 3}
   BossRef: {fileID: 0}
-  portraitLeft: {fileID: 0}
-  portraitRight: {fileID: 0}
+  portraitLeft: {fileID: 115268820272572221}
+  portraitRight: {fileID: 2570709766019676173}
 --- !u!1 &2893131714327979623
 GameObject:
   m_ObjectHideFlags: 0
