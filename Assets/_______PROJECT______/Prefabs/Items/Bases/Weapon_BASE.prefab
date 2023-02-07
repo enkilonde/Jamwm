@@ -5112,6 +5112,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6919935904074007671, guid: 8e698fccb4d726448b64322ca782c3b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7042706480219794793, guid: 8e698fccb4d726448b64322ca782c3b3,
         type: 3}
       propertyPath: m_Name
@@ -5168,6 +5173,12 @@ MonoBehaviour:
   MovementSpeed: 0
   Defense: 0
   MaxHp: 0
+  _Strength: {x: 0, y: 0}
+  _Magic: {x: 0, y: 0}
+  _AttackSpeed: {x: 0, y: 0}
+  _MovementSpeed: {x: 0, y: 0}
+  _Defense: {x: 0, y: 0}
+  _MaxHp: {x: 0, y: 0}
   LootCollider: {fileID: 0}
   _fx: {fileID: 5030405073909272984}
   weaponChargeTime: 1

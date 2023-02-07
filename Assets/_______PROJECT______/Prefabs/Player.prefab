@@ -361,6 +361,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ee7f677b-e1ba-46e6-ace3-264d41c1e801
     m_ActionName: MainGameplay/ActivateMouse[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f8e3ddb5-0c13-40c3-b62e-3ecf8d1881f8
+    m_ActionName: MainGameplay/PressA[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a78205eb-b883-4a2a-b9d8-aae986000780
+    m_ActionName: MainGameplay/PressStart[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MainGameplay
