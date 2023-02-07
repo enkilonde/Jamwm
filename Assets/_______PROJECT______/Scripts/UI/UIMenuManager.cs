@@ -24,6 +24,9 @@ public class UIMenuManager : MonoBehaviour
     [SerializeField] private Image _cursorGlow;
 
     [SerializeField] private List<Button> _buttons;
+    
+    [SerializeField] private ParticleSystem _particleEye1;
+    [SerializeField] private ParticleSystem _particleEye2;
 
     private float _targetCursor;
     private int _currentButton =0;
@@ -49,6 +52,8 @@ public class UIMenuManager : MonoBehaviour
         _cursorGlow.DOFade(.2f,1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
         
         SelectButton(_buttons[_currentButton]);
+        UpdateFlames();
+
     }
     
     public void Move(InputAction.CallbackContext context)
@@ -69,6 +74,7 @@ public class UIMenuManager : MonoBehaviour
             }
             _changedButton = true;
             SelectButton(_buttons[_currentButton]);
+            UpdateFlames();
         }
         else if (_vertical < -0.2f && _changedButton == false)
         {
@@ -79,6 +85,7 @@ public class UIMenuManager : MonoBehaviour
             }
             _changedButton = true;
             SelectButton(_buttons[_currentButton]);
+            UpdateFlames();
         }
         else if (Mathf.Abs(_vertical)<0.2f)
         {
@@ -86,6 +93,22 @@ public class UIMenuManager : MonoBehaviour
             {
                 _changedButton = false;
             }
+        }
+    }
+
+    public void UpdateFlames()
+    {
+        if (_currentButton == 0)
+        {
+            _particleEye1.Play();
+            _particleEye2.Play();
+        }
+        else
+        {
+            if (_particleEye1.isPlaying)
+                _particleEye1.Stop();
+            if (_particleEye2.isPlaying)
+                _particleEye2.Stop();
         }
     }
 
